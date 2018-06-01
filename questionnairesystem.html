@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Questionnaire Management System | Michael Barrows | Full Stack Web Developer in Colchester, Essex.</title>
+    <meta name="description" content="Questionnaire Management System project by Michael Barrows.">
+    <meta name="keywords" content="Michael Barrows, Web Developer, Questionnaire Management, Colchester, Essex, Web Design, Student, Portfolio">
+    <title>Questionnaire Management System | Michael Barrows</title>
+    <meta name="theme-color" content="#0099CC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/favicon.png">
+  </head>
+  <body>
+    <header id="project">
+      <a href="/"><img src="/img/logo.png" alt=""></a>
+      <div class="button">
+        <a href="/#projects"><span class="fa fa-arrow-circle-left left"></span> Back To Projects</a>
+      </div>
+      <h1>Questionnaire Management System</h1>
+    </header>
+    <section id="project">
+      <div class="technologies">
+        <div class="grid">
+          <span class="inner">HMTL5</span>
+          <span class="inner">CSS3</span>
+          <span class="inner">Sass</span>
+          <span class="inner">PHP</span>
+          <span class="inner">Laravel</span>
+          <span class="inner">Foundation</span>
+        </div>
+      </div>
+      <h2>Summary</h2>
+      <p>A web based implementation of the popular Connect 4 game, using HTML5 Canvas, EmberJS and implemented as a web app for Android using Apache Cordova.</p>
+      <h2>Try me!</h2>
+      <div class="image-grid">
+        <div class="span-all">
+          <iframe class="connect-4" src="https://projects.michaelbarrows.co.uk/connect-4/">
+            Your browser does not support iframes, to access this project, please
+            click the project link at the bottom of this page
+          </iframe>
+        </div>
+      </div>
+      <h2>Requirements</h2>
+      <p>Requirements consisted of:</p>
+      <ul>
+        <li>Must display the game board</li>
+        <li>Must allow markers to be placed</li>
+        <li>Must detect a winnig position</li>
+        <li>Must run as an app on a mobile device</li>
+        <li>Must implement a computer player</li>
+        <li>Must use a JavaScript Framework</li>
+      </ul>
+      <!-- <h2>Design</h2>
+      <p>8 sketches were created, 4 for the standalone version, 3 for the
+        integrated version and 1 page sketch to show the position of the
+        integrated element in comparison to the rest of the page.
+      </p>
+      <p>Mockups were not used as the sketches were detailed enough to start
+        building from.
+      </p>
+      <div class="image-grid">
+        <figure>
+          <img src="/img/currency-converter/sketches/sketch1.png" alt="design sketch of currency converter (standalone)">
+          <figcaption>First Sketch (standalone)</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/currency-converter/sketches/sketch2.png" alt="design sketch of currency converter (standalone)">
+          <figcaption>Second Sketch (standalone)</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/currency-converter/sketches/sketch3.png" alt="design sketch of currency converter (standalone)">
+          <figcaption>Third Sketch (standalone)</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/currency-converter/sketches/sketch4.png" alt="final design sketch of currency converter (standalone)">
+          <figcaption>Final Sketch (standalone)</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/currency-converter/sketches/framesketch.png" alt="page design sketch (integrated into site)">
+          <figcaption>Page Sketch (integrated into site)</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/currency-converter/sketches/isketch1.png" alt="design sketch of currency converter (integrated)">
+          <figcaption>First Sketch (integrated)</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/currency-converter/sketches/isketch2.png" alt="design sketch of currency converter (integrated)">
+          <figcaption>Second Sketch (integrated)</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/currency-converter/sketches/isketch3.png" alt="final design sketch of currency converter (integrated)">
+          <figcaption>Final Sketch (integrated)</figcaption>
+        </figure>
+      </div> -->
+      <h2>Development</h2>
+      <p>The currency converter was developed as both a standalone and integrated
+        solution, the website given as the example for integration was
+        <a href="http://doggiegadgets.com">doggiegadgets.com</a>. The integrated
+        version was created by making a copy of a page on the website and
+        integrating the currency converter into an existing form, with JavaScript
+        used to change the original product prices to the new prices.
+      </p>
+      <p>For development, the currency converter uses an object-oriented approach,
+        and the API <a href="http://fixer.io">fixer.io</a>, which was used for
+        obtaining the exchange rates. 5 currencies are used within the converter,
+        the US Dollar, the Euro, the Japenese Yen, the Australian Dollar and the
+        Canadian Dollar as these were found to be the most popular.
+      </p>
+      <div class="image-grid">
+        <figure>
+          <img src="/img/currency-converter/doggiegadgets.com_integration_original_state.png" alt="image of integrated currency converter, original state">
+          <figcaption>Integrated within doggiegadgets.com, original state</figcaption>
+        </figure>
+        <span></span>
+        <figure>
+          <img src="/img/currency-converter/doggiegadgets.com_integration_converted_state.png" alt="image of integrted currency converter, converted state">
+          <figcaption>Integrated within doggiegadgets.com, converted state</figcaption>
+        </figure>
+      </div>
+      <div class="image-grid">
+        <figure>
+          <img src="/img/currency-converter/standalone_original_state.png" alt="image of standalone currency converter, original state">
+          <figcaption>Standalone version, original state</figcaption>
+        </figure>
+        <span></span>
+        <figure>
+          <img src="/img/currency-converter/standalone_converted_state.png" alt="image of standalone currency converter, converted state">
+          <figcaption>Standalone version, converted state</figcaption>
+        </figure>
+      </div>
+      <h2>Testing</h2>
+      <p>The currency converter testing consisted of manually checking calculations
+        for all currencies, checking text and no input was handles with an error
+        message and ensuring the functionality of the application performed as
+        expected.
+      </p>
+      <p>The application will accept text after numbers, but will disregard
+        anything after the numbers to ensure the application can still function
+      </p>
+      <p>The testing revealed that the application functioned perfectly on
+        desktop, however on mobile, the flags on the currency select failed
+        to update until the select was clicked again, implying an issue
+        with the JQuery event handler for mobile selects.
+      </p>
+      <div class="button-grid">
+        <div class="grid">
+          <div class="inner">
+            <div class="button"><a href="https://projects.michaelbarrows.co.uk/questionnaire-management-system/" target="_blank"><span class="fa fa-arrow-circle-right right"></span> View Project</a></div>
+          </div>
+          <div class="inner">
+            <div class="button"><a href="https://github.com/MichaelBarrows/QuestionnaireSystem"><span class="fa fa-external-link right"></span> GitHub Repository</a></div>
+          </div>
+          <div class="inner nav">
+            <div class="button project-nav"><a href="/projects/grade-calculator/"><span class="fa fa-arrow-circle-left left"></span>Previous Project</a></div>
+          </div>
+          <div class="inner nav">
+            <div class="button project-nav"><a href="/#contact"><span class="fa fa-arrow-circle-right right"></span>Get In Touch</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="mailto:contact@michaelbarrows.co.uk" target="_blank"><span class="fa fa-envelope"></span></a>
+          <a href="https://twitter.com/michaelbarrows_" target="_blank"><span class="fa fa-twitter"></span></a>
+          <a href="https://www.linkedin.com/in/michaelpbarrows/" target="_blank"><span class="fa fa-linkedin"></span></a>
+          <a href="https://github.com/MichaelBarrows" target="_blank"><span class="fa fa-github"></span></a>
+        </div>
+        <img src="/img/logo.png" alt="">
+        <p>&copy; Michael Barrows 2018</p>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

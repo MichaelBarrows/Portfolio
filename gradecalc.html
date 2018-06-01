@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Grade Calculator | Michael Barrows | Full Stack Web Developer in Colchester, Essex.</title>
+    <meta name="description" content="Web based grade calculator project by Michael Barrows.">
+    <meta name="keywords" content="Michael Barrows, Web Developer, Grade Calculator, Colchester, Essex, Web Design, Student, Portfolio">
+    <meta name="theme-color" content="#0099CC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/favicon.png">
+  </head>
+  <body>
+    <header id="project">
+      <a href="/"><img src="/img/logo.png" alt=""></a>
+      <div class="button">
+        <a href="/#projects"><span class="fa fa-arrow-circle-left left"></span> Back To Projects</a>
+      </div>
+      <h1>Grade Calculator</h1>
+    </header>
+    <section id="project">
+      <div class="technologies">
+        <div class="grid">
+          <span class="inner">HMTL5</span>
+          <span class="inner">CSS3</span>
+          <span class="inner">JavaScript</span>
+          <span class="inner">JQuery</span>
+          <span class="inner">Object-Oriented Programming</span>
+          <span class="inner">Foundation</span>
+        </div>
+      </div>
+      <h2>Summary</h2>
+      <p>
+        A web based application for calculating module grades using weighted
+        averages, and average year grades based on individual module grades and
+        their credit values whilst also showing the grade classification.
+      </p>
+      <div class="image-grid">
+        <figure class="span-all">
+          <img src="/img/grade-calc/homepage-screenshot.png" alt="Image of the home page of the grade calculator">
+          <figcaption>Home Page</figcaption>
+        </figure>
+      </div>
+      <div class="image-grid">
+        <figure>
+          <img src="/img/grade-calc/module-screenshot.png" alt="Image of the module page of the grade calculator">
+          <figcaption>Module Grade Calculator</figcaption>
+        </figure>
+        <span></span>
+        <figure>
+          <img src="/img/grade-calc/year-screenshot.png" alt="Image of the year page of the grade calculator">
+          <figcaption>Year Grade Calculator</figcaption>
+        </figure>
+      </div>
+      <h2>Mobile Version</h2>
+      <div class="image-grid">
+        <figure>
+          <img src="/img/grade-calc/mobile-homepage-screenshot.png" alt="Image of the mobile grade calculator home page">
+          <figcaption>Grade Calculator</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/grade-calc/mobile-module-screenshot.png" alt="Image of the mobile grade calculator module page">
+          <figcaption>Module Grade Calculator</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/grade-calc/mobile-year-screenshot.png" alt="Image of the mobile grade calculator year page">
+          <figcaption>Year Grade Calculator</figcaption>
+        </figure>
+      </div>
+      <h2>Problem</h2>
+      <p>
+        Having to manually calculate grades using weightings for modules was
+        somewhat complex and became very tedious. Having to repeat this process
+        continuously became very time consuming, and trying to compute the average
+        for the entire year was confusing as this uses credits rather than
+        percentages, meaning that other grade calculators didn't provide a
+        complete solution for this problem.
+      </p>
+      <p>
+        This solution automates the calculation of weighted averages for modules
+        and the calculation of module grades to determine the average grade for
+        the year, whilst doing this, the web based system shows the outcomes from
+        each stage of the calculations, such as the grade of an assessment as a
+        weighted percentage of the entire module grade and the weighted module
+        grade in comparison to the total number of credits for example:
+      </p>
+      <p>The following example shows a module based grade</p>
+      <div class="example">
+        <p>Assignment 1: 80% Achieved, 20% weighting</p>
+        <p>Assignment 2: 86% Achieved, 80% weighting</p>
+        <p>To calculate this manually, the grade would be multiplied by the weighting and divided by 100:</p>
+        <div class="math">
+          <p>A1: (80 * 20) / 100 = 16</p>
+          <p>A2: (86 * 80) / 100 = 68.8</p>
+          <p>Total: 16 + 68.8 = 84.8</p>
+        </div>
+      </div>
+      <h2>Development</h2>
+      <p>
+        The functionality of the website was developed using JavaScript and
+        JQuery, which allowed all calculations to be completed on the client-side
+        of the application, meaning that these calculations were completed with
+        no additional requests to the server and the page was not reloaded.
+      </p>
+      <p>
+        The website was developed using the Foundation framework, as this framework
+        provided basic style elements such as buttons and the responsive grid. Using
+        this framework simplified development, as the emphasis for this project
+        was the functionality of the website, rather than the design.
+      </p>
+      <h2>Testing</h2>
+      <p>
+        The application was tested by manually carrying out calculations and
+        checking that the results from the application matched the manual
+        calculations.
+      </p>
+      <p>
+        The rest of the functionality was tested during development to ensure
+        that buttons and links functioned correctly.
+      </p>
+
+      <h2>Future Development</h2>
+      <p>
+        In future, this application has the potential to be further developed
+        with capabilities such as storage (either on the server using PHP and
+        MySQL or using HTML5 Local Storage), this would improve the user
+        experience of the application as users would not have to re-enter grades
+        everytime they visited the site.
+      </p>
+      <p>
+        The design could be improved to better use the space available in the
+        desktop versions, as there is a lot of white space. Adding a button to
+        add rows would allow more rows to be added as the user requires.
+      </p>
+      <div class="button-grid">
+        <div class="grid">
+          <div class="inner">
+            <div class="button"><a href="https://www.gradecalc.co.uk" target="_blank"><span class="fa fa-arrow-circle-right right"></span> View Project</a></div>
+          </div>
+          <div class="inner">
+            <div class="button"><a href="https://github.com/MichaelBarrows/GradeCalc"><span class="fa fa-external-link right"></span> GitHub Repository</a></div>
+          </div>
+          <div class="inner nav">
+            <div class="button project-nav"><a href="/#projects"><span class="fa fa-arrow-circle-left left"></span>Back To Projects</a></div>
+          </div>
+          <div class="inner nav">
+            <div class="button project-nav"><a href="/projects/currency-converter/"><span class="fa fa-arrow-circle-right right"></span>Next Project</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="social">
+          <a href="mailto:contact@michaelbarrows.co.uk" target="_blank"><span class="fa fa-envelope"></span></a>
+          <a href="https://twitter.com/michaelbarrows_" target="_blank"><span class="fa fa-twitter"></span></a>
+          <a href="https://www.linkedin.com/in/michaelpbarrows/" target="_blank"><span class="fa fa-linkedin"></span></a>
+          <a href="https://github.com/MichaelBarrows" target="_blank"><span class="fa fa-github"></span></a>
+        </div>
+        <img src="/img/logo.png" alt="">
+        <p>&copy; Michael Barrows 2018</p>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
