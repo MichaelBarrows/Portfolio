@@ -3,6 +3,6 @@ RewriteEngine On
 RewriteRule ^projects/currency-converter/$ currencyconverter.html [L]
 RewriteRule ^projects/html-email/$ htmlemail.html [L]
 RewriteRule ^projects/portfolio/$ portfolio.html [L]
-RewriteRule ^projects/connect-4/$ connect4.html [L]
 RewriteRule ^projects/grade-calculator/$ gradecalc.html [L]
-RewriteRule ^projects/questionnaire-management-system/$ questionnairesystem.html [L]
+#RewriteRule ^projects/connect-4/$ connect4.html [L]
+#RewriteRule ^projects/questionnaire-management-system/$ questionnairesystem.html [L]
