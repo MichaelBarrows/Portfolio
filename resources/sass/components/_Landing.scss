@@ -1,0 +1,20 @@
+section.landing {
+    min-height: 100vh;
+    h2 {
+        text-align: center;
+        font-size: 3.5em;
+        color: $blue;
+        margin: 12.5vh 0;
+        opacity: 0.9;
+    }
+    .card {
+        background-color: $light_grey;
+        opacity: 0.5;
+        margin: 5px;
+        h3 {
+            color: $blue;
+            text-align:center;
+            font-size: 3em;
+        }
+    }
+}
