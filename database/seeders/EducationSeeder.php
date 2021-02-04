@@ -18,10 +18,11 @@ class EducationSeeder extends Seeder
             ['id' => 1,
              'institution_name' => 'University of Portsmouth',
              'course_name' => 'MRes Technology (Computer Science)',
-             'grade' => 'Distinction',
+             'grade' => 'Distinction [to be awarded]',
              'start_date' => 'January 2020',
              'end_date' => 'January 2021',
              'description' => '',
+             'project_id' => 10,
             ],
             ['id' => 2,
             'institution_name' => 'Edge Hill University',
@@ -30,6 +31,7 @@ class EducationSeeder extends Seeder
             'start_date' => 'September 2015',
             'end_date' => 'July 2019',
             'description' => '',
+            'project_id' => 11,
             ],
             ['id' => 3,
             'institution_name' => 'Colchester Institute',
@@ -38,6 +40,7 @@ class EducationSeeder extends Seeder
             'start_date' => 'September 2012',
             'end_date' => 'June 2014',
             'description' => '',
+            'project_id' => null,
             ],
         ]);
     }

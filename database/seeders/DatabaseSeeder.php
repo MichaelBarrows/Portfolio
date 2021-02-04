@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SiteSettings::class);
         $this->call(EducationSeeder::class);
         $this->call(ProjectsSeeder::class);
-        $this->call(EducationProjectsPivotSeeder::class);
         $this->call(TechStackSeeder::class);
         $this->call(ProjectTechStackSeeder::class);
 

@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SiteSetting;
-use App\Models\Education;
 use App\Models\Project;
-use App\Models\TechStack;
 
-class HomeController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $maintenance_mode = SiteSetting::findOrFail(1);
-        $education = Education::all();
-        $projects = Project::all();
-        $projects = Project::where('type', 'project')->get();
-
-        $technologies = TechStack::all();
-        return view('pages/home', ['maintenance_mode' => $maintenance_mode,
-                                   'education' => $education,
-                                   'projects' => $projects,
-                                   'technologies' => $technologies]);
+        //
     }
 
     /**
@@ -56,9 +45,13 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($pretty_url)
     {
-        //
+        $maintenance_mode = SiteSetting::findOrFail(1);
+        $project = Project::where('pretty_url', $pretty_url)->firstOrFail();
+        return view('pages.project', ['maintenance_mode' => $maintenance_mode,
+                                      'project' => $project]);
+
     }
 
     /**

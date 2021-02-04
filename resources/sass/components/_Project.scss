@@ -1,0 +1,14 @@
+section.project {
+    .tech-stack {
+        text-align: center;
+        p {
+            display: inline-block;
+            padding: 10px;
+            margin: 7.5px 10px;
+            border: 3px solid $blue;
+            color: $light_grey;
+            font-weight: 700;
+            opacity: $text-opacity;
+        }
+    }
+}

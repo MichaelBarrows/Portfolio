@@ -43,11 +43,11 @@
 
                 </div>
                 <div class="body">
+                    <p>Grade: <span class="bold">{{ $edu->grade }}</span></p>
                     <p>{{ $edu->description }}</p>
-                    <p>{{ $edu->grade }}</p>
-                    @foreach($edu->projects as $project)
-                    <p>{{ $project->name }}</p>
-                    @endforeach
+                    @if(isset($edu->project))
+                    <p>Research Project: {{ $edu->project->name }}</p>
+                    @endif
                 </div>
             </div>
             @endforeach
@@ -77,19 +77,36 @@
             @foreach($projects as $project)
             @if($project->tech_stack != null)
 
-            <div class="desktop-4 mobile-12 project-card" data-tech-stack="@foreach($project->tech_stack as $tech){{ $tech->identifier }} @endforeach" id="{{ $project->id }}">
+            <div class="desktop-4 mobile-12 project-card grid" data-tech-stack="@foreach($project->tech_stack as $tech){{ $tech->identifier }} @endforeach" id="{{ $project->id }}">
             @endif
                 <h3 class="all-12">{{ $project->name }}</h3>
-                @if($project->image != "")
-                <img src="{{ asset('img/' . $project->image) }}" alt="{{ $project->name }}">
+                @if(isset($project->image))
+                <img class="all-12" src="{{ asset('img/' . $project->image) }}" alt="{{ $project->name }}">
+                @elseif(isset($project->text_logo))
+                <div class="not-img all-12">
+                    <div class="text">
+                        <p>{{ $project->text_logo }}</p>
+                    </div>
+                </div>
+                @elseif(isset($project->fa_icon_logo))
+                <div class="not-img all-12">
+                    <div class="text">
+                        <p><i class="fas {{ $project->fa_icon_logo }}"></i></p>
+                    </div>
+                </div>
                 @else
-                <div class="not-img">
+                <div class="not-img all-12">
                     <div class="text">
                         <p><i class="fas fa-code"></i></p>
                     </div>
                 </div>
                 @endif
-                <p class="all-12">{{ $project->short_description }}</p>
+                @if($project->short_description != "")
+                <p class="short-description all-12">{{ $project->short_description }}</p>
+                @endif
+                <div class="link all-12">
+                    <p><a href="{{ route('project.show', ['project' => $project->pretty_url]) }}">View Project</a></p>
+                </div>
             </div>
             @endforeach
         </div>

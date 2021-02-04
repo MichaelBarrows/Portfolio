@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Education extends Model
 {
     use HasFactory;
-    public function projects() {
-        return $this->belongsToMany(Project::class);
+    public function project() {
+        return $this->belongsTo(Project::class);
     }
 }

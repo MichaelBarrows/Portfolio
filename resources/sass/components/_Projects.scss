@@ -3,6 +3,7 @@ section.projects {
     .tech-filters {
         text-align: center;
         line-height: 1;
+        margin: 5px 0;
         & > a:link, & > a:visited {
             // background-color: $dark_grey;
             color: $light_grey;
@@ -10,24 +11,26 @@ section.projects {
             padding: 10px;
             text-decoration: none;
             font-weight: 700;
-            opacity: 0.6;
+            opacity: $box-bg-opacity;
             display: inline-block;
-            margin: 10px;
+            margin: 7.5px 10px;
         }
         & > a:active, & > a:hover {
             background-color: $blue;
             color: $dark_grey;
+            opacity: $box-bg-opacity;
 
         }
         & > a.active {
             background-color: $blue;
             color: $dark_grey;
+            opacity: $box-bg-opacity;
         }
     }
     .project-card {
         // background: rgba(0, 153, 204, 0.6);
         background-color: $blue;
-        opacity: 0.6;
+        opacity: $box-bg-opacity;
         align-self: stretch;
         margin: 2.5px;
         h3 {
@@ -44,7 +47,6 @@ section.projects {
             background-color: $dark_grey;
             color: $light_grey;
             position: relative;
-            // opacity: 0.9;
             .text {
                 position: absolute;
                 top: 0;
@@ -58,7 +60,31 @@ section.projects {
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    font-weight: 700;
 
+                }
+            }
+        }
+        .short-description {
+            margin: 5px 10px;
+            text-align: center;
+        }
+        .link {
+            text-align: center;
+            p {
+                // margin: 5px;
+                padding: 5px 0 10px 0;
+                display: block;
+                a:link, a:visited {
+                    border: 4px solid $dark_grey;
+                    padding: 10px 25px;
+                    margin: 5px 0;
+                    // display: block;
+                    color: $dark_grey;
+                    text-decoration: none;
+                    font-size: 1.1em;
+                    font-weight: 700;
+                    background-color: $light_grey;
                 }
             }
         }

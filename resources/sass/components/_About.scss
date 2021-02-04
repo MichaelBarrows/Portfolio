@@ -4,31 +4,31 @@ section.about {
         margin: 0 12.5%;
         border-radius: 50%;
         border: $blue 5px solid;
-        opacity: 0.65;
+        opacity: $box-bg-opacity;
     }
     .education {
         margin: 7.5px 0;
         .header {
             background-color: $blue;
-            opacity: 0.6;
+            opacity: $box-bg-opacity;
             padding: 5px;
             border-bottom: 2px solid $dark_grey;
             h3 {
                 color: $dark_grey;
-                margin:2.5px;
+                margin: 2.5px;
                 font-weight: 700;
                 font-size: 1.25em;
             }
             p {
-                font-weight: bold;
-                color: $dark_grey;
+                color: $light_grey;
                 font-weight: 700;
                 margin: 2.5px;
+                font-size: 1.1em;
             }
         }
         .body {
             background-color: $light_grey;
-            opacity: 0.6;
+            opacity: $box-bg-opacity;
             p {
                 padding: 10px;
                 margin: 0;

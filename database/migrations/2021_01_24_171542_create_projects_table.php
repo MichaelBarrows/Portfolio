@@ -19,7 +19,9 @@ class CreateProjectsTable extends Migration
             $table->string('pretty_url');
             $table->string('short_description');
             $table->string('long_description');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->string('text_logo')->nullable();
+            $table->string('fa_icon_logo')->nullable();
             $table->string('type');
             $table->timestamps();
         });

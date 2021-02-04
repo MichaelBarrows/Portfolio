@@ -11,6 +11,14 @@ body {
         background-attachment: fixed;
     }
     h1, h2, h3, h4, h5, h6 {
-        opacity: 0.9;
+        opacity: $text-opacity;
+    }
+    .blue-text {
+        color: $blue;
+        opacity: $text-opacity;
+    }
+
+    .bold {
+        font-weight: 700;
     }
 }

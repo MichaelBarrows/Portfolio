@@ -177,10 +177,15 @@ body {
     background-attachment: fixed; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     opacity: 0.9; }
+  body .blue-text {
+    color: #0099CC;
+    opacity: 0.9; }
+  body .bold {
+    font-weight: 700; }
 
 header {
   background-color: #0099CC;
-  opacity: 0.9; }
+  opacity: 0.85; }
   header h1 {
     margin: 0;
     color: #333333;
@@ -196,14 +201,15 @@ header {
 section h2 {
   text-align: center;
   font-size: 2em;
-  color: #0099CC; }
+  color: #0099CC;
+  margin: 15px 0 0 0; }
 
 section .semi-transparent-light-grey {
-  background: rgba(204, 204, 204, 0.6);
+  background: rgba(204, 204, 204, 0.75);
   color: #333333; }
 
 section .semi-transparent-blue {
-  background: rgba(0, 153, 204, 0.6);
+  background: rgba(0, 153, 204, 0.75);
   color: #000000; }
 
 section .semi-transparent-light-grey p, section .semi-transparent-blue p {
@@ -220,7 +226,7 @@ section.landing {
     opacity: 0.9; }
   section.landing .card {
     background-color: #CCCCCC;
-    opacity: 0.5;
+    opacity: 0.75;
     margin: 5px; }
     section.landing .card h3 {
       color: #0099CC;
@@ -232,13 +238,13 @@ section.about img.mb {
   margin: 0 12.5%;
   border-radius: 50%;
   border: #0099CC 5px solid;
-  opacity: 0.65; }
+  opacity: 0.75; }
 
 section.about .education {
   margin: 7.5px 0; }
   section.about .education .header {
     background-color: #0099CC;
-    opacity: 0.6;
+    opacity: 0.75;
     padding: 5px;
     border-bottom: 2px solid #333333; }
     section.about .education .header h3 {
@@ -247,13 +253,13 @@ section.about .education {
       font-weight: 700;
       font-size: 1.25em; }
     section.about .education .header p {
-      font-weight: bold;
-      color: #333333;
+      color: #CCCCCC;
       font-weight: 700;
-      margin: 2.5px; }
+      margin: 2.5px;
+      font-size: 1.1em; }
   section.about .education .body {
     background-color: #CCCCCC;
-    opacity: 0.6; }
+    opacity: 0.75; }
     section.about .education .body p {
       padding: 10px;
       margin: 0; }
@@ -262,25 +268,28 @@ section.projects {
   padding-bottom: 100vh; }
   section.projects .tech-filters {
     text-align: center;
-    line-height: 1; }
+    line-height: 1;
+    margin: 5px 0; }
     section.projects .tech-filters > a:link, section.projects .tech-filters > a:visited {
       color: #CCCCCC;
       border: 3px solid #0099CC;
       padding: 10px;
       text-decoration: none;
       font-weight: 700;
-      opacity: 0.6;
+      opacity: 0.75;
       display: inline-block;
-      margin: 10px; }
+      margin: 7.5px 10px; }
     section.projects .tech-filters > a:active, section.projects .tech-filters > a:hover {
       background-color: #0099CC;
-      color: #333333; }
+      color: #333333;
+      opacity: 0.75; }
     section.projects .tech-filters > a.active {
       background-color: #0099CC;
-      color: #333333; }
+      color: #333333;
+      opacity: 0.75; }
   section.projects .project-card {
     background-color: #0099CC;
-    opacity: 0.6;
+    opacity: 0.75;
     align-self: stretch;
     margin: 2.5px; }
     section.projects .project-card h3 {
@@ -307,5 +316,34 @@ section.projects {
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, -50%); }
+          transform: translate(-50%, -50%);
+          font-weight: 700; }
+    section.projects .project-card .short-description {
+      margin: 5px 10px;
+      text-align: center; }
+    section.projects .project-card .link {
+      text-align: center; }
+      section.projects .project-card .link p {
+        padding: 5px 0 10px 0;
+        display: block; }
+        section.projects .project-card .link p a:link, section.projects .project-card .link p a:visited {
+          border: 4px solid #333333;
+          padding: 10px 25px;
+          margin: 5px 0;
+          color: #333333;
+          text-decoration: none;
+          font-size: 1.1em;
+          font-weight: 700;
+          background-color: #CCCCCC; }
+
+section.project .tech-stack {
+  text-align: center; }
+  section.project .tech-stack p {
+    display: inline-block;
+    padding: 10px;
+    margin: 7.5px 10px;
+    border: 3px solid #0099CC;
+    color: #CCCCCC;
+    font-weight: 700;
+    opacity: 0.9; }
 

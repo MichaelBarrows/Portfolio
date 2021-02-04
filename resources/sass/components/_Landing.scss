@@ -5,11 +5,11 @@ section.landing {
         font-size: 3.5em;
         color: $blue;
         margin: 12.5vh 0;
-        opacity: 0.9;
+        opacity: $text-opacity;
     }
     .card {
         background-color: $light_grey;
-        opacity: 0.5;
+        opacity: $box-bg-opacity;
         margin: 5px;
         h3 {
             color: $blue;
