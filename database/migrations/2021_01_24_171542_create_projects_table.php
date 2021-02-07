@@ -22,7 +22,6 @@ class CreateProjectsTable extends Migration
             $table->string('image')->nullable();
             $table->string('text_logo')->nullable();
             $table->string('fa_icon_logo')->nullable();
-            $table->string('type');
             $table->timestamps();
         });
     }

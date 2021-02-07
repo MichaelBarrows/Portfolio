@@ -20,9 +20,9 @@ class HomeController extends Controller
         $maintenance_mode = SiteSetting::findOrFail(1);
         $education = Education::all();
         $projects = Project::all();
-        $projects = Project::where('type', 'project')->get();
-
+        $projects = Project::all();
         $technologies = TechStack::all();
+        
         return view('pages/home', ['maintenance_mode' => $maintenance_mode,
                                    'education' => $education,
                                    'projects' => $projects,

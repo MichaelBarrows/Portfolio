@@ -15,9 +15,15 @@ class SiteSettings extends Seeder
     public function run()
     {
         DB::table('site_settings')->insert([
-            ['id' => 1,
-             'name' => 'maintenance_mode',
-             'value' => 'false',
+            [
+                'id' => 1,
+                'name' => 'maintenance_mode',
+                'value' => False,
+            ],
+            [
+                'id' => 2,
+                'name' => 'allow_emails',
+                'value' => True,
             ],
         ]);
     }

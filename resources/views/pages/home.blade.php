@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="landing">
+<section class="landing" id="landing">
     <div class="grid-container grid">
         <div class="desktop-12 mobile-12">
             <h2>Hi, I'm Michael, a Web Developer from Colchester, Essex!</h2>
@@ -21,7 +21,7 @@
     </div>
 </section>
 
-<section class="about">
+<section class="about" id="about">
     <div class="grid-container grid">
         <div class="desktop-12 mobile-12">
             <h2>About Me</h2>
@@ -45,8 +45,8 @@
                 <div class="body">
                     <p>Grade: <span class="bold">{{ $edu->grade }}</span></p>
                     <p>{{ $edu->description }}</p>
-                    @if(isset($edu->project))
-                    <p>Research Project: {{ $edu->project->name }}</p>
+                    @if(isset($edu->project_title))
+                    <p>Research Project: {{ $edu->project_title }}</p>
                     @endif
                 </div>
             </div>
@@ -56,7 +56,7 @@
     </div>
 </section>
 
-<section class="projects">
+<section class="projects" id="projects">
     <div class="grid-container grid">
         <div class="desktop-12 mobile-12">
             <h2>Projects</h2>
@@ -111,6 +111,43 @@
             @endforeach
         </div>
         @endif
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="grid-container grid">
+        <div class="desktop-12 mobile-12">
+            <h2>Contact Me</h2>
+        </div>
+
+    @foreach (['success', 'error'] as $msg)
+    @if(Session::has($msg))
+    <div class="desktop-12 mobile-12 flash-message {{ $msg }}">
+        <p class="{{ $msg }}">{{ Session::get($msg) }}</p>
+    </div>
+    @endif
+    @endforeach
+
+        {!! Form::open(['route' => 'contact.store', 'class' => 'contact-form grid desktop-12 mobile-12']) !!}
+        <div class="mobile-12 desktop-4">
+            {!! Form::text('name', '', ['placeholder' => 'Name']) !!}
+        </div>
+        <div class="mobile-12 desktop-4">
+            {!! Form::email('email_address', '', ['placeholder' => 'E-Mail Address']) !!}
+        </div>
+        <div class="mobile-12 desktop-4">
+            {!! Form::text('phone_number', '', ['placeholder' => 'Phone Number']) !!}
+        </div>
+        <div class="mobile-12 desktop-12">
+            {!! Form::textarea('message', '', ['placeholder' => 'Your Message', 'class' => 'message']) !!}
+        </div>
+        <div class="mobile-12 desktop-6">
+            {!! Form::reset('Reset Form') !!}
+        </div>
+        <div class="mobile-12 desktop-6">
+            {!! Form::submit('Send Message') !!}
+        </div>
+        {!! Form::close() !!}
     </div>
 </section>
 

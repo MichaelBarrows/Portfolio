@@ -21,7 +21,7 @@ class CreateEducationTable extends Migration
             $table->string('start_date');
             $table->string('end_date');
             $table->string('description');
-            $table->foreignId('project_id')->nullable();
+            $table->string('project_title')->nullable();
             $table->timestamps();
         });
     }

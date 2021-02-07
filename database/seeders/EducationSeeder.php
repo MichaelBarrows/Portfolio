@@ -22,7 +22,7 @@ class EducationSeeder extends Seeder
              'start_date' => 'January 2020',
              'end_date' => 'January 2021',
              'description' => '',
-             'project_id' => 10,
+             'project_title' => 'Automatic sentiment and emotion labelling of Iranian state-sponsored propaganda tweets and ',
             ],
             ['id' => 2,
             'institution_name' => 'Edge Hill University',
@@ -31,7 +31,7 @@ class EducationSeeder extends Seeder
             'start_date' => 'September 2015',
             'end_date' => 'July 2019',
             'description' => '',
-            'project_id' => 11,
+            'project_title' => 'A chatbot to facilitate new undergraduate Computer Science students’ transition to university: is it technically feasible and would students find it useful?',
             ],
             ['id' => 3,
             'institution_name' => 'Colchester Institute',
@@ -40,7 +40,7 @@ class EducationSeeder extends Seeder
             'start_date' => 'September 2012',
             'end_date' => 'June 2014',
             'description' => '',
-            'project_id' => null,
+            'project_title' => null,
             ],
         ]);
     }

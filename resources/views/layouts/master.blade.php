@@ -1,5 +1,5 @@
 @if(isset($maintenance_mode))
-@if($maintenance_mode->value == "true")
+@if($maintenance_mode->value == True)
     @include('layouts.maintenance_mode')
 @else
 <!DOCTYPE html>

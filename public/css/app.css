@@ -164,6 +164,9 @@
 .align-center {
   text-align: center; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   padding: 0;
   margin: 0;
@@ -264,77 +267,110 @@ section.about .education {
       padding: 10px;
       margin: 0; }
 
-section.projects {
-  padding-bottom: 100vh; }
-  section.projects .tech-filters {
-    text-align: center;
-    line-height: 1;
-    margin: 5px 0; }
-    section.projects .tech-filters > a:link, section.projects .tech-filters > a:visited {
-      color: #CCCCCC;
-      border: 3px solid #0099CC;
-      padding: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      opacity: 0.75;
-      display: inline-block;
-      margin: 7.5px 10px; }
-    section.projects .tech-filters > a:active, section.projects .tech-filters > a:hover {
-      background-color: #0099CC;
-      color: #333333;
-      opacity: 0.75; }
-    section.projects .tech-filters > a.active {
-      background-color: #0099CC;
-      color: #333333;
-      opacity: 0.75; }
-  section.projects .project-card {
-    background-color: #0099CC;
+section.projects .tech-filters {
+  text-align: center;
+  line-height: 1;
+  margin: 5px 0; }
+  section.projects .tech-filters > a:link, section.projects .tech-filters > a:visited {
+    color: #CCCCCC;
+    border: 3px solid #0099CC;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 700;
     opacity: 0.75;
-    align-self: stretch;
-    margin: 2.5px; }
-    section.projects .project-card h3 {
-      text-align: center; }
-    section.projects .project-card img {
-      max-width: 50%;
-      margin: 0 25%; }
-    section.projects .project-card .not-img {
-      width: 50%;
-      margin: 0 25%;
-      padding-top: 50%;
-      background-color: #333333;
-      color: #CCCCCC;
-      position: relative; }
-      section.projects .project-card .not-img .text {
+    display: inline-block;
+    margin: 7.5px 10px; }
+  section.projects .tech-filters > a:active, section.projects .tech-filters > a:hover {
+    background-color: #0099CC;
+    color: #333333;
+    opacity: 0.75; }
+  section.projects .tech-filters > a.active {
+    background-color: #0099CC;
+    color: #333333;
+    opacity: 0.75; }
+
+section.projects .project-card {
+  background-color: #0099CC;
+  opacity: 0.75;
+  align-self: stretch;
+  margin: 2.5px; }
+  section.projects .project-card h3 {
+    text-align: center; }
+  section.projects .project-card img {
+    max-width: 50%;
+    margin: 0 25%; }
+  section.projects .project-card .not-img {
+    width: 50%;
+    margin: 0 25%;
+    padding-top: 50%;
+    background-color: #333333;
+    color: #CCCCCC;
+    position: relative; }
+    section.projects .project-card .not-img .text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; }
+      section.projects .project-card .not-img .text p {
+        font-size: 6em;
+        margin: 0;
         position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0; }
-        section.projects .project-card .not-img .text p {
-          font-size: 6em;
-          margin: 0;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-weight: 700; }
-    section.projects .project-card .short-description {
-      margin: 5px 10px;
-      text-align: center; }
-    section.projects .project-card .link {
-      text-align: center; }
-      section.projects .project-card .link p {
-        padding: 5px 0 10px 0;
-        display: block; }
-        section.projects .project-card .link p a:link, section.projects .project-card .link p a:visited {
-          border: 4px solid #333333;
-          padding: 10px 25px;
-          margin: 5px 0;
-          color: #333333;
-          text-decoration: none;
-          font-size: 1.1em;
-          font-weight: 700;
-          background-color: #CCCCCC; }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 700; }
+  section.projects .project-card .short-description {
+    margin: 5px 10px;
+    text-align: center; }
+  section.projects .project-card .link {
+    text-align: center; }
+    section.projects .project-card .link p {
+      padding: 5px 0 10px 0;
+      display: block; }
+      section.projects .project-card .link p a:link, section.projects .project-card .link p a:visited {
+        border: 4px solid #333333;
+        padding: 10px 25px;
+        margin: 5px 0;
+        color: #333333;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: 700;
+        background-color: #CCCCCC; }
+
+.flash-message > p {
+  margin: 0;
+  padding: 10px;
+  opacity: 0.75;
+  text-align: center;
+  font-size: 1.25em; }
+
+.flash-message .success {
+  background-color: #38C172; }
+
+.flash-message .error {
+  background-color: #E3342F; }
+
+section.contact {
+  padding-bottom: 100vh; }
+  section.contact form > div {
+    margin: 2.5px; }
+    section.contact form > div input[type="text"], section.contact form > div input[type="email"], section.contact form > div textarea, section.contact form > div input[type="reset"], section.contact form > div input[type="submit"] {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      border: #0099CC 5px solid;
+      background-color: #CCCCCC;
+      opacity: 0.6;
+      font-size: 1.1em;
+      font-weight: 700; }
+    section.contact form > div textarea {
+      font-family: 'Raleway', sans-serif; }
+    section.contact form > div input[type="reset"] {
+      background-color: #e3342f; }
+    section.contact form > div input[type="submit"] {
+      background-color: #38c172; }
 
 section.project .tech-stack {
   text-align: center; }
