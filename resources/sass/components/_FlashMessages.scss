@@ -1,0 +1,15 @@
+.flash-message {
+    & > p {
+        margin: 0;
+        padding: 10px;
+        opacity: $box-bg-opacity;
+        text-align: center;
+        font-size: 1.25em;
+    }
+    & .success {
+        background-color: $green;
+    }
+    & .error {
+        background-color: $red;
+    }
+}
