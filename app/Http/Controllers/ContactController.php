@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 Use App\Models\Contact;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactSendMe;
 use App\Mail\ContactSendThem;
 use App\Models\SiteSetting;
-
-use Illuminate\Database\Eloquent\Collection;
+use App\Http\Requests\ContactFormValidationRequest;
 
 class ContactController extends Controller
 {
@@ -39,14 +39,10 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactFormValidationRequest $request)
     {
-        $this->validate($request, [
-            'name' => ['required'],
-            'email_address' => ['required'],
-            'phone_number' => ['required'],
-            'message' => ['required'],
-        ]);
+        $validated = $request->validated();
+
         if ($contact_message = Contact::create($request->all())) {
             $request->session()->flash('success', 'Message sent!');
         } else {
