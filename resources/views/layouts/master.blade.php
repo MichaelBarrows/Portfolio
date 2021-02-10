@@ -5,13 +5,13 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>@yield('title')Michael Barrows</title>
+        <title>@yield('title')Michael Barrows | Web Developer in Colchester, Essex.</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html"/>
-        <meta name="keywords" content="University, Module, Year, Grade, Calculator, Average, Percentage, Student, Degree, Classification"/>
-        <meta name="description" content="An easy way to calculate your weighted module and year university grades with classifications."/>
+        <meta name="description" content="Michael Barrows is a software developer located in Colchester, Essex.">
+        <meta name="keywords" content="Michael Barrows, Software Developer, Colchester, Essex, Web Developer, Graduate, Portfolio">
         <meta name="author" content="Michael Barrows"/>
         @yield('canonical')
         <meta name="theme-color" content="#007684">
@@ -31,13 +31,21 @@
         <div class="hex-bg-container">
             <header>
                 <div class="grid-container grid">
-                    <div class="desktop-5 mobile-12">
+                    <div class="small-12 medium-12 large-6 xlarge-5">
                         <h1><a href="{{ route('index') }}">Michael Barrows</a></h1>
                     </div>
-                    <nav class="mobile mobile-12 desktop-hidden grid">
+                    <nav class="small medium small-12 medium-12 large-hidden xlarge-hidden grid">
+                        <a class="small-12 medium-12" href="{{ url('/') }}">Home</a>
+                        <a class="small-12 medium-12" href="{{ url('/#about') }}">About</a>
+                        <a class="small-12 medium-12" href="{{ url('/#projects') }}">Projects</a>
+                        <a class="small-12 medium-12" href="{{ url('/#contact') }}">Contact</a>
                     </nav>
-                    <div class="desktop-7 mobile-hidden align-right">
-                        <nav class="desktop align-right flex-container flex-right">
+                    <div class="large-6 xlarge-7 small-hidden medium-hidden align-right">
+                        <nav class="large xlarge align-right flex-container flex-right">
+                            <a href="{{ url('/') }}">Home</a>
+                            <a href="{{ url('/#about') }}">About</a>
+                            <a href="{{ url('/#projects') }}">Projects</a>
+                            <a href="{{ url('/#contact') }}">Contact</a>
                         </nav>
                     </div>
                 </div>

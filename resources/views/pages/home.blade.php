@@ -2,41 +2,41 @@
 
 
 @section('content')
-<section class="landing" id="landing">
+<section id="landing">
     <div class="grid-container grid">
-        <div class="desktop-12 mobile-12">
+        <div class="all-12">
             <h2>Hi, I'm Michael, a Web Developer from Colchester, Essex!</h2>
         </div>
-        <div class="desktop-12 mobile-12 grid">
-            <div class="desktop-4 mobile-12 card">
+        <div class="all-12 grid">
+            <div class="small-12 medium-6 large-4 xlarge-4 card">
                 <h3><i class="fas fa-code"></i></h3>
             </div>
-            <div class="desktop-4 mobile-12 card">
+            <div class="small-12 medium-6 large-4 xlarge-4 card">
                 <h3><i class="fas fa-palette"></i></h3>
             </div>
-            <div class="desktop-4 mobile-12 card">
+            <div class="small-12 medium-6 large-4 xlarge-4 medium-start-3 card">
                 <h3><i class="fas fa-code"></i></h3>
             </div>
         </div>
     </div>
 </section>
 
-<section class="about" id="about">
+<section id="about">
     <div class="grid-container grid">
-        <div class="desktop-12 mobile-12">
+        <div class="all-12">
             <h2>About Me</h2>
         </div>
-        <div class="desktop-3 mobile-12">
+        <div class="small-12 medium-4 large-3 xlarge-3">
             <img class="mb" src="{{ asset('img/michaelbarrows.jpeg') }}" alt="Picture of me">
         </div>
-        <div class="desktop-9 mobile-12 semi-transparent-light-grey">
+        <div class="small-12 medium-8 large-9 xlarge-9 semi-transparent-light-grey">
             <p>About me text</p>
             <p>About me text</p>
         </div>
         @if(isset($education))
-        <div class="desktop-12 mobile-12 grid">
+        <div class="all-12 grid">
             @foreach($education as $edu)
-            <div class="desktop-12 mobile-12 education">
+            <div class="all-12 education">
                 <div class="header">
                     <h3>{{ $edu->course_name }}</h3>
                     <p>{{ $edu->institution_name }}</p>
@@ -56,15 +56,15 @@
     </div>
 </section>
 
-<section class="projects" id="projects">
+<section id="projects">
     <div class="grid-container grid">
-        <div class="desktop-12 mobile-12">
+        <div class="all-12">
             <h2>Projects</h2>
         </div>
         @if(isset($projects))
         <!-- projects refine tools -->
         @if(isset($technologies))
-        <div class="desktop-12 mobile-12">
+        <div class="all-12">
             <p class="tech-filters">
                 <a href="#" class="stack-filter active" data-tech-stack="all-active">All Projects</a>
                 @foreach($technologies as $technology)
@@ -73,11 +73,11 @@
             </p>
         </div>
         @endif
-        <div class="desktop-12 mobile-12 grid">
+        <div class="all-12 grid">
             @foreach($projects as $project)
             @if($project->tech_stack != null)
 
-            <div class="desktop-4 mobile-12 project-card grid" data-tech-stack="@foreach($project->tech_stack as $tech){{ $tech->identifier }} @endforeach" id="{{ $project->id }}">
+            <div class="small-12 medium-6 large-4 xlarge-4 project-card grid" data-tech-stack="@foreach($project->tech_stack as $tech){{ $tech->identifier }} @endforeach" id="{{ $project->id }}">
             @endif
                 <h3 class="all-12">{{ $project->name }}</h3>
                 @if(isset($project->image))
@@ -114,41 +114,60 @@
     </div>
 </section>
 
-<section class="contact" id="contact">
+<section id="contact">
     <div class="grid-container grid">
-        <div class="desktop-12 mobile-12">
+        <div class="all-12">
             <h2>Contact Me</h2>
+        </div>
+        <div class="all-12">
+            <div class="text semi-transparent-blue text-centre">
+                <p>Got a project you'd like some help with or a vacancy you think I'd be a good fit for? Get in touch!</p>
+                <p>If you'd rather email me, my email address is <a href="mailto:contact@michaelbarrows.com">contact@michaelbarrows.com</a>.</p>
+            </div>
         </div>
 
     @foreach (['success', 'error'] as $msg)
     @if(Session::has($msg))
-    <div class="desktop-12 mobile-12 flash-message {{ $msg }}">
+    <div class="all-12 flash-message {{ $msg }}">
         <p class="{{ $msg }}">{{ Session::get($msg) }}</p>
     </div>
     @endif
     @endforeach
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
 
-        {!! Form::open(['route' => 'contact.store', 'class' => 'contact-form grid desktop-12 mobile-12']) !!}
-        <div class="mobile-12 desktop-4">
-            {!! Form::text('name', '', ['placeholder' => 'Name']) !!}
+        <div class="all-12 flash-message error">
+            <p class="error">{{ $error }}</p>
         </div>
-        <div class="mobile-12 desktop-4">
-            {!! Form::email('email_address', '', ['placeholder' => 'E-Mail Address']) !!}
+        @endforeach
+    @endif
+        {!! Form::open(['route' => 'contact.store', 'class' => 'contact-form grid all-12']) !!}
+        <div class="small-12 medium-12 large-4 xlarge-4">
+            {!! Form::text('name', '', ['placeholder' => 'Name', 'required']) !!}
         </div>
-        <div class="mobile-12 desktop-4">
-            {!! Form::text('phone_number', '', ['placeholder' => 'Phone Number']) !!}
+        <div class="small-12 medium-12 large-4 xlarge-4">
+            {!! Form::email('email_address', '', ['placeholder' => 'E-Mail Address', 'required']) !!}
         </div>
-        <div class="mobile-12 desktop-12">
-            {!! Form::textarea('message', '', ['placeholder' => 'Your Message', 'class' => 'message']) !!}
+        <div class="small-12 medium-12 large-4 xlarge-4">
+            {!! Form::text('phone_number', '', ['placeholder' => 'Phone Number', 'required']) !!}
         </div>
-        <div class="mobile-12 desktop-6">
+        <div class="small-12 medium-12 large-12 xlarge-12">
+            {!! Form::textarea('message', '', ['placeholder' => 'Your Message', 'class' => 'message', 'required']) !!}
+        </div>
+        <div class="small-12 medium-6 large-6 xlarge-6">
             {!! Form::reset('Reset Form') !!}
         </div>
-        <div class="mobile-12 desktop-6">
+        <div class="small-12 medium-6 large-6 xlarge-6">
             {!! Form::submit('Send Message') !!}
         </div>
         {!! Form::close() !!}
     </div>
 </section>
+
+<footer>
+    <div class="grid-container grid">
+        <p class="all-12">&copy; Michael Barrows {{ date('Y') }}</p>
+    </div>
+</footer>
 
 @endsection
