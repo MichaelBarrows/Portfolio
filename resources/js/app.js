@@ -1,5 +1,22 @@
 require('./bootstrap');
 
+function stack_filters_add_event() {
+    var stack_filters = document.getElementsByClassName('stack-filter');
+    for (i = 0; i < stack_filters.length; i++) {
+        stack_filters[i].addEventListener("click", function(event){
+            event.preventDefault();
+            stack = this.dataset.techStack;
+            other_active = document.getElementsByClassName("active");
+            for (j = 0; j < other_active.length; j ++) {
+                other_active[j].classList.remove("active");
+            }
+            this.classList.add("active");
+            stack_filter(stack);
+        });
+
+    }
+}
+
 function stack_filter (selected_stack) {
     proj_cards = document.getElementsByClassName("project-card");
     for (idx = 0; idx < proj_cards.length; idx++) {
@@ -17,26 +34,6 @@ function stack_filter (selected_stack) {
     }
 }
 
-$(document).ready(function(){
-
-    $('a.stack-filter').click(function () {
-        event.preventDefault();
-        stack = this.dataset.techStack;
-        other_active = document.getElementsByClassName("active");
-        for (idx = 0; idx < other_active.length; idx ++) {
-            other_active[idx].classList.remove("active");
-        }
-        this.classList.add("active");
-        stack_filter(stack);
-    });
-
-
-
-el = document.getElementById("1");
-stack = el.dataset.techStack;
-stack = stack.split(" ");
-for (i = 0; i < stack.length; i++) {
-    console.log(stack[i]);
-}
-
+document.addEventListener("DOMContentLoaded", function() {
+    stack_filters_add_event()
 });
