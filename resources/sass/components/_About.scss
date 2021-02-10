@@ -1,7 +1,8 @@
-section.about {
+section#about {
     img.mb {
+        display: block;
         max-width: 75%;
-        margin: 0 12.5%;
+        margin: 0 auto;
         border-radius: 50%;
         border: $blue 5px solid;
         opacity: $box-bg-opacity;
@@ -33,6 +34,16 @@ section.about {
                 padding: 10px;
                 margin: 0;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    section#about {
+        img.mb {
+            max-width: 75%;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }

@@ -1,6 +1,9 @@
 header {
     background-color: $blue;
-    opacity: 0.85;
+    opacity: $box-bg-opacity;
+    .grid {
+        align-items: center;
+    }
     h1 {
         margin: 0;
         color: $dark_grey;
@@ -15,4 +18,69 @@ header {
             color: $light_grey;
         }
     }
+    nav:not(.small) {
+        a:link, a:visited {
+            color: $dark-grey;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            padding: 25px 10px;
+            margin: 0 10px;
+        }
+        a:hover, a:active {
+            background-color: $dark_grey;
+            color: $blue;
+        }
+        a:link:last-child, a:visited:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+
+// Small specific overrides
+@media only screen and (max-width: $media-max-medium) {
+    header {
+        h1 {
+            font-size: 2em;
+            text-align: center;
+        }
+        nav:not(.large) {
+            &.grid {
+                grid-gap: 0;
+            }
+            a:link, a:visited {
+                color: $dark-grey;
+                text-align: center;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.1em;
+                padding: 7.5px;
+                margin: 0;
+            }
+            a:hover, a:active {
+                background-color: $dark_grey;
+                color: $blue;
+            }
+            // a:link, a:visited {
+            //     margin-right: 0;
+            // }
+        }
+    }
+}
+
+// Medium specific overrides
+@media only screen and (min-width: $media-min-medium) and (max-width: $media-max-medium) {
+
+}
+
+// Large specific overrides
+@media only screen and (min-width: $media-min-large) and (max-width: $media-max-large) {
+
+}
+
+// Large specific overrides
+@media only screen and (min-width: $media-min-xlarge) {
+
 }

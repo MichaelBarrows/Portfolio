@@ -1,9 +1,9 @@
-section.projects {
+section#projects {
     // padding-bottom: 100vh;
     .tech-filters {
         text-align: center;
         line-height: 1;
-        margin: 5px 0;
+        margin: 5px 100px;
         & > a:link, & > a:visited {
             // background-color: $dark_grey;
             color: $light_grey;
@@ -89,4 +89,33 @@ section.projects {
             }
         }
     }
+}
+
+
+
+
+// Medium specific overrides
+@media only screen and (min-width: $media-min-medium) and (max-width: $media-max-medium) {
+    section#projects {
+        .project-card {
+            .not-img {
+                .text {
+                    p {
+                        font-size: 4.8em;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// Large specific overrides
+@media only screen and (min-width: $media-min-large) and (max-width: $media-max-large) {
+
+}
+
+// Large specific overrides
+@media only screen and (min-width: $media-min-xlarge) {
+
 }

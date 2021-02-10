@@ -1,4 +1,5 @@
 section {
+    padding-bottom: 45px;
     h2 {
         text-align: center;
         font-size: 2em;
@@ -20,5 +21,8 @@ section {
                 margin: 0;
             }
         }
+    }
+    .text-centre {
+        text-align: center;
     }
 }

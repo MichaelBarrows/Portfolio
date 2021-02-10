@@ -1,0 +1,11 @@
+footer {
+    background-color: $blue;
+    opacity: $box-bg-opacity;
+    p {
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: 700;
+        padding: 10px;
+        color: $dark-grey;
+    }
+}

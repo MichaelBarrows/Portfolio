@@ -1,4 +1,5 @@
-section.landing {
+// Shared Styles
+section#landing {
     min-height: 100vh;
     h2 {
         text-align: center;
@@ -17,4 +18,30 @@ section.landing {
             font-size: 3em;
         }
     }
+}
+
+// Small specific overrides
+@media only screen and (max-width: $media-max-small) {
+    section#landing {
+        h2 {
+            font-size: 2.5em;
+            margin: 7.5vh 0;
+
+        }
+    }
+}
+
+// Medium specific overrides
+@media only screen and (min-width: $media-min-medium) and (max-width: $media-max-medium) {
+
+}
+
+// Large specific overrides
+@media only screen and (min-width: $media-min-large) and (max-width: $media-max-large) {
+
+}
+
+// Large specific overrides
+@media only screen and (min-width: $media-min-xlarge) {
+
 }
