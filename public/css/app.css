@@ -51,105 +51,200 @@
   .grid .grid {
     grid-gap: 7.5px; }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 480px) {
   .grid-container {
-    max-width: 98%;
+    max-width: 95vw;
     margin: auto; }
-  .grid .mobile-2 {
+  .grid .small-2 {
     grid-column: auto / span 2; }
-  .grid .mobile-3 {
+  .grid .small-3 {
     grid-column: auto / span 3; }
-  .grid .mobile-4 {
+  .grid .small-4 {
     grid-column: auto / span 4; }
-  .grid .mobile-5 {
+  .grid .small-5 {
     grid-column: auto / span 5; }
-  .grid .mobile-6 {
+  .grid .small-6 {
     grid-column: auto / span 6; }
-  .grid .mobile-7 {
+  .grid .small-7 {
     grid-column: auto / span 7; }
-  .grid .mobile-8 {
+  .grid .small-8 {
     grid-column: auto / span 8; }
-  .grid .mobile-9 {
+  .grid .small-9 {
     grid-column: auto / span 9; }
-  .grid .mobile-10 {
+  .grid .small-10 {
     grid-column: auto / span 10; }
-  .grid .mobile-11 {
+  .grid .small-11 {
     grid-column: auto / span 11; }
-  .grid .mobile-12 {
+  .grid .small-12 {
     grid-column: auto / span 12; }
-  .grid .mobile-hidden {
+  .grid .small-hidden {
     display: none; }
-  .grid .mobile-start-1 {
+  .grid .small-start-1 {
     grid-column-start: 2; }
-  .grid .mobile-start-2 {
+  .grid .small-start-2 {
     grid-column-start: 3; }
-  .grid .mobile-start-3 {
+  .grid .small-start-3 {
     grid-column-start: 4; }
-  .grid .mobile-start-4 {
+  .grid .small-start-4 {
     grid-column-start: 5; }
-  .grid .mobile-start-5 {
+  .grid .small-start-5 {
     grid-column-start: 6; }
-  .grid .mobile-start-6 {
+  .grid .small-start-6 {
     grid-column-start: 7; }
-  .grid .mobile-start-7 {
+  .grid .small-start-7 {
     grid-column-start: 8; }
-  .grid .mobile-start-8 {
+  .grid .small-start-8 {
     grid-column-start: 9; }
-  .grid .mobile-start-9 {
+  .grid .small-start-9 {
     grid-column-start: 10; }
-  .grid .mobile-start-10 {
+  .grid .small-start-10 {
     grid-column-start: 11; } }
 
-@media only screen and (min-width: 701px) {
+@media only screen and (min-width: 481px) and (max-width: 950px) {
   .grid-container {
-    max-width: 1200px;
+    max-width: 95vw;
     margin: auto; }
-  .form-grid-container {
-    max-width: 60%;
-    margin: auto; }
-  .grid .desktop-2 {
+  .grid .medium-2 {
     grid-column: auto / span 2; }
-  .grid .desktop-3 {
+  .grid .medium-3 {
     grid-column: auto / span 3; }
-  .grid .desktop-4 {
+  .grid .medium-4 {
     grid-column: auto / span 4; }
-  .grid .desktop-5 {
+  .grid .medium-5 {
     grid-column: auto / span 5; }
-  .grid .desktop-6 {
+  .grid .medium-6 {
     grid-column: auto / span 6; }
-  .grid .desktop-7 {
+  .grid .medium-7 {
     grid-column: auto / span 7; }
-  .grid .desktop-8 {
+  .grid .medium-8 {
     grid-column: auto / span 8; }
-  .grid .desktop-9 {
+  .grid .medium-9 {
     grid-column: auto / span 9; }
-  .grid .desktop-10 {
+  .grid .medium-10 {
     grid-column: auto / span 10; }
-  .grid .desktop-11 {
+  .grid .medium-11 {
     grid-column: auto / span 11; }
-  .grid .desktop-12 {
+  .grid .medium-12 {
     grid-column: auto / span 12; }
-  .grid .desktop-hidden {
+  .grid .medium-hidden {
     display: none; }
-  .grid .desktop-start-1 {
+  .grid .medium-start-1 {
     grid-column-start: 2; }
-  .grid .desktop-start-2 {
+  .grid .medium-start-2 {
     grid-column-start: 3; }
-  .grid .desktop-start-3 {
+  .grid .medium-start-3 {
     grid-column-start: 4; }
-  .grid .desktop-start-4 {
+  .grid .medium-start-4 {
     grid-column-start: 5; }
-  .grid .desktop-start-5 {
+  .grid .medium-start-5 {
     grid-column-start: 6; }
-  .grid .desktop-start-6 {
+  .grid .medium-start-6 {
     grid-column-start: 7; }
-  .grid .desktop-start-7 {
+  .grid .medium-start-7 {
     grid-column-start: 8; }
-  .grid .desktop-start-8 {
+  .grid .medium-start-8 {
     grid-column-start: 9; }
-  .grid .desktop-start-9 {
+  .grid .medium-start-9 {
     grid-column-start: 10; }
-  .grid .desktop-start-10 {
+  .grid .medium-start-10 {
+    grid-column-start: 11; } }
+
+@media only screen and (min-width: 951px) and (max-width: 1450px) {
+  .grid-container {
+    max-width: 95vw;
+    margin: auto; }
+  .grid .large-2 {
+    grid-column: auto / span 2; }
+  .grid .large-3 {
+    grid-column: auto / span 3; }
+  .grid .large-4 {
+    grid-column: auto / span 4; }
+  .grid .large-5 {
+    grid-column: auto / span 5; }
+  .grid .large-6 {
+    grid-column: auto / span 6; }
+  .grid .large-7 {
+    grid-column: auto / span 7; }
+  .grid .large-8 {
+    grid-column: auto / span 8; }
+  .grid .large-9 {
+    grid-column: auto / span 9; }
+  .grid .large-10 {
+    grid-column: auto / span 10; }
+  .grid .large-11 {
+    grid-column: auto / span 11; }
+  .grid .large-12 {
+    grid-column: auto / span 12; }
+  .grid .large-hidden {
+    display: none; }
+  .grid .large-start-1 {
+    grid-column-start: 2; }
+  .grid .large-start-2 {
+    grid-column-start: 3; }
+  .grid .large-start-3 {
+    grid-column-start: 4; }
+  .grid .large-start-4 {
+    grid-column-start: 5; }
+  .grid .large-start-5 {
+    grid-column-start: 6; }
+  .grid .large-start-6 {
+    grid-column-start: 7; }
+  .grid .large-start-7 {
+    grid-column-start: 8; }
+  .grid .large-start-8 {
+    grid-column-start: 9; }
+  .grid .large-start-9 {
+    grid-column-start: 10; }
+  .grid .large-start-10 {
+    grid-column-start: 11; } }
+
+@media only screen and (min-width: 1451px) {
+  .grid-container {
+    max-width: 1400px;
+    margin: auto; }
+  .grid .xlarge-2 {
+    grid-column: auto / span 2; }
+  .grid .xlarge-3 {
+    grid-column: auto / span 3; }
+  .grid .xlarge-4 {
+    grid-column: auto / span 4; }
+  .grid .xlarge-5 {
+    grid-column: auto / span 5; }
+  .grid .xlarge-6 {
+    grid-column: auto / span 6; }
+  .grid .xlarge-7 {
+    grid-column: auto / span 7; }
+  .grid .xlarge-8 {
+    grid-column: auto / span 8; }
+  .grid .xlarge-9 {
+    grid-column: auto / span 9; }
+  .grid .xlarge-10 {
+    grid-column: auto / span 10; }
+  .grid .xlarge-11 {
+    grid-column: auto / span 11; }
+  .grid .xlarge-12 {
+    grid-column: auto / span 12; }
+  .grid .xlarge-hidden {
+    display: none; }
+  .grid .xlarge-start-1 {
+    grid-column-start: 2; }
+  .grid .xlarge-start-2 {
+    grid-column-start: 3; }
+  .grid .xlarge-start-3 {
+    grid-column-start: 4; }
+  .grid .xlarge-start-4 {
+    grid-column-start: 5; }
+  .grid .xlarge-start-5 {
+    grid-column-start: 6; }
+  .grid .xlarge-start-6 {
+    grid-column-start: 7; }
+  .grid .xlarge-start-7 {
+    grid-column-start: 8; }
+  .grid .xlarge-start-8 {
+    grid-column-start: 9; }
+  .grid .xlarge-start-9 {
+    grid-column-start: 10; }
+  .grid .xlarge-start-10 {
     grid-column-start: 11; } }
 
 .align-left {
@@ -163,6 +258,12 @@
 
 .align-center {
   text-align: center; }
+
+.flex-container {
+  display: inline-flex; }
+
+.flex-right {
+  justify-content: flex-end; }
 
 html {
   scroll-behavior: smooth; }
@@ -188,7 +289,9 @@ body {
 
 header {
   background-color: #0099CC;
-  opacity: 0.85; }
+  opacity: 0.75; }
+  header .grid {
+    align-items: center; }
   header h1 {
     margin: 0;
     color: #333333;
@@ -200,78 +303,137 @@ header {
       text-decoration: none; }
     header h1 a:hover {
       color: #CCCCCC; }
+  header nav:not(.small) a:link, header nav:not(.small) a:visited {
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 25px 10px;
+    margin: 0 10px; }
+  header nav:not(.small) a:hover, header nav:not(.small) a:active {
+    background-color: #333333;
+    color: #0099CC; }
+  header nav:not(.small) a:link:last-child, header nav:not(.small) a:visited:last-child {
+    margin-right: 0; }
 
-section h2 {
-  text-align: center;
-  font-size: 2em;
-  color: #0099CC;
-  margin: 15px 0 0 0; }
+@media only screen and (max-width: 950px) {
+  header h1 {
+    font-size: 2em;
+    text-align: center; }
+  header nav:not(.large).grid {
+    grid-gap: 0; }
+  header nav:not(.large) a:link, header nav:not(.large) a:visited {
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 7.5px;
+    margin: 0; }
+  header nav:not(.large) a:hover, header nav:not(.large) a:active {
+    background-color: #333333;
+    color: #0099CC; } }
 
-section .semi-transparent-light-grey {
-  background: rgba(204, 204, 204, 0.75);
-  color: #333333; }
+section {
+  padding-bottom: 45px; }
+  section h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #0099CC;
+    margin: 15px 0 0 0; }
+  section .semi-transparent-light-grey {
+    background: rgba(204, 204, 204, 0.75);
+    color: #333333; }
+  section .semi-transparent-blue {
+    background: rgba(0, 153, 204, 0.75);
+    color: #000000; }
+  section .semi-transparent-light-grey p, section .semi-transparent-blue p {
+    padding: 10px;
+    margin: 0; }
+  section .text-centre {
+    text-align: center; }
 
-section .semi-transparent-blue {
-  background: rgba(0, 153, 204, 0.75);
-  color: #000000; }
-
-section .semi-transparent-light-grey p, section .semi-transparent-blue p {
-  padding: 10px;
-  margin: 0; }
-
-section.landing {
+section#landing {
   min-height: 100vh; }
-  section.landing h2 {
+  section#landing h2 {
     text-align: center;
     font-size: 3.5em;
     color: #0099CC;
     margin: 12.5vh 0;
     opacity: 0.9; }
-  section.landing .card {
+  section#landing .card {
     background-color: #CCCCCC;
     opacity: 0.75;
-    margin: 5px; }
-    section.landing .card h3 {
+    margin: 5px;
+    align-self: stretch; }
+    section#landing .card h3 {
       color: #0099CC;
       text-align: center;
-      font-size: 3em; }
+      font-size: 2em;
+      margin: 25px 0; }
+    section#landing .card p {
+      text-align: center;
+      color: #333333;
+      margin: 10px;
+      font-size: 1.2em; }
 
-section.about img.mb {
+@media only screen and (max-width: 480px) {
+  section#landing h2 {
+    font-size: 2.5em;
+    margin: 7.5vh 0; } }
+
+@media only screen and (min-width: 951px) and (max-width: 1450px) {
+  section#landing h2 {
+    margin: 12.5vh 7.5vw; } }
+
+@media only screen and (min-width: 1451px) {
+  section#landing h2 {
+    margin: 12.5vh 7.5vw; } }
+
+section#about img.mb {
+  display: block;
   max-width: 75%;
-  margin: 0 12.5%;
+  margin: 0 auto;
   border-radius: 50%;
   border: #0099CC 5px solid;
   opacity: 0.75; }
 
-section.about .education {
+section#about .education {
   margin: 7.5px 0; }
-  section.about .education .header {
+  section#about .education .header {
     background-color: #0099CC;
     opacity: 0.75;
     padding: 5px;
     border-bottom: 2px solid #333333; }
-    section.about .education .header h3 {
+    section#about .education .header h3 {
       color: #333333;
       margin: 2.5px;
       font-weight: 700;
       font-size: 1.25em; }
-    section.about .education .header p {
+    section#about .education .header p {
       color: #CCCCCC;
       font-weight: 700;
       margin: 2.5px;
       font-size: 1.1em; }
-  section.about .education .body {
+  section#about .education .body {
     background-color: #CCCCCC;
     opacity: 0.75; }
-    section.about .education .body p {
+    section#about .education .body p {
       padding: 10px;
       margin: 0; }
 
-section.projects .tech-filters {
+@media only screen and (max-width: 700px) {
+  section#about img.mb {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+section#projects .tech-filters {
   text-align: center;
   line-height: 1;
-  margin: 5px 0; }
-  section.projects .tech-filters > a:link, section.projects .tech-filters > a:visited {
+  margin: 5px 100px; }
+  section#projects .tech-filters > a:link, section#projects .tech-filters > a:visited {
     color: #CCCCCC;
     border: 3px solid #0099CC;
     padding: 10px;
@@ -280,39 +442,39 @@ section.projects .tech-filters {
     opacity: 0.75;
     display: inline-block;
     margin: 7.5px 10px; }
-  section.projects .tech-filters > a:active, section.projects .tech-filters > a:hover {
+  section#projects .tech-filters > a:active, section#projects .tech-filters > a:hover {
     background-color: #0099CC;
     color: #333333;
     opacity: 0.75; }
-  section.projects .tech-filters > a.active {
+  section#projects .tech-filters > a.active {
     background-color: #0099CC;
     color: #333333;
     opacity: 0.75; }
 
-section.projects .project-card {
+section#projects .project-card {
   background-color: #0099CC;
   opacity: 0.75;
   align-self: stretch;
   margin: 2.5px; }
-  section.projects .project-card h3 {
+  section#projects .project-card h3 {
     text-align: center; }
-  section.projects .project-card img {
+  section#projects .project-card img {
     max-width: 50%;
     margin: 0 25%; }
-  section.projects .project-card .not-img {
+  section#projects .project-card .not-img {
     width: 50%;
     margin: 0 25%;
     padding-top: 50%;
     background-color: #333333;
     color: #CCCCCC;
     position: relative; }
-    section.projects .project-card .not-img .text {
+    section#projects .project-card .not-img .text {
       position: absolute;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0; }
-      section.projects .project-card .not-img .text p {
+      section#projects .project-card .not-img .text p {
         font-size: 6em;
         margin: 0;
         position: absolute;
@@ -320,15 +482,15 @@ section.projects .project-card {
         left: 50%;
         transform: translate(-50%, -50%);
         font-weight: 700; }
-  section.projects .project-card .short-description {
+  section#projects .project-card .short-description {
     margin: 5px 10px;
     text-align: center; }
-  section.projects .project-card .link {
+  section#projects .project-card .link {
     text-align: center; }
-    section.projects .project-card .link p {
+    section#projects .project-card .link p {
       padding: 5px 0 10px 0;
       display: block; }
-      section.projects .project-card .link p a:link, section.projects .project-card .link p a:visited {
+      section#projects .project-card .link p a:link, section#projects .project-card .link p a:visited {
         border: 4px solid #333333;
         padding: 10px 25px;
         margin: 5px 0;
@@ -337,6 +499,10 @@ section.projects .project-card {
         font-size: 1.1em;
         font-weight: 700;
         background-color: #CCCCCC; }
+
+@media only screen and (min-width: 481px) and (max-width: 950px) {
+  section#projects .project-card .not-img .text p {
+    font-size: 4.8em; } }
 
 .flash-message > p {
   margin: 0;
@@ -351,30 +517,46 @@ section.projects .project-card {
 .flash-message .error {
   background-color: #E3342F; }
 
-section.contact {
-  padding-bottom: 100vh; }
-  section.contact form > div {
-    margin: 2.5px; }
-    section.contact form > div input[type="text"], section.contact form > div input[type="email"], section.contact form > div textarea, section.contact form > div input[type="reset"], section.contact form > div input[type="submit"] {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 10px;
-      text-align: center;
-      border: #0099CC 5px solid;
-      background-color: #CCCCCC;
-      opacity: 0.6;
-      font-size: 1.1em;
-      font-weight: 700; }
-    section.contact form > div textarea {
-      font-family: 'Raleway', sans-serif; }
-    section.contact form > div input[type="reset"] {
-      background-color: #e3342f; }
-    section.contact form > div input[type="submit"] {
-      background-color: #38c172; }
+section#contact .text a:link, section#contact .text a:visited {
+  color: #333333;
+  font-weight: 700; }
 
-section.project .tech-stack {
+section#contact .text a:hover, section#contact .text a:active {
+  color: #0099CC;
+  background-color: #333333; }
+
+section#contact form > div {
+  margin: 2.5px; }
+  section#contact form > div input[type="text"], section#contact form > div input[type="email"], section#contact form > div textarea, section#contact form > div input[type="reset"], section#contact form > div input[type="submit"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: #0099CC 5px solid;
+    background-color: #CCCCCC;
+    opacity: 0.75;
+    font-size: 1.1em;
+    font-weight: 700; }
+  section#contact form > div textarea {
+    font-family: 'Raleway', sans-serif; }
+  section#contact form > div input[type="reset"] {
+    background-color: #e3342f; }
+  section#contact form > div input[type="submit"] {
+    background-color: #38c172; }
+
+footer {
+  background-color: #0099CC;
+  opacity: 0.75; }
+  footer p {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 10px;
+    color: #333333; }
+
+section#project .tech-stack {
   text-align: center; }
-  section.project .tech-stack p {
+  section#project .tech-stack p {
     display: inline-block;
     padding: 10px;
     margin: 7.5px 10px;

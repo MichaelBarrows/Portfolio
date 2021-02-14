@@ -5,7 +5,7 @@
 <section id="landing">
     <div class="grid-container grid">
         <div class="all-12">
-            <h2>Hi, I'm Michael, a Web Developer from Colchester, Essex!</h2>
+            <h2>Hi, I'm Michael, a Web Developer in Colchester, Essex!</h2>
         </div>
         <div class="all-12 grid">
             <div class="small-12 medium-6 large-4 xlarge-4 card">
@@ -15,7 +15,7 @@
                 <h3><i class="fas fa-palette"></i></h3>
             </div>
             <div class="small-12 medium-6 large-4 xlarge-4 medium-start-3 card">
-                <h3><i class="fas fa-code"></i></h3>
+                <h3><i class="fas fa-database"></i></h3>
             </div>
         </div>
     </div>

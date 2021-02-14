@@ -12,10 +12,18 @@ section#landing {
         background-color: $light_grey;
         opacity: $box-bg-opacity;
         margin: 5px;
+        align-self: stretch;
         h3 {
             color: $blue;
-            text-align:center;
-            font-size: 3em;
+            text-align: center;
+            font-size: 2em;
+            margin: 25px 0;
+        }
+        p {
+            text-align: center;
+            color: $dark-grey;
+            margin: 10px;
+            font-size: 1.2em;
         }
     }
 }
@@ -38,10 +46,18 @@ section#landing {
 
 // Large specific overrides
 @media only screen and (min-width: $media-min-large) and (max-width: $media-max-large) {
-
+    section#landing {
+        h2 {
+            margin: 12.5vh 7.5vw;
+        }
+    }
 }
 
 // Large specific overrides
 @media only screen and (min-width: $media-min-xlarge) {
-
+    section#landing {
+        h2 {
+            margin: 12.5vh 7.5vw;
+        }
+    }
 }
