@@ -8,13 +8,13 @@
             <h2>Hi, I'm Michael, a Web Developer in Colchester, Essex!</h2>
         </div>
         <div class="all-12 grid">
-            <div class="small-12 medium-6 large-4 xlarge-4 card">
-                <h3><i class="fas fa-code"></i></h3>
+            <div class="small-12 medium-6 large-4 xlarge-4 card slight-rounding">
+                <h3><i class="fas fa-code"></i>  Back-end technologies</h3>
             </div>
-            <div class="small-12 medium-6 large-4 xlarge-4 card">
+            <div class="small-12 medium-6 large-4 xlarge-4 card slight-rounding">
                 <h3><i class="fas fa-palette"></i></h3>
             </div>
-            <div class="small-12 medium-6 large-4 xlarge-4 medium-start-3 card">
+            <div class="small-12 medium-6 large-4 xlarge-4 medium-start-3 card slight-rounding">
                 <h3><i class="fas fa-database"></i></h3>
             </div>
         </div>
@@ -29,9 +29,48 @@
         <div class="small-12 medium-4 large-3 xlarge-3">
             <img class="mb" src="{{ asset('img/michaelbarrows.jpeg') }}" alt="Picture of me">
         </div>
-        <div class="small-12 medium-8 large-9 xlarge-9 semi-transparent-light-grey">
+        <div class="small-12 medium-8 large-9 xlarge-9 semi-transparent-light-grey slight-rounding">
             <p>About me text</p>
             <p>About me text</p>
+        </div>
+        <!-- Technical Skills -->
+        <div class="small-12 medium-12 large-4 xlarge-4 skills align-center">
+            <h3>Back-end Skills</h3>
+            <p>PHP</p>
+            <p>Laravel</p>
+            <p>MySQL</p>
+            <p>Database Design</p>
+            <p>Data Normalisation</p>
+            <p>Relational Databases</p>
+            <p>Creating API's</p>
+            <p>Python</p>
+            <p>Behaviour Driven Development (BDD)</p>
+
+        </div>
+        <div class="small-12 medium-12 large-4 xlarge-4 skills align-center">
+            <h3>Front-end Skills</h3>
+            <p>HTML5</p>
+            <p>CSS3</p>
+            <p>Sass</p>
+            <p>JavaScript</p>
+            <p>JQuery</p>
+            <p>Using API's</p>
+            <p>Bootstrap</p>
+            <p>Foundation</p>
+            <p>JSON</p>
+        </div>
+        <div class="small-12 medium-12 large-4 xlarge-4 skills align-center">
+            <h3>Other Skills</h3>
+            <p>Git</p>
+            <p>CSS3</p>
+            <p>Natural Language Processing (NLP)</p>
+            <p>Machine Learning</p>
+            <p>Automated Labelling</p>
+            <p>Numpy</p>
+            <p>Pandas</p>
+            <p>Scikit-Learn</p>
+            <p>Natural Language Toolkit (NLTK)</p>
+            <p>matplotlib</p>
         </div>
         @if(isset($education))
         <div class="all-12 grid">
@@ -44,6 +83,7 @@
                 </div>
                 <div class="body">
                     <p>Grade: <span class="bold">{{ $edu->grade }}</span></p>
+                    <p>{{ $edu->start_date }} - {{ $edu->end_date }}</p>
                     <p>{{ $edu->description }}</p>
                     @if(isset($edu->project_title))
                     <p>Research Project: {{ $edu->project_title }}</p>
@@ -62,7 +102,6 @@
             <h2>Projects</h2>
         </div>
         @if(isset($projects))
-        <!-- projects refine tools -->
         @if(isset($technologies))
         <div class="all-12">
             <p class="tech-filters">
@@ -120,7 +159,7 @@
             <h2>Contact Me</h2>
         </div>
         <div class="all-12">
-            <div class="text semi-transparent-blue text-centre">
+            <div class="text semi-transparent-blue text-centre slight-rounding">
                 <p>Got a project you'd like some help with or a vacancy you think I'd be a good fit for? Get in touch!</p>
                 <p>If you'd rather email me, my email address is <a href="mailto:contact@michaelbarrows.com">contact@michaelbarrows.com</a>.</p>
             </div>
@@ -163,11 +202,4 @@
         {!! Form::close() !!}
     </div>
 </section>
-
-<footer>
-    <div class="grid-container grid">
-        <p class="all-12">&copy; Michael Barrows {{ date('Y') }}</p>
-    </div>
-</footer>
-
 @endsection

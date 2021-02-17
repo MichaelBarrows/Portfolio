@@ -39,6 +39,8 @@
                         <a class="small-12 medium-12" href="{{ url('/#about') }}">About</a>
                         <a class="small-12 medium-12" href="{{ url('/#projects') }}">Projects</a>
                         <a class="small-12 medium-12" href="{{ url('/#contact') }}">Contact</a>
+                        <a class="small-12 medium-12" href="https://github.com/MichaelBarrows" target="_blank"><i class="fab fa-github"></i></a>
+                        <a class="small-12 medium-12" href="https://www.linkedin.com/in/michaelpbarrows" target="_blank"><i class="fab fa-linkedin"></i></a>
                     </nav>
                     <div class="large-6 xlarge-7 small-hidden medium-hidden align-right">
                         <nav class="large xlarge align-right flex-container flex-right">
@@ -46,11 +48,19 @@
                             <a href="{{ url('/#about') }}">About</a>
                             <a href="{{ url('/#projects') }}">Projects</a>
                             <a href="{{ url('/#contact') }}">Contact</a>
+                            <a href="https://github.com/MichaelBarrows" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/michaelpbarrows" target="_blank"><i class="fab fa-linkedin"></i></a>
                         </nav>
                     </div>
                 </div>
             </header>
             @yield('content')
+
+            <footer>
+                <div class="grid-container grid">
+                    <p class="all-12">&copy; Michael Barrows {{ date('Y') }}</p>
+                </div>
+            </footer>
         </div>
     </body>
     </html>

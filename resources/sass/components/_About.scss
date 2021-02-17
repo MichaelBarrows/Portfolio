@@ -7,13 +7,41 @@ section#about {
         border: $blue 5px solid;
         opacity: $box-bg-opacity;
     }
+    .skills {
+        background: $light_grey;
+        opacity: $box-bg-opacity;
+        padding: 15px;
+        align-self: stretch;
+        border-radius: 5px;
+
+        h3 {
+            margin: 0;
+            color: $dark_grey;
+            opacity: $text-opacity;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            border-radius: 5px;
+            background-color: $blue;
+            padding: 7.5px 10px;
+            font-weight: 700;
+            text-align: center;
+            color: $dark-grey;
+            font-size: 1.1em;
+            margin: 2.5px;
+            display: inline-block;
+        }
+    }
     .education {
-        margin: 7.5px 0;
+        margin-bottom: 7.5px;
         .header {
             background-color: $blue;
             opacity: $box-bg-opacity;
             padding: 5px;
             border-bottom: 2px solid $dark_grey;
+            border-radius: 5px 5px 0 0;
             h3 {
                 color: $dark_grey;
                 margin: 2.5px;
@@ -30,6 +58,7 @@ section#about {
         .body {
             background-color: $light_grey;
             opacity: $box-bg-opacity;
+            border-radius: 0 0 5px 5px;
             p {
                 padding: 10px;
                 margin: 0;
