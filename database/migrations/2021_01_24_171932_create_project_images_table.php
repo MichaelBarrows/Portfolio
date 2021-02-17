@@ -18,6 +18,7 @@ class CreateProjectImagesTable extends Migration
             $table->foreignId('project_id');
             $table->string('alt_text');
             $table->string('filepath_filename');
+            $table->string('description');
             $table->timestamps();
         });
     }

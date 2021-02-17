@@ -20,7 +20,11 @@ class Project extends Model
         return $this->belongsToMany(TechStack::class);
     }
 
-    public function education(){
-        return $this->hasOne(Education::class);
+    public function project_texts(){
+        return $this->hasMany(ProjectTexts::class);
+    }
+
+    public function ordered_project_texts() {
+        return $this->project_texts->sortBy('order')->get();
     }
 }
