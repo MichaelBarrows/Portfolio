@@ -49,11 +49,11 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 2,
-                'tech_stack_id' => 9,
+                'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 2,
-                'tech_stack_id' => 10,
+                'tech_stack_id' => 9,
             ],
             [
                 'project_id' => 3,
@@ -61,11 +61,11 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 3,
-                'tech_stack_id' => 9,
+                'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 3,
-                'tech_stack_id' => 10,
+                'tech_stack_id' => 9,
             ],
             [
                 'project_id' => 4,
@@ -153,11 +153,11 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 7,
-                'tech_stack_id' => 9,
+                'tech_stack_id' => 11,
             ],
             [
                 'project_id' => 7,
-                'tech_stack_id' => 11,
+                'tech_stack_id' => 9,
             ],
             [
                 'project_id' => 8,
@@ -165,11 +165,11 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 8,
-                'tech_stack_id' => 9,
+                'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 8,
-                'tech_stack_id' => 10,
+                'tech_stack_id' => 9,
             ],
             [
                 'project_id' => 9,

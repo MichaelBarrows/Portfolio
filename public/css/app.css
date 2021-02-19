@@ -492,7 +492,9 @@ section#projects .project-card {
   border-radius: 5px;
   margin: 2.5px; }
   section#projects .project-card h3 {
-    text-align: center; }
+    text-align: center;
+    color: #333333;
+    opacity: 1; }
   section#projects .project-card img {
     max-width: 50%;
     margin: 0 25%; }
@@ -555,13 +557,15 @@ section#projects .project-card {
 .flash-message .error {
   background-color: #E3342F; }
 
-section#contact .text a:link, section#contact .text a:visited {
+section#contact .text p {
   color: #333333;
-  font-weight: 700; }
-
-section#contact .text a:hover, section#contact .text a:active {
-  color: #0099CC;
-  background-color: #333333; }
+  opacity: 1; }
+  section#contact .text p a:link, section#contact .text p a:visited {
+    color: #333333;
+    font-weight: 700; }
+  section#contact .text p a:hover, section#contact .text p a:active {
+    color: #0099CC;
+    background-color: #333333; }
 
 section#contact form > div {
   margin: 2.5px; }
@@ -653,7 +657,8 @@ section#project {
     section#project .side a:hover, section#project .side a:active {
       background-color: #CCCCCC; }
   section#project .tech-stack {
-    text-align: center; }
+    text-align: center;
+    padding: 0 5px; }
     section#project .tech-stack p {
       display: inline-block;
       padding: 7.5px;

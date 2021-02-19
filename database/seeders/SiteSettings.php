@@ -18,7 +18,7 @@ class SiteSettings extends Seeder
             [
                 'id' => 1,
                 'name' => 'maintenance_mode',
-                'value' => False,
+                'value' => True,
             ],
             [
                 'id' => 2,

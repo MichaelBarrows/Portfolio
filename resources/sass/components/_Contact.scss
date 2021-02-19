@@ -1,12 +1,16 @@
 section#contact {
     .text {
-        a:link, a:visited {
+        p {
             color: $dark_grey;
-            font-weight: 700;
-        }
-        a:hover, a:active {
-            color: $blue;
-            background-color: $dark-grey;
+            opacity: 1;
+            a:link, a:visited {
+                color: $dark_grey;
+                font-weight: 700;
+            }
+            a:hover, a:active {
+                color: $blue;
+                background-color: $dark-grey;
+            }
         }
     }
     form {
