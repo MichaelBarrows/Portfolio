@@ -35,5 +35,5 @@ function stack_filter (selected_stack) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    stack_filters_add_event()
+    stack_filters_add_event();
 });
