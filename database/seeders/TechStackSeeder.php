@@ -81,6 +81,12 @@ class TechStackSeeder extends Seeder
                 'identifier' => 'api',
                 'is_long' => 0,
             ],
+            [
+                'id' => 12,
+                'name' => 'Flask',
+                'identifier' => 'flask',
+                'is_long' => 0,
+            ],
         ]);
     }
 }

@@ -157,6 +157,10 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 7,
+                'tech_stack_id' => 12,
+            ],
+            [
+                'project_id' => 7,
                 'tech_stack_id' => 9,
             ],
             [
