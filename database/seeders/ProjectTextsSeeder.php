@@ -16,6 +16,12 @@ class ProjectTextsSeeder extends Seeder
     {
         DB::table('project_texts')->insert([
             [
+                'project_id' => 1,
+                'format' => 'p class="all-12"',
+                'order' => 1,
+                'text' => "Content coming soon.",
+            ],
+            [
                 'project_id' => 2,
                 'format' => 'p class="all-12"',
                 'order' => 1,
@@ -278,6 +284,12 @@ class ProjectTextsSeeder extends Seeder
                 'format' => 'p class="all-12"',
                 'order' => 12,
                 'text' => "Other potential features include links to individual university grading guidelines (possibly user submitted) and potentially implementing these guidelines into the application (e.g. MComp courses at one university may be weighted 20:30:50, whereas another university may use 20:20:60).",
+            ],
+            [
+                'project_id' => 5,
+                'format' => 'p class="all-12"',
+                'order' => 1,
+                'text' => "Content coming soon.",
             ],
             [
                 'project_id' => 6,

@@ -8,15 +8,9 @@
             <h2>Hi, I'm Michael, a Web Developer in Colchester, Essex!</h2>
         </div>
         <div class="small-12 medium-12 large-8 xlarge-8 large-start-2 xlarge-start-2 grid">
-            <div class="card small-12 medium-12 large-4 xlarge-4">
-                <a href="#about">Find out more <i class="fas fa-info-circle"></i></a>
-            </div>
-            <div class="card small-12 medium-12 large-4 xlarge-4">
-                <a href="#projects">View my work <i class="fas fa-code"></i></a>
-            </div>
-            <div class="card small-12 medium-12 large-4 xlarge-4">
-                <a href="#contact">Get in touch <i class="fas fa-envelope"></i></a>
-            </div>
+            <a class="link small-12 medium-12 large-4 xlarge-4" href="#about">Find out more <i class="fas fa-info-circle"></i></a>
+            <a class="link small-12 medium-12 large-4 xlarge-4" href="#projects">View my work <i class="fas fa-code"></i></a>
+            <a class="link small-12 medium-12 large-4 xlarge-4" href="#contact">Get in touch <i class="fas fa-envelope"></i></a>
         </div>
         <div class="chevron">
             <a href="#about"><span class="fa fa-chevron-down"></span></a>
@@ -29,12 +23,17 @@
         <div class="all-12">
             <h2>About Me</h2>
         </div>
-        <div class="small-12 medium-4 large-3 xlarge-3">
-            <img class="mb" src="{{ asset('img/michaelbarrows.jpeg') }}" alt="Picture of me">
-        </div>
-        <div class="small-12 medium-8 large-9 xlarge-9 semi-transparent-light-grey slight-rounding">
-            <p>About me text</p>
-            <p>About me text</p>
+        <div class="all-12 grid img-text-container">
+            <div class="small-12 medium-12 large-3 xlarge-3">
+                <img class="mb" src="{{ asset('img/michaelbarrows.jpeg') }}" alt="Picture of me">
+            </div>
+            <div class="small-12 medium-12 large-9 xlarge-9 semi-transparent-light-grey about-text slight-rounding">
+                <p>I'm Michael, a web developer (back-end/full-stack) in Colchester with 4 years of experience specifically in web design and development.</p>
+                <p>I've recently completed a research master's at the University of Portsmouth in which I explored automated labelling and machine learning for sentiment and emotion. Before that, I studied a master of computing degree at Edge Hill University in web design and development.</p>
+                <p>Within the web development field, my interests are mainly in back-end development (PHP, Laravel, SQL).</p>
+                <p>I am currently looking for a back-end or full-stack developer role in Colchester, Ipswich, Chelmsford, London or remote. I am also open to freelance projects</p>
+                <p>Want to know more? <a href="#contact">Get in touch</a>.</p>
+            </div>
         </div>
         <!-- Technical Skills -->
         <div class="small-12 medium-12 large-4 xlarge-4 skills align-center">

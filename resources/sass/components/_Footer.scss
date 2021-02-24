@@ -19,3 +19,15 @@ footer {
         }
     }
 }
+
+@media only screen and (max-width: $media-max-medium) {
+    footer {
+        .grid-container {
+            grid-gap: 0;
+        }
+        p {
+            margin: 5px;
+            padding: 5px;
+        }
+    }
+}

@@ -52,33 +52,29 @@ section#landing {
         margin: 12.5vh 0;
         opacity: $text-opacity;
     }
-    .card {
-        // background-color: $light_grey;
-        opacity: $box-bg-opacity;
-        margin: 5px;
+    a:link.link, a:visited.link {
         align-self: stretch;
         position: relative;
-        a:link, a:visited {
-            display: block;
-            text-align: center;
-            color: $blue;
-            font-weight: 700;
-            font-size: 1.2em;
-            text-decoration: none;
-            border: 3px solid $blue;
-            margin: 10px;
-            padding: 15px calc(15px + 5%) 15px 15px;
-            i {
-                position: absolute;
-                right: 7.5%;
-                top: 50%;
-                transform: translate(0, -50%);
-            }
+        display: block;
+        text-align: center;
+        color: $blue;
+        font-weight: 700;
+        font-size: 1.2em;
+        text-decoration: none;
+        border: 3px solid $blue;
+        margin: 15px;
+        padding: 15px calc(15px + 7.5%) 15px 15px;
+        opacity: $box-bg-opacity;
+        i {
+            position: absolute;
+            right: 3%;
+            top: 50%;
+            transform: translate(0, -50%);
         }
-        a:hover, a:active {
-            background-color: $blue;
-            color: $dark-grey;
-        }
+    }
+    a:hover.link, a:active.link {
+        background-color: $blue;
+        color: $dark-grey;
     }
     .chevron a {
         color: $light-grey;
@@ -103,10 +99,16 @@ section#landing {
 // Small specific overrides
 @media only screen and (max-width: $media-max-small) {
     section#landing {
+        min-height: 65vh;
         h2 {
             font-size: 2.5em;
-            margin: 7.5vh 0;
+            margin: 5vh 0;
 
+        }
+        .card {
+            a:link, a:visited {
+                margin:0;
+            }
         }
     }
 }
