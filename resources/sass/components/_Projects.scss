@@ -39,6 +39,7 @@ section#projects {
             text-align: center;
             color: $dark_grey;
             opacity: 1;
+            margin-bottom: 5px;
         }
         img {
             max-width: 50%;
@@ -73,10 +74,23 @@ section#projects {
             margin: 5px 10px;
             text-align: center;
         }
+        .tech-stack {
+            text-align: center;
+            p {
+                display: inline-block;
+                background-color: $dark_grey;
+                color: $light_grey;
+                padding: 7px;
+                margin: 5px 0;
+                font-size: 0.9em;
+                font-weight: 700;
+                border-radius: 5px;
+
+            }
+        }
         .link {
             text-align: center;
             p {
-                // margin: 5px;
                 padding: 5px 0 10px 0;
                 display: block;
                 a:link, a:visited {

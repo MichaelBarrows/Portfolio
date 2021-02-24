@@ -2,10 +2,20 @@ footer {
     background-color: $blue;
     opacity: $box-bg-opacity;
     p {
-        text-align: center;
         font-size: 1.1em;
         font-weight: 700;
         padding: 10px;
         color: $dark-grey;
+        &.icons {
+            padding: 0 5px;
+            a:link, a:visited {
+                color: $dark_grey;
+                font-size: 1.85em;
+                padding: 5px;
+            }
+            a:hover, a:active {
+                color: $light_grey;
+            }
+        }
     }
 }

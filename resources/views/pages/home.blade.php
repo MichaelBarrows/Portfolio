@@ -7,16 +7,19 @@
         <div class="all-12">
             <h2>Hi, I'm Michael, a Web Developer in Colchester, Essex!</h2>
         </div>
-        <div class="all-12 grid">
-            <div class="small-12 medium-6 large-4 xlarge-4 card slight-rounding">
-                <h3><i class="fas fa-code"></i>  Back-end technologies</h3>
+        <div class="small-12 medium-12 large-8 xlarge-8 large-start-2 xlarge-start-2 grid">
+            <div class="card small-12 medium-12 large-4 xlarge-4">
+                <a href="#about">Find out more <i class="fas fa-info-circle"></i></a>
             </div>
-            <div class="small-12 medium-6 large-4 xlarge-4 card slight-rounding">
-                <h3><i class="fas fa-palette"></i></h3>
+            <div class="card small-12 medium-12 large-4 xlarge-4">
+                <a href="#projects">View my work <i class="fas fa-code"></i></a>
             </div>
-            <div class="small-12 medium-6 large-4 xlarge-4 medium-start-3 card slight-rounding">
-                <h3><i class="fas fa-database"></i></h3>
+            <div class="card small-12 medium-12 large-4 xlarge-4">
+                <a href="#contact">Get in touch <i class="fas fa-envelope"></i></a>
             </div>
+        </div>
+        <div class="chevron">
+            <a href="#about"><span class="fa fa-chevron-down"></span></a>
         </div>
     </div>
 </section>
@@ -62,32 +65,31 @@
         <div class="small-12 medium-12 large-4 xlarge-4 skills align-center">
             <h3>Other Skills</h3>
             <p>Git</p>
-            <p>CSS3</p>
-            <p>Natural Language Processing (NLP)</p>
             <p>Machine Learning</p>
-            <p>Automated Labelling</p>
             <p>Numpy</p>
             <p>Pandas</p>
             <p>Scikit-Learn</p>
+            <p>Automated Labelling</p>
+            <p>Natural Language Processing (NLP)</p>
             <p>Natural Language Toolkit (NLTK)</p>
             <p>matplotlib</p>
         </div>
         @if(isset($education))
         <div class="all-12 grid">
             @foreach($education as $edu)
-            <div class="all-12 education">
-                <div class="header">
-                    <h3>{{ $edu->course_name }}</h3>
+            <div class="all-12 education" id="{{ $edu->identifier }}">
+                <div class="header closed">
+                    <h3>{{ $edu->course_name }} <span class="small">({{ $edu->grade }})</span></h3>
                     <p>{{ $edu->institution_name }}</p>
+                    <a href="#"><i class="fas fa-chevron-down"></i></a>
 
                 </div>
                 <div class="body">
-                    <p>Grade: <span class="bold">{{ $edu->grade }}</span></p>
-                    <p>{{ $edu->start_date }} - {{ $edu->end_date }}</p>
-                    <p>{{ $edu->description }}</p>
+                    <p>Grade: <span class="bold">{{ $edu->grade }}</span> ({{ $edu->start_date }} - {{ $edu->end_date }})</p>
                     @if(isset($edu->project_title))
-                    <p>Research Project: {{ $edu->project_title }}</p>
+                    <p><span class="bold">Research Project:</span> {{ $edu->project_title }}</p>
                     @endif
+                    {!! $edu->description !!}
                 </div>
             </div>
             @endforeach
@@ -143,6 +145,18 @@
                 @if($project->short_description != "")
                 <p class="short-description all-12">{{ $project->short_description }}</p>
                 @endif
+                <div class="tech-stack all-12">
+                @if(count($project->tech_stack) >= 6)
+                    @for($idx = 0; $idx < 5; $idx++)
+                        <p>{{ $project->tech_stack[$idx]->name }}</p>
+                    @endfor
+                    <p> + {{ count($project->tech_stack) - 5 }}</p>
+                @else
+                    @foreach($project->tech_stack as $tech)
+                        <p>{{ $tech->name }}</p>
+                    @endforeach
+                @endif
+                </div>
                 <div class="link all-12">
                     <p><a href="{{ route('project.show', ['project' => $project->pretty_url]) }}">View Project</a></p>
                 </div>

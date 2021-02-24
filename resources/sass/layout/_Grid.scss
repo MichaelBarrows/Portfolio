@@ -39,6 +39,19 @@
     &-12 {
       grid-column: auto / span 12;
     }
+
+    &-left {
+      text-align: left;
+    }
+    &-right {
+      text-align: right;
+    }
+    &-justify {
+      text-align: justify;
+    }
+    &-center {
+      text-align: center;
+    }
   }
   .all-start {
     &-1 {
@@ -121,6 +134,19 @@
       &-hidden {
           display: none;
       }
+
+      &-left {
+        text-align: left;
+      }
+      &-right {
+        text-align: right;
+      }
+      &-justify {
+        text-align: justify;
+      }
+      &-center {
+        text-align: center;
+      }
     }
     .small-start {
       &-1 {
@@ -200,6 +226,19 @@
       }
       &-hidden {
           display: none;
+      }
+
+      &-left {
+        text-align: left;
+      }
+      &-right {
+        text-align: right;
+      }
+      &-justify {
+        text-align: justify;
+      }
+      &-center {
+        text-align: center;
       }
     }
     .medium-start {
@@ -281,6 +320,19 @@
       &-hidden {
           display: none;
       }
+
+      &-left {
+        text-align: left;
+      }
+      &-right {
+        text-align: right;
+      }
+      &-justify {
+        text-align: justify;
+      }
+      &-center {
+        text-align: center;
+      }
     }
     .large-start {
       &-1 {
@@ -360,6 +412,19 @@
       }
       &-hidden {
           display: none;
+      }
+
+      &-left {
+        text-align: left;
+      }
+      &-right {
+        text-align: right;
+      }
+      &-justify {
+        text-align: justify;
+      }
+      &-center {
+        text-align: center;
       }
     }
     .xlarge-start {
