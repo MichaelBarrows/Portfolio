@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+@section('canonical')
+<link rel="canonical" href="https://michaelbarrows.com">
+@endsection
 
 @section('content')
 <section id="landing">

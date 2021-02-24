@@ -10,12 +10,20 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html"/>
-        <meta name="description" content="Michael Barrows is a software developer located in Colchester, Essex.">
-        <meta name="keywords" content="Michael Barrows, Software Developer, Colchester, Essex, Web Developer, Graduate, Portfolio">
+        <meta name="description" content="Michael Barrows is a full-stack/back-end web developer located in Colchester, Essex.">
+        <meta name="keywords" content="michael barrows, colchester, essex, web developer, graduate, portfolio, full stack, back end">
         <meta name="author" content="Michael Barrows"/>
         @yield('canonical')
-        <meta name="theme-color" content="#007684">
+        <meta name="theme-color" content="#0099CC">
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89047400-5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-89047400-5');
+        </script>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
@@ -23,7 +31,6 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     </head>
     <body>

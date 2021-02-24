@@ -1,5 +1,14 @@
 @extends('layouts.master')
 
+@if(isset($image))
+    @section('canonical')
+    <link rel="canonical" href="https://michaelbarrows.com/images/{{ $image->id }}">
+    @endsection
+
+    @section('title')
+    {{ $image->project->name }} | 
+    @endsection
+@endif
 
 @section('content')
 <section id="image">

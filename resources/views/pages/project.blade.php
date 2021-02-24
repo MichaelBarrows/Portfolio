@@ -1,5 +1,15 @@
 @extends('layouts.master')
 
+@if(isset($project))
+    @section('canonical')
+    <link rel="canonical" href="https://michaelbarrows.com/project/{{ $project->pretty_url }}">
+    @endsection
+
+    @section('title')
+    {{ $project->name }} | 
+    @endsection
+@endif
+
 
 @section('content')
 <section id="project">
