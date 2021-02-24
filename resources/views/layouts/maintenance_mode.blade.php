@@ -80,7 +80,7 @@
         <div class="container">
             <div class="semi-transparent-blue">
                 <h1>Michael Barrows</h1>
-                <h2>Under Construction</h2>
+                <h2>Come back soon!</h2>
                 <div class="links">
                     <a href="https://github.com/MichaelBarrows" target="_blank">GitHub</a>
                     <a href="https://www.linkedin.com/in/michaelpbarrows" target="_blank">LinkedIn</a>
