@@ -33,10 +33,6 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 1,
-                'tech_stack_id' => 5,
-            ],
-            [
-                'project_id' => 1,
                 'tech_stack_id' => 6,
             ],
             [
