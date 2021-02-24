@@ -50,9 +50,9 @@
                 @endif
             </div>
 
-            <div class="small-12 medium-12 large-9 xlarge-9 semi-transparent-light-grey slight-rounding text">
+            <div class="small-12 medium-12 large-9 xlarge-9 semi-transparent-light-grey slight-rounding grid text">
                 @foreach($project->project_texts->sortBy('order') as $opt)
-                    <{{ $opt->format }}  {!! $opt->attributes !!}>{!! $opt->text !!}</{{ $opt->format }}>
+                    <{!! $opt->format !!}>{!! $opt->text !!}</{{ $opt->format }}>
                 @endforeach
             </div>
 
