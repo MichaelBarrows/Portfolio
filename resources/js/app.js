@@ -1,5 +1,3 @@
-require('./bootstrap');
-
 function stack_filters_add_event() {
     var stack_filters = document.getElementsByClassName('stack-filter');
     for (i = 0; i < stack_filters.length; i++) {
