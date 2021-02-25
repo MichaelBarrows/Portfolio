@@ -129,9 +129,29 @@ function removeCookieBanner () {
     return;
 }
 
+function toggle_mobile_nav () {
+    var bars = document.getElementById('bars');
+        bars.addEventListener("click", function(event){
+            event.preventDefault();
+            nav_links = bars.parentElement.querySelectorAll('a');
+            console.log(nav_links);
+            for (idx = 0; idx < nav_links.length; idx++) {
+                if (bars.classList.contains('hidden')) {
+                    nav_links[idx].classList.remove('hidden');
+                    nav_links[idx].classList.add('show');
+                } else {
+                    nav_links[idx].classList.remove('show');
+                    nav_links[idx].classList.add('hidden');
+                }
+            }
+    });
+
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
     stack_filters_add_event();
     education_dropdown_add_event();
     checkUserAcceptanceCookie();
+    toggle_mobile_nav();
 });

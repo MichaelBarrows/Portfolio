@@ -18,7 +18,7 @@ class ProjectsSeeder extends Seeder
             ['id' => 1,
              'name' => 'Portfolio Website',
              'pretty_url' => 'portfolio-website',
-             'short_description' => 'Portfolio Website',
+             'short_description' => '',
              'long_description' => '',
              'image' => null,
              'text_logo' => 'MB',

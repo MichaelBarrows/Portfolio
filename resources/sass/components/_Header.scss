@@ -66,6 +66,12 @@ header {
                 background-color: $dark_grey;
                 color: $blue;
             }
+            a:link:not(#bars).hidden, a:visited:not(#bars).hidden {
+                display: none;
+            }
+            a:link:not(#bars).show, a:visited:not(#bars).show {
+                display: block;
+            }
             // a:link, a:visited {
             //     margin-right: 0;
             // }
