@@ -134,7 +134,6 @@ function toggle_mobile_nav () {
         bars.addEventListener("click", function(event){
             event.preventDefault();
             nav_links = bars.parentElement.querySelectorAll('a');
-            console.log(nav_links);
             for (idx = 0; idx < nav_links.length; idx++) {
                 if (bars.classList.contains('hidden')) {
                     nav_links[idx].classList.remove('hidden');
