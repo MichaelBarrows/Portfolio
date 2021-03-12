@@ -51,7 +51,6 @@ class ProjectController extends Controller
         $project = Project::where('pretty_url', $pretty_url)->firstOrFail();
         return view('pages.project', ['maintenance_mode' => $maintenance_mode,
                                       'project' => $project]);
-
     }
 
     /**

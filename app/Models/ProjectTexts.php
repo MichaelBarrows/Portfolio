@@ -9,7 +9,8 @@ class ProjectTexts extends Model
 {
     use HasFactory;
 
-    public function project () {
+    public function project()
+    {
         return $this->belongsTo(Project::class);
     }
 }

@@ -6,7 +6,7 @@
     @endsection
 
     @section('title')
-    {{ $project->name }} | 
+    {{ $project->name }} |
     @endsection
 @endif
 
@@ -42,26 +42,26 @@
                     </div>
                 </div>
                 @endif
-                @if($project->tech_stack != null)
+                @if($project->techStack != null)
                 <div class="all-12 tech-stack">
-                    @foreach($project->tech_stack as $tech)
+                    @foreach($project->techStack as $tech)
                     <p>{{ $tech->name }}</p>
                     @endforeach
                 </div>
                 @endif
 
-                @if ($project->project_images->count() != 0)
-                    <a class="all-12" href="/images/{{ $project->project_images[0]->id }}">View Images ({{ $project->project_images->count() }}) <i class="fas fa-image"></i></a>
+                @if ($project->projectImages->count() != 0)
+                    <a class="all-12" href="/images/{{ $project->projectImages[0]->id }}">View Images ({{ $project->projectImages->count() }}) <i class="fas fa-image"></i></a>
                 @endif
-                @if($project->project_links->count() != 0)
-                    @foreach($project->project_links as $link)
+                @if($project->projectLinks->count() != 0)
+                    @foreach($project->projectLinks as $link)
                         <a class="all-12" href="{{ $link->link }}" target="_blank">{{ $link->text }} <i class="{{ $link->icon }}"></i></a>
                     @endforeach
                 @endif
             </div>
 
             <div class="small-12 medium-12 large-9 xlarge-9 semi-transparent-light-grey slight-rounding grid text">
-                @foreach($project->project_texts->sortBy('order') as $opt)
+                @foreach($project->projectTexts->sortBy('order') as $opt)
                     <{!! $opt->format !!}>{!! $opt->text !!}</{{ $opt->format }}>
                 @endforeach
             </div>

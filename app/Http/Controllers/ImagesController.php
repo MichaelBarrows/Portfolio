@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProjectImage;
 use App\Models\SiteSetting;
+
 class ImagesController extends Controller
 {
 
@@ -38,13 +39,12 @@ class ImagesController extends Controller
                 break;
             }
         }
-        return view ('pages.image', [
+        return view('pages.image', [
             'maintenance_mode' => $maintenance_mode,
             'prev_image_id' => $prev_image_id,
             'image' => $current_image,
             'next_image_id' => $next_image_id,
             'counter' => $counter
         ]);
-
     }
 }

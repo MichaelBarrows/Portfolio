@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectLink extends Model
 {
     use HasFactory;
-    public function project() {
+
+    public function project()
+    {
         $this->belongsTo(Project::class);
     }
 }

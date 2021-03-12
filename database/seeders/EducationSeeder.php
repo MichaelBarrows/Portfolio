@@ -22,9 +22,16 @@ class EducationSeeder extends Seeder
                 'grade' => 'Distinction [to be awarded]',
                 'start_date' => 'January 2020',
                 'end_date' => 'January 2021',
-                'project_title' => 'Iranian State-Sponsored Propaganda on Twitter: Exploring Methods for Automatic Classification and Analysis',
+                'project_title' => 'Iranian State-Sponsored Propaganda on Twitter: Exploring Methods for Automatic
+                Classification and Analysis',
                 'description' => '
-                    <p>For my research project, I evaluated how well machine learning algorithms perform at identifying sentiment and emotion in Iranian state-sponsored propaganda on Twitter about the nuclear deal. This project has involved extracting the tweets using keywords, preprocessing the text of the tweets, labelling the tweets for sentiment and emotion automatically using a lexicon (SentiWordNet and NRC Emotion Lexicon) and evaluating five machine learning algorithms (K-Nearest Neighbours, Decision Tree, Random Forest, Linear SVM, and Naive Bayes) performance at sentiment analysis and emotion detection.</p>
+                    <p>For my research project, I evaluated how well machine learning algorithms perform at identifying
+                    sentiment and emotion in Iranian state-sponsored propaganda on Twitter about the nuclear deal. This
+                    project has involved extracting the tweets using keywords, preprocessing the text of the tweets,
+                    labelling the tweets for sentiment and emotion automatically using a lexicon (SentiWordNet and NRC
+                    Emotion Lexicon) and evaluating five machine learning algorithms (K-Nearest Neighbours, Decision
+                    Tree, Random Forest, Linear SVM, and Naive Bayes) performance at sentiment analysis and emotion
+                    detection.</p>
                     <h4>Modules studied include:</h4>
                     <ul>
                         <li>Research Preparation and Development</li>
@@ -39,9 +46,16 @@ class EducationSeeder extends Seeder
                 'grade' => '2.1',
                 'start_date' => 'September 2015',
                 'end_date' => 'July 2019',
-                'project_title' => 'A chatbot to facilitate new undergraduate Computer Science students’ transition to university: is it technically feasible and would students find it useful?',
+                'project_title' => 'A chatbot to facilitate new undergraduate Computer Science students’ transition to
+                university: is it technically feasible and would students find it useful?',
                 'description' => "
-                    <p>For my dissertation, I investigated the technical feasibilty of implementing a chatbot for new students within Edge Hill University's department of Computer Science. This was completed by evaluating two chatbot implementation methods (Chatterbot - a Python paackage and BotMan Studio - a PHP framework). I then implemented a chatbot (and a FAQ's mobile website) and conducted a usability evaluation with a questionnaire to evaluate and compare the perceived usefulness of a chatbot and a FAQ's mobile website for new students (with first year Computer Science students). Results show that the chatbot was perceived to be more useful than the FAQ's mobile website.</p>
+                    <p>For my dissertation, I investigated the technical feasibilty of implementing a chatbot for new
+                    students within Edge Hill University's department of Computer Science. This was completed by
+                    evaluating two chatbot implementation methods (Chatterbot - a Python paackage and BotMan Studio -
+                    a PHP framework). I then implemented a chatbot (and a FAQ's mobile website) and conducted a
+                    usability evaluation with a questionnaire to evaluate and compare the perceived usefulness of a
+                    chatbot and a FAQ's mobile website for new students (with first year Computer Science students).
+                    Results show that the chatbot was perceived to be more useful than the FAQ's mobile website.</p>
                     <div class=\"grid\">
                         <div class=\"small-12 medium-12 large-6 xlarge-6\">
                             <h4>Undergraduate modules studied:</h4>

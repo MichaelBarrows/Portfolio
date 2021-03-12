@@ -8,23 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-    public function project_links(){
+
+    public function projectLinks()
+    {
         return $this->hasMany(ProjectLink::class);
     }
 
-    public function project_images(){
+    public function projectImages()
+    {
         return $this->hasMany(ProjectImage::class);
     }
 
-    public function tech_stack(){
+    public function techStack()
+    {
         return $this->belongsToMany(TechStack::class);
     }
 
-    public function project_texts(){
+    public function projectTexts()
+    {
         return $this->hasMany(ProjectTexts::class);
     }
 
-    public function ordered_project_texts() {
-        return $this->project_texts->sortBy('order')->get();
+    public function orderedProjectTexts()
+    {
+        return $this->projectTexts->sortBy('order')->get();
     }
 }
