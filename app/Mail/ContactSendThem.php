@@ -9,25 +9,20 @@ use Illuminate\Queue\SerializesModels;
 
 class ContactSendThem extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public $data;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
     public function __construct($data)
     {
         $this->data = $data;
+        $this->userName = $this->data['name'];
+        $this->emailAddress = $this->data['email_address'];
+        $this->phoneNumber = $this->data['phone_number'];
+        $this->userMessage = $this->data['user_message'];
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         $address = 'no-reply@michaelbarrows.com';
@@ -35,12 +30,14 @@ class ContactSendThem extends Mailable
         $name = 'michaelbarrows.com';
 
         return $this->view('emails.contact.send_to_them')
-                    ->from($address, $name)
-                    ->replyTo('contact@michaelbarrows.com', 'Michael Barrows')
-                    ->subject($subject)
-                    ->with(['name' => $this->data['name'],
-                            'email_address' => $this->data['email_address'],
-                            'phone_number' => $this->data['phone_number'],
-                            'user_message' => $this->data['user_message']]);
+            ->from($address, $name)
+            ->replyTo('contact@michaelbarrows.com', 'Michael Barrows')
+            ->subject($subject)
+            ->with([
+                'name' => $this->userName,
+                'email_address' => $this->emailAddress,
+                'phone_number' => $this->phoneNumber,
+                'user_message' => $this->userMessage,
+            ]);
     }
 }

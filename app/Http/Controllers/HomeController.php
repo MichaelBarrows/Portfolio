@@ -10,22 +10,19 @@ use App\Models\TechStack;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $maintenance_mode = SiteSetting::findOrFail(1);
+        $maintenanceMode = SiteSetting::findOrFail(1);
         $education = Education::all();
         $projects = Project::all();
         $projects = Project::all();
         $technologies = TechStack::all();
 
-        return view('pages/home', ['maintenance_mode' => $maintenance_mode,
-                                   'education' => $education,
-                                   'projects' => $projects,
-                                   'technologies' => $technologies]);
+        return view('pages.home', [
+            'maintenance_mode' => $maintenanceMode,
+            'education' => $education,
+            'projects' => $projects,
+            'technologies' => $technologies,
+        ]);
     }
 }

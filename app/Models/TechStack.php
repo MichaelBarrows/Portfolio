@@ -9,7 +9,8 @@ class TechStack extends Model
 {
     use HasFactory;
 
-    public function project () {
+    public function project()
+    {
         return $this->belongsToMany(Project::class);
     }
 }

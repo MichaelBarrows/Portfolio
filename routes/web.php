@@ -17,7 +17,7 @@ use App\Http\Controllers\ImagesController;
 |
 */
 
-Route::resource('/', HomeController::class)->only(['index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::resource('/project', ProjectController::class)->only(['show']);
 Route::resource('/contact', ContactController::class)->only(['store']);
 Route::resource('/images', ImagesController::class)->only(['show']);

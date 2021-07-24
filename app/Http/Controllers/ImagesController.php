@@ -2,49 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\ProjectImage;
 use App\Models\SiteSetting;
+use Illuminate\Http\Request;
+
 class ImagesController extends Controller
 {
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(ProjectImage $currentImage)
     {
-        $maintenance_mode = SiteSetting::findOrFail(1);
-        $current_image = ProjectImage::findOrFail($id);
-        $all_images = ProjectImage::where('project_id', $current_image->project->id)->pluck('id')->toArray();
+        $maintenanceMode = SiteSetting::findOrFail(1);
+        $currentImage = ProjectImage::findOrFail($id);
+        $allImages = ProjectImage::where('project_id', $currentImage->project->id)
+            ->pluck('id')
+            ->toArray();
         $counter = "";
-        for ($idx = 0; $idx < count($all_images); $idx++) {
-            if ($current_image->id == $all_images[$idx]) {
+        for ($idx = 0; $idx < count($allImages); $idx++) {
+            if ($currentImage->id == $allImages[$idx]) {
                 if ($idx - 1 < 0) {
-                    $prev_image_id = 0;
+                    $prevImageId = 0;
                 } else {
-                    $prev_image_id = $all_images[$idx - 1];
+                    $prevImageId = $allImages[$idx - 1];
                 }
 
-                if ($idx + 1 >= count($all_images)) {
-                    $next_image_id = 0;
+                if ($idx + 1 >= count($allImages)) {
+                    $nextImageId = 0;
                 } else {
-                    $next_image_id = $all_images[$idx + 1];
+                    $nextImageId = $allImages[$idx + 1];
                 }
 
-                $counter = $idx + 1 . " / " . count($all_images);
+                $counter = $idx + 1 . " / " . count($allImages);
                 break;
             }
         }
-        return view ('pages.image', [
-            'maintenance_mode' => $maintenance_mode,
-            'prev_image_id' => $prev_image_id,
-            'image' => $current_image,
-            'next_image_id' => $next_image_id,
-            'counter' => $counter
+        return view('pages.image', [
+            'maintenance_mode' => $maintenanceMode,
+            'prev_image_id' => $prev_imageId,
+            'image' => $currentImage,
+            'next_image_id' => $nextImageId,
+            'counter' => $counter,
         ]);
-
     }
 }

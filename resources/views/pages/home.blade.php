@@ -118,9 +118,9 @@
         @endif
         <div class="all-12 grid">
             @foreach($projects as $project)
-            @if($project->tech_stack != null)
+            @if($project->techStack != null)
 
-            <div class="small-12 medium-6 large-4 xlarge-4 project-card grid" data-tech-stack="@foreach($project->tech_stack as $tech){{ $tech->identifier }} @endforeach" id="{{ $project->id }}">
+            <div class="small-12 medium-6 large-4 xlarge-4 project-card grid" data-tech-stack="@foreach($project->techStack as $tech){{ $tech->identifier }} @endforeach" id="{{ $project->id }}">
             @endif
                 <h3 class="all-12">{{ $project->name }}</h3>
                 @if(isset($project->image))
@@ -148,13 +148,13 @@
                 <p class="short-description all-12">{{ $project->short_description }}</p>
                 @endif
                 <div class="tech-stack all-12">
-                @if(count($project->tech_stack) >= 6)
+                @if(count($project->techStack) >= 6)
                     @for($idx = 0; $idx < 5; $idx++)
-                        <p>{{ $project->tech_stack[$idx]->name }}</p>
+                        <p>{{ $project->techStack[$idx]->name }}</p>
                     @endfor
-                    <p> + {{ count($project->tech_stack) - 5 }}</p>
+                    <p> + {{ count($project->techStack) - 5 }}</p>
                 @else
-                    @foreach($project->tech_stack as $tech)
+                    @foreach($project->techStack as $tech)
                         <p>{{ $tech->name }}</p>
                     @endforeach
                 @endif
