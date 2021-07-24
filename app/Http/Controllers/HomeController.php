@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $maintenanceMode = SiteSetting::findOrFail(1);
+        $maintenanceMode = SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE);
         $education = Education::all();
         $projects = Project::all();
         $projects = Project::all();

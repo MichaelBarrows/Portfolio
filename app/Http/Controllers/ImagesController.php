@@ -10,7 +10,7 @@ class ImagesController extends Controller
 {
     public function show(ProjectImage $currentImage)
     {
-        $maintenanceMode = SiteSetting::findOrFail(1);
+        $maintenanceMode = SiteSetting::findOrFail(SiteSetting::MAINTENTANCE_MODE);
         $currentImage = ProjectImage::findOrFail($id);
         $allImages = ProjectImage::where('project_id', $currentImage->project->id)
             ->pluck('id')

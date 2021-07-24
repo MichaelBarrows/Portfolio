@@ -18,12 +18,12 @@ class SiteSettings extends Seeder
             [
                 'id' => 1,
                 'name' => 'maintenance_mode',
-                'value' => False,
+                'value' => false,
             ],
             [
                 'id' => 2,
                 'name' => 'allow_emails',
-                'value' => True,
+                'value' => true,
             ],
         ]);
     }

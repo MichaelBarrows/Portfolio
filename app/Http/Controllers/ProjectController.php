@@ -10,7 +10,7 @@ class ProjectController extends Controller
 {
     public function show($pretty_url)
     {
-        $maintenanceMode = SiteSetting::findOrFail(1);
+        $maintenanceMode = SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE);
         $project = Project::where('pretty_url', $pretty_url)
             ->firstOrFail();
         return view('pages.project', [

@@ -27,8 +27,8 @@ class ContactController extends Controller
             'phone_number' => $request->phone_number,
             'user_message' => $request->message,
         ];
-        $emailsAllowed = SiteSetting::findOrFail(2);
-        if ($emailsAllowed == True) {
+        $emailsAllowed = SiteSetting::findOrFail(SiteSetting::EMAILS_ALLOWED);
+        if ($emailsAllowed->value) {
             Mail::to($request->input('email_address'))->send(new ContactSendThem($data));
             Mail::to('contact@michaelbarrows.com')->send(new ContactSendMe($data));
         }
