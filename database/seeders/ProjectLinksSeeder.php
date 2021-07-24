@@ -86,13 +86,6 @@ class ProjectLinksSeeder extends Seeder
                 'link' => 'https://www.gradecalc.co.uk',
             ],
             [
-                'project_id' => 4,
-                'name' => 'gradecalc v1 website',
-                'text' => 'View Version 1',
-                'icon' => 'fas fa-external-link-alt',
-                'link' => 'https://v1.gradecalc.co.uk',
-            ],
-            [
                 'project_id' => 5,
                 'name' => 'device inventory manager github',
                 'text' => 'View Code',
