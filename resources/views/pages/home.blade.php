@@ -49,8 +49,8 @@
                 <p>Relational Databases</p>
                 <p>Creating API's</p>
                 <p>Python</p>
-                <p>Behaviour Driven Development (BDD)</p>
                 <p>Test Driven Development (TDD)</p>
+                <p>Behaviour Driven Development (BDD)</p>
             </div>
             <div class="small-12 medium-12 large-4 xlarge-4 skills align-center">
                 <h3>Front-end Skills</h3>
