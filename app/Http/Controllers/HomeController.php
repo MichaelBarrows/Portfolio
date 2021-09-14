@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\SiteSetting;
 use App\Models\Education;
+use App\Models\Employment;
 use App\Models\Project;
+use App\Models\SiteSetting;
 use App\Models\TechStack;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -14,13 +15,14 @@ class HomeController extends Controller
     {
         $maintenanceMode = SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE);
         $education = Education::all();
-        $projects = Project::all();
+        $employment = Employment::all();
         $projects = Project::all();
         $technologies = TechStack::all();
 
         return view('pages.home', [
             'maintenance_mode' => $maintenanceMode,
             'education' => $education,
+            'employments' => $employment,
             'projects' => $projects,
             'technologies' => $technologies,
         ]);

@@ -75,8 +75,35 @@
                 <p>Natural Language Toolkit (NLTK)</p>
                 <p>matplotlib</p>
             </div>
+
+            
+            @if (isset($employments))
+                <div class="all-12 grid">
+                    <div class="all-12">
+                        <h2>Employment</h2>
+                    </div>
+                    @foreach ($employments as $employment)
+                        <div class="all-12 education" id="{{ $employment->id }}">
+                            <div class="header closed">
+                                <h3>{{ $employment->title }}</h3>
+                                <p>{{ $employment->company }}</p>
+                                <a href="#"><i class="fas fa-chevron-down"></i></a>
+                            </div>
+                            <div class="body">
+                                <p>{{ $employment->start_date }} - {{ $employment->end_date }}</p>
+                                {!! $employment->description !!}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+
             @if (isset($education))
                 <div class="all-12 grid">
+                    <div class="all-12">
+                        <h2>Education</h2>
+                    </div>
                     @foreach ($education as $edu)
                         <div class="all-12 education" id="{{ $edu->identifier }}">
                             <div class="header closed">
