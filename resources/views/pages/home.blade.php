@@ -34,7 +34,7 @@
                     <p>I'm Michael, a web developer (back-end/full-stack) in Colchester with 4 years of experience specifically in web design and development.</p>
                     <p>I've recently completed a research master's at the University of Portsmouth in which I explored automated labelling and machine learning for sentiment and emotion. Before that, I studied a master of computing degree at Edge Hill University in web design and development.</p>
                     <p>Within the web development field, my interests are mainly in back-end development (PHP, Laravel, SQL).</p>
-                    <p>I am currently looking for a back-end or full-stack developer role in Colchester, Ipswich, Chelmsford, London or remote. I am also open to freelance projects</p>
+                    <p>I am currently looking for a back-end or full-stack developer role in Colchester, Ipswich, Chelmsford, London or remote. I am also open to freelance projects.</p>
                     <p>Want to know more? <a href="#contact">Get in touch</a>.</p>
                 </div>
             </div>
@@ -50,6 +50,7 @@
                 <p>Creating API's</p>
                 <p>Python</p>
                 <p>Behaviour Driven Development (BDD)</p>
+                <p>Test Driven Development (TDD)</p>
             </div>
             <div class="small-12 medium-12 large-4 xlarge-4 skills align-center">
                 <h3>Front-end Skills</h3>
