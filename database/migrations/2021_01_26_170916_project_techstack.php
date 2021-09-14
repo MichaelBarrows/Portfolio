@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class ProjectTechstack extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('project_tech_stack', function (Blueprint $table) {
@@ -21,11 +16,6 @@ class ProjectTechstack extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('project_tech_stack');

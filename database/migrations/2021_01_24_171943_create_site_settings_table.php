@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateSiteSettingsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('site_settings', function (Blueprint $table) {
@@ -21,11 +16,6 @@ class CreateSiteSettingsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('site_settings');

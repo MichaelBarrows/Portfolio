@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTechStacksTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('tech_stacks', function (Blueprint $table) {
@@ -22,11 +17,6 @@ class CreateTechStacksTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('tech_stacks');

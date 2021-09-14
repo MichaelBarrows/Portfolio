@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectImagesSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('project_images')->insert([
@@ -150,10 +145,3 @@ class ProjectImagesSeeder extends Seeder
         ]);
     }
 }
-
-// [
-//     'project_id' => ,
-//     'alt_text' => '',
-//     'filepath_filename' => '',
-//     'description' => '',
-// ],

@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class EducationSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('education')->insert([
@@ -19,7 +14,7 @@ class EducationSeeder extends Seeder
                 'id' => 1,
                 'institution_name' => 'University of Portsmouth',
                 'course_name' => 'MRes Technology (Computer Science)',
-                'grade' => 'Distinction [to be awarded]',
+                'grade' => 'Distinction',
                 'start_date' => 'January 2020',
                 'end_date' => 'January 2021',
                 'project_title' => 'Iranian State-Sponsored Propaganda on Twitter: Exploring Methods for Automatic Classification and Analysis',

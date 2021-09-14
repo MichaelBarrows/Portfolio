@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectTechStackSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('project_tech_stack')->insert([
