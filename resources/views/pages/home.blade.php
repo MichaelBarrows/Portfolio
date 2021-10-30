@@ -81,7 +81,7 @@
             @if (isset($employments))
                 <div class="all-12 grid">
                     <div class="all-12">
-                        <h2>Employment</h2>
+                        <h3>Employment</h3>
                     </div>
                     @foreach ($employments as $employment)
                         <div class="all-12 education" id="{{ $employment->id }}">
@@ -103,7 +103,7 @@
             @if (isset($education))
                 <div class="all-12 grid">
                     <div class="all-12">
-                        <h2>Education</h2>
+                        <h3>Education</h3>
                     </div>
                     @foreach ($education as $edu)
                         <div class="all-12 education" id="{{ $edu->identifier }}">
@@ -218,26 +218,27 @@
                 </div>
             @endforeach
         @endif
-        {!! Form::open(['route' => 'contact.store', 'class' => 'contact-form grid all-12']) !!}
-            <div class="small-12 medium-12 large-4 xlarge-4">
-                {!! Form::text('name', '', ['placeholder' => 'Name', 'required']) !!}
+        <form action="{{ route('contact.store') }}" method="post" id="contact-form" class="contact-form grid all-12">
+        @csrf    
+        <div class="small-12 medium-12 large-4 xlarge-4">
+                <input type="text" name="name" placeholder="Name" required>
             </div>
             <div class="small-12 medium-12 large-4 xlarge-4">
-                {!! Form::email('email_address', '', ['placeholder' => 'E-Mail Address', 'required']) !!}
+                <input type="email" name="email_address" placeholder="E-Mail Address" required>
             </div>
             <div class="small-12 medium-12 large-4 xlarge-4">
-                {!! Form::text('phone_number', '', ['placeholder' => 'Phone Number', 'required']) !!}
+                <input type="text" name="phone_number" placeholder="Phone Number" required>
             </div>
             <div class="small-12 medium-12 large-12 xlarge-12">
-                {!! Form::textarea('message', '', ['placeholder' => 'Your Message', 'class' => 'message', 'required']) !!}
+                <textarea name="message" placeholder="Your Message" class="message" rows="10" required></textarea>
             </div>
             <div class="small-12 medium-6 large-6 xlarge-6">
-                {!! Form::reset('Reset Form') !!}
+                <input type="reset" value="Reset Form">
             </div>
             <div class="small-12 medium-6 large-6 xlarge-6">
-                {!! Form::submit('Send Message') !!}
+                <input type="submit" value="Send Message">
             </div>
-        {!! Form::close() !!}
+        </form>
         </div>
     </section>
 @endsection
