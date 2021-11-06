@@ -80,9 +80,7 @@
             
             @if (isset($employments))
                 <div class="all-12 grid">
-                    <div class="all-12">
-                        <h3>Employment</h3>
-                    </div>
+                    <h3 class="heading all-12">Employment</h3>
                     @foreach ($employments as $employment)
                         <div class="all-12 education" id="{{ $employment->id }}">
                             <div class="header closed">
@@ -102,9 +100,7 @@
 
             @if (isset($education))
                 <div class="all-12 grid">
-                    <div class="all-12">
-                        <h3>Education</h3>
-                    </div>
+                    <h3 class="heading all-12">Education</h3>
                     @foreach ($education as $edu)
                         <div class="all-12 education" id="{{ $edu->identifier }}">
                             <div class="header closed">

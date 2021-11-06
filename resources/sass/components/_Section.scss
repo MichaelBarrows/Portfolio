@@ -6,6 +6,12 @@ section {
         color: $blue;
         margin: 15px 0 0 0;
     }
+    &#about h3.heading {
+        text-align: center;
+        font-size: 1.75em;
+        color: $blue;
+        margin: 15px 0 0 0;
+    }
     .semi-transparent {
         &-light-grey {
             background: rgba(204, 204, 204, $box-bg-opacity);

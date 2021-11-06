@@ -142,9 +142,7 @@ function toggle_mobile_nav () {
                 }
             }
     });
-
 }
-
 
 document.addEventListener("DOMContentLoaded", function() {
     stack_filters_add_event();
