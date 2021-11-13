@@ -7,24 +7,18 @@ use App\Models\Employment;
 use App\Models\Project;
 use App\Models\SiteSetting;
 use App\Models\TechStack;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(): View
     {
-        $maintenanceMode = SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE);
-        $education = Education::all();
-        $employment = Employment::all();
-        $projects = Project::all();
-        $technologies = TechStack::all();
-
         return view('pages.home', [
-            'maintenance_mode' => $maintenanceMode,
-            'education' => $education,
-            'employments' => $employment,
-            'projects' => $projects,
-            'technologies' => $technologies,
+            'maintenance_mode' => SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE),
+            'education' => Education::all(),
+            'employments' => Employment::all(),
+            'projects' => Project::all(),
+            'technologies' => TechStack::all(),
         ]);
     }
 }

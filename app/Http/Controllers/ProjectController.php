@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\SiteSetting;
 use App\Models\Project;
+use App\Models\SiteSetting;
+use Illuminate\View\View;
 
 class ProjectController extends Controller
 {
-    public function show($pretty_url)
+    public function show($pretty_url): View
     {
-        $maintenanceMode = SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE);
-        $project = Project::where('pretty_url', $pretty_url)
-            ->firstOrFail();
         return view('pages.project', [
-            'maintenance_mode' => $maintenanceMode,
-            'project' => $project,
+            'maintenance_mode' => SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE),
+            'project' => Project::wherePrettyUrl($pretty_url)
+                ->firstOrFail(),
         ]);
     }
 }

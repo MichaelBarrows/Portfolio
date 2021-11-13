@@ -4,26 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\ProjectImage;
 use App\Models\SiteSetting;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ImagesController extends Controller
 {
-    public function show(ProjectImage $currentImage)
+    public function show(ProjectImage $currentImage): View
     {
-        $maintenanceMode = SiteSetting::findOrFail(SiteSetting::MAINTENTANCE_MODE);
-        $currentImage = ProjectImage::findOrFail($id);
-        $allImages = ProjectImage::where('project_id', $currentImage->project->id)
+        $allImages = ProjectImage::whereProjectId($currentImage->project->id)
             ->pluck('id')
             ->toArray();
+
         $counter = "";
+
         for ($idx = 0; $idx < count($allImages); $idx++) {
             if ($currentImage->id == $allImages[$idx]) {
-                if ($idx - 1 < 0) {
-                    $prevImageId = 0;
-                } else {
-                    $prevImageId = $allImages[$idx - 1];
-                }
-
+                $prevImageId = $idx - 1 < 0 ? 0 : $allImages[$idx - 1];
+                $nextImageId = $idx + 1 >= count($allImages) ? 0 : $allImages[$idx + 1];
                 if ($idx + 1 >= count($allImages)) {
                     $nextImageId = 0;
                 } else {
@@ -34,9 +30,10 @@ class ImagesController extends Controller
                 break;
             }
         }
+
         return view('pages.image', [
-            'maintenance_mode' => $maintenanceMode,
-            'prev_image_id' => $prev_imageId,
+            'maintenance_mode' => SiteSetting::findOrFail(SiteSetting::MAINTENANCE_MODE),
+            'prev_image_id' => $prevImageId,
             'image' => $currentImage,
             'next_image_id' => $nextImageId,
             'counter' => $counter,

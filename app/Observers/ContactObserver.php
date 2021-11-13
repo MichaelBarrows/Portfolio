@@ -13,24 +13,4 @@ class ContactObserver
         Notification::route('slack', config('slack.contact_notification_webhook_url'))
             ->notify(new ContactFormNotification($contact));
     }
-
-    public function updated(Contact $contact)
-    {
-        //
-    }
-
-    public function deleted(Contact $contact)
-    {
-        //
-    }
-
-    public function restored(Contact $contact)
-    {
-        //
-    }
-
-    public function forceDeleted(Contact $contact)
-    {
-        //
-    }
 }

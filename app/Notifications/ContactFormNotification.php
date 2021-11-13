@@ -16,12 +16,12 @@ class ContactFormNotification extends Notification
         $this->contact = $contact;
     }
 
-    public function via($notifiable)
+    public function via(): array
     {
         return ['slack'];
     }
 
-    public function toSlack()
+    public function toSlack(): SlackMessage
     {
         return (new SlackMessage())
             ->from('MichaelBarrows.com')

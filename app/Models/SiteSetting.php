@@ -10,5 +10,4 @@ class SiteSetting extends Model
     use HasFactory;
 
     public const MAINTENANCE_MODE = 1;
-    public const EMAILS_ALLOWED = 2;
 }

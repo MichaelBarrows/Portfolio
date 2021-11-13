@@ -8,12 +8,12 @@ class ContactFormValidationRequest extends FormRequest
 {
     protected $redirect = "/#contact";
 
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
-    
-    public function rules()
+
+    public function rules(): array
     {
         return [
             'name' => 'required|string',
