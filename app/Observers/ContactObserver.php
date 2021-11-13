@@ -10,7 +10,7 @@ class ContactObserver
 {
     public function created(Contact $contact): void
     {
-        Notification::route('slack', config('slack.contact_notification_slack_webhook_url'))
+        Notification::route('slack', config('slack.contact_notification_webhook_url'))
             ->notify(new ContactFormNotification($contact));
     }
 
