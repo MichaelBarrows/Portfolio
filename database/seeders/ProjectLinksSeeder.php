@@ -89,20 +89,6 @@ class ProjectLinksSeeder extends Seeder
             ],
             [
                 'project_id' => 6,
-                'name' => 'chatbot project',
-                'text' => 'View Chatbot',
-                'icon' => 'fas fa-external-link-alt',
-                'link' => 'https://projects.michaelbarrows.co.uk/dissertation/chat',
-            ],
-            [
-                'project_id' => 6,
-                'name' => 'FAQs project',
-                'text' => "View FAQ's Website",
-                'icon' => 'fas fa-external-link-alt',
-                'link' => 'https://projects.michaelbarrows.co.uk/dissertation/faqs',
-            ],
-            [
-                'project_id' => 6,
                 'name' => 'dissertation github',
                 'text' => 'View Code',
                 'icon' => 'fab fa-github',
@@ -121,13 +107,6 @@ class ProjectLinksSeeder extends Seeder
                 'text' => 'View Code',
                 'icon' => 'fab fa-github',
                 'link' => 'https://github.com/MichaelBarrows/AmazonSentimentAnalysis',
-            ],
-            [
-                'project_id' => 9,
-                'name' => 'currency converter website',
-                'text' => 'View Project',
-                'icon' => 'fas fa-external-link-alt',
-                'link' => 'https://projects.michaelbarrows.co.uk/currency-converter/',
             ],
             [
                 'project_id' => 9,
