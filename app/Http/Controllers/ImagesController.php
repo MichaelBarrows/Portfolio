@@ -20,12 +20,6 @@ class ImagesController extends Controller
             if ($currentImage->id == $allImages[$idx]) {
                 $prevImageId = $idx - 1 < 0 ? 0 : $allImages[$idx - 1];
                 $nextImageId = $idx + 1 >= count($allImages) ? 0 : $allImages[$idx + 1];
-                if ($idx + 1 >= count($allImages)) {
-                    $nextImageId = 0;
-                } else {
-                    $nextImageId = $allImages[$idx + 1];
-                }
-
                 $counter = $idx + 1 . " / " . count($allImages);
                 break;
             }
