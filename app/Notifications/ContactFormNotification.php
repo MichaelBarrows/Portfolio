@@ -24,15 +24,16 @@ class ContactFormNotification extends Notification
     public function toSlack()
     {
         return (new SlackMessage())
-        ->attachment(function ($attachment) {
-            $attachment->title('New contact form message')
-                ->fields([
-                    'From' => $this->contact->name,
-                    'Email' => $this->contact->email_address,
-                    'Phone' => $this->contact->phone_number,
-                ])
-                ->content("-\n{$this->contact->message}\n-")
-                ->color('#38c172');
-        });
+            ->from('MichaelBarrows.com')
+            ->attachment(function ($attachment) {
+                $attachment->title('New contact form message')
+                    ->fields([
+                        'From' => $this->contact->name,
+                        'Email' => $this->contact->email_address,
+                        'Phone' => $this->contact->phone_number,
+                    ])
+                    ->content("-\n{$this->contact->message}\n-")
+                    ->color('#38c172');
+            });
     }
 }
