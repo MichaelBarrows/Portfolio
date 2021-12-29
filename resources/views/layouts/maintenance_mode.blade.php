@@ -81,8 +81,8 @@
                     <h1>Michael Barrows</h1>
                     <h2>Come back soon!</h2>
                     <div class="links">
-                        <a href="https://github.com/MichaelBarrows" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/in/michaelpbarrows" target="_blank">LinkedIn</a>
+                        <a href="{{ \App\Models\SiteSetting::GITHUB_URL }}" target="_blank">GitHub</a>
+                        <a href="{{ \App\Models\SiteSetting::LINKEDIN_URL }}" target="_blank">LinkedIn</a>
                         <a href="mailto:contact@michaelbarrows.com">contact@michaelbarrows.com</a>
                     </div>
                 </div>

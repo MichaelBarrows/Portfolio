@@ -10,4 +10,6 @@ class SiteSetting extends Model
     use HasFactory;
 
     public const MAINTENANCE_MODE = 1;
+    public const GITHUB_URL = 'https://github.com/MichaelBarrows';
+    public const LINKEDIN_URL = 'https://www.linkedin.com/in/michaelpbarrows/';
 }

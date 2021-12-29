@@ -45,8 +45,8 @@
                                 <a class="small-12 medium-12 hidden" href="{{ url('/#about') }}">About</a>
                                 <a class="small-12 medium-12 hidden" href="{{ url('/#projects') }}">Projects</a>
                                 <a class="small-12 medium-12 hidden" href="{{ url('/#contact') }}">Contact</a>
-                                <a class="small-12 medium-12 hidden" href="https://github.com/MichaelBarrows" target="_blank"><i class="fab fa-github"></i></a>
-                                <a class="small-12 medium-12 hidden" href="https://www.linkedin.com/in/michaelpbarrows" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a class="small-12 medium-12 hidden" href="{{ \App\Models\SiteSetting::GITHUB_URL }}" target="_blank"><i class="fab fa-github"></i></a>
+                                <a class="small-12 medium-12 hidden" href="{{ \App\Models\SiteSetting::LINKEDIN_URL }}" target="_blank"><i class="fab fa-linkedin"></i></a>
                                 <a class="small-12 medium-12 hidden" id="bars" href="#"><i class="fas fa-bars"></i></a>
                             </nav>
                             <div class="large-6 xlarge-7 small-hidden medium-hidden align-right">
@@ -55,8 +55,8 @@
                                     <a href="{{ url('/#about') }}">About</a>
                                     <a href="{{ url('/#projects') }}">Projects</a>
                                     <a href="{{ url('/#contact') }}">Contact</a>
-                                    <a href="https://github.com/MichaelBarrows" target="_blank"><i class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/michaelpbarrows" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="{{ \App\Models\SiteSetting::GITHUB_URL }}" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="{{ \App\Models\SiteSetting::LINKEDIN_URL }}" target="_blank"><i class="fab fa-linkedin"></i></a>
                                 </nav>
                             </div>
                         </div>
@@ -68,8 +68,8 @@
                         <div class="grid-container grid">
                             <div class="small-12 medium-12 large-6 xlarge-6 small-center medium-center large-left xlarge-left">
                                 <p class="icons">
-                                    <a href="https://github.com/MichaelBarrows" target="_blank"><i class="fab fa-github"></i></a>
-                                    <a href="https://linkedin.com/in/michaelpbarrows" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="{{ \App\Models\SiteSetting::GITHUB_URL }}" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="{{ \App\Models\SiteSetting::LINKEDIN_URL }}" target="_blank"><i class="fab fa-linkedin"></i></a>
                                     <a href="mailto:contact@michaelbarrows.com" target="_blank"><i class="fas fa-envelope"></i></a>
                                 </p>
                             </div>
