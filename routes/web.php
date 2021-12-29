@@ -7,10 +7,10 @@ use App\Http\Controllers\ProjectController;
 use App\Models\SiteSetting;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/project/{pretty_url}', [ProjectController::class, 'show'])->name('project.show');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-Route::get('/images/{image}', [ImagesController::class, 'show'])->name('image.show');
+// Route::get('/', [HomeController::class, 'index'])->name('index');
+// Route::get('/project/{pretty_url}', [ProjectController::class, 'show'])->name('project.show');
+// Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+// Route::get('/images/{image}', [ImagesController::class, 'show'])->name('image.show');
 
 
 Route::get('github', fn () => redirect()->away(SiteSetting::GITHUB_URL));
