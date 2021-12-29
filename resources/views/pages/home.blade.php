@@ -77,7 +77,7 @@
                 <p>matplotlib</p>
             </div>
 
-            
+
             @if (isset($employments))
                 <div class="all-12 grid">
                     <h3 class="heading all-12">Employment</h3>
@@ -139,7 +139,7 @@
                     </div>
                 @endif
                 <div class="all-12 grid">
-                    @foreach ($projects as $project)                    
+                    @foreach ($projects as $project)
                         <div class="small-12 medium-6 large-4 xlarge-4 project-card grid" data-tech-stack="@if($project->techStack != null) @foreach($project->techStack as $tech){{ $tech->identifier }} @endforeach @endif" id="{{ $project->id }}">
                             <h3 class="all-12">{{ $project->name }}</h3>
                             @if (isset($project->image))
@@ -179,7 +179,7 @@
                                 @endif
                             </div>
                             <div class="link all-12">
-                                <p><a href="{{ route('project.show', ['project' => $project->pretty_url]) }}">View Project</a></p>
+                                <p><a href="{{ route('project.show', ['pretty_url' => $project->pretty_url]) }}">View Project</a></p>
                             </div>
                         </div>
                     @endforeach
@@ -215,7 +215,7 @@
             @endforeach
         @endif
         <form action="{{ route('contact.store') }}" method="post" id="contact-form" class="contact-form grid all-12">
-        @csrf    
+        @csrf
         <div class="small-12 medium-12 large-4 xlarge-4">
                 <input type="text" name="name" placeholder="Name" required>
             </div>
