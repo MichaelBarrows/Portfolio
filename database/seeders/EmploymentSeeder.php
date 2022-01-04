@@ -16,11 +16,17 @@ class EmploymentSeeder extends Seeder
     {
         DB::table('employments')->insert([
             [
-                'id' => 2,
+                'title' => 'PHP Developer',
+                'company' => 'Accu Limited',
+                'start_date' => 'December 2021',
+                'end_date' => 'Present',
+                'description' => '',
+            ],
+            [
                 'title' => 'Junior PHP Developer',
                 'company' => 'Accu Limited',
                 'start_date' => 'March 2021',
-                'end_date' => 'Present',
+                'end_date' => 'December 2021',
                 'description' => '',
             ],
         ]);
