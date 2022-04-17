@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Project extends Model
 {
     use HasFactory;
+
+    protected $appends = ['tech_stack_list'];
 
     public function projectLinks(): HasMany
     {
@@ -38,5 +41,12 @@ class Project extends Model
             ->projectTexts()
             ->sortBy('order')
             ->get();
+    }
+
+    public function techStackList(): Attribute
+    {
+        return new Attribute(
+            fn () => implode(' ', $this->techStack->pluck('identifier')->toArray()),
+        );
     }
 }

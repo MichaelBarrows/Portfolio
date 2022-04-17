@@ -35,28 +35,32 @@ class ProjectTechStackSeeder extends Seeder
                 'tech_stack_id' => 7,
             ],
             [
-                'project_id' => 2,
+                'project_id' => 1,
                 'tech_stack_id' => 8,
-            ],
-            [
-                'project_id' => 2,
-                'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 2,
                 'tech_stack_id' => 9,
             ],
             [
-                'project_id' => 3,
-                'tech_stack_id' => 8,
+                'project_id' => 2,
+                'tech_stack_id' => 11,
             ],
             [
-                'project_id' => 3,
+                'project_id' => 2,
                 'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 3,
                 'tech_stack_id' => 9,
+            ],
+            [
+                'project_id' => 3,
+                'tech_stack_id' => 11,
+            ],
+            [
+                'project_id' => 3,
+                'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 4,
@@ -80,11 +84,11 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 4,
-                'tech_stack_id' => 6,
+                'tech_stack_id' => 7,
             ],
             [
                 'project_id' => 4,
-                'tech_stack_id' => 7,
+                'tech_stack_id' => 8,
             ],
             [
                 'project_id' => 5,
@@ -96,15 +100,15 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 5,
-                'tech_stack_id' => 6,
-            ],
-            [
-                'project_id' => 5,
                 'tech_stack_id' => 7,
             ],
             [
                 'project_id' => 5,
-                'tech_stack_id' => 11,
+                'tech_stack_id' => 8,
+            ],
+            [
+                'project_id' => 5,
+                'tech_stack_id' => 12,
             ],
             [
                 'project_id' => 6,
@@ -128,26 +132,14 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 6,
-                'tech_stack_id' => 6,
-            ],
-            [
-                'project_id' => 6,
                 'tech_stack_id' => 7,
             ],
             [
                 'project_id' => 6,
-                'tech_stack_id' => 11,
-            ],
-            [
-                'project_id' => 7,
                 'tech_stack_id' => 8,
             ],
             [
-                'project_id' => 7,
-                'tech_stack_id' => 11,
-            ],
-            [
-                'project_id' => 7,
+                'project_id' => 6,
                 'tech_stack_id' => 12,
             ],
             [
@@ -155,16 +147,28 @@ class ProjectTechStackSeeder extends Seeder
                 'tech_stack_id' => 9,
             ],
             [
-                'project_id' => 8,
-                'tech_stack_id' => 8,
+                'project_id' => 7,
+                'tech_stack_id' => 12,
             ],
             [
-                'project_id' => 8,
+                'project_id' => 7,
+                'tech_stack_id' => 13,
+            ],
+            [
+                'project_id' => 7,
                 'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 8,
                 'tech_stack_id' => 9,
+            ],
+            [
+                'project_id' => 8,
+                'tech_stack_id' => 11,
+            ],
+            [
+                'project_id' => 8,
+                'tech_stack_id' => 10,
             ],
             [
                 'project_id' => 9,
@@ -188,7 +192,7 @@ class ProjectTechStackSeeder extends Seeder
             ],
             [
                 'project_id' => 9,
-                'tech_stack_id' => 11,
+                'tech_stack_id' => 12,
             ],
         ]);
     }
