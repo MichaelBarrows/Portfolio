@@ -15,8 +15,10 @@ class ProjectController extends Controller
         );
     }
 
-    public function show(Project $project): JsonResponse
+    public function show(string $project): JsonResponse
     {
+        $project = Project::wherePrettyUrl($project)
+            ->firstOrFail();
         $project->content = '';
         foreach ($project->projectTexts->sortBy('order') as $text) {
             $project->content .= '<' . $text->format . '>' . $text->text . '</' . ($text->format[0] == 'h' ? 'h3' : 'p') . '>';
