@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:3000', 'https://michaelbarrows.com'],
+    'allowed_origins' => [env('CORS_ALLOWED_ORIGIN')],
 
     'allowed_origins_patterns' => [],
 
