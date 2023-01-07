@@ -18,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('/education/all', EducationController::class)->name('education.all');
 Route::get('/employment/all', EmploymentController::class)->name('employment.all');
 Route::get('/project/all', [ProjectController::class, 'index'])->name('project.all');
