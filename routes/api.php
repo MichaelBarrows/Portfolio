@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\EmploymentController;
 use App\Http\Controllers\Api\ProjectController;
@@ -23,3 +24,4 @@ Route::get('/employment/all', EmploymentController::class)->name('employment.all
 Route::get('/project/all', [ProjectController::class, 'index'])->name('project.all');
 Route::get('/project/{project:pretty_url}', [ProjectController::class, 'show'])->name('project.show');
 Route::get('/tech-stack', TechController::class)->name('tech.show');
+Route::post('/contact', ContactController::class)->name('contact.save');

@@ -17,8 +17,8 @@ class ContactFormValidationRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email_address' => 'required|email',
-            'phone_number' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required|string',
             'message' => 'required|string',
         ];
     }

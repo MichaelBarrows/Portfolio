@@ -11,6 +11,8 @@ class ContactFormNotification extends Notification
 {
     use Queueable;
 
+    public Contact $contact;
+
     public function __construct(Contact $contact)
     {
         $this->contact = $contact;
@@ -29,11 +31,11 @@ class ContactFormNotification extends Notification
                 $attachment->title('New contact form message')
                     ->fields([
                         'From' => $this->contact->name,
-                        'Email' => $this->contact->email_address,
-                        'Phone' => $this->contact->phone_number,
+                        'Email' => $this->contact->email,
+                        'Phone' => $this->contact->phone,
                     ])
-                    ->content("-\n{$this->contact->message}\n-")
-                    ->color('#38c172');
+                    ->content("-\n{$this->contact->message}\n\n ---")
+                    ->color('#0099CC');
             });
     }
 }
