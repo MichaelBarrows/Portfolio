@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactFormValidationRequest;
 use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
     public function __invoke(ContactFormValidationRequest $request): JsonResponse
     {
-        Contact::create($request->all());
+        $contact = Contact::create($request->all());
 
-        return response()->json();
+        return response()->json([
+            'success' => (bool) $contact,
+        ], Response::HTTP_CREATED);
     }
 }
