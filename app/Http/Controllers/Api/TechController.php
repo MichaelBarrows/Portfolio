@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\TechStackResource;
 use App\Models\TechStack;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class TechController extends Controller
 {
-    public function __invoke(): JsonResponse
+    public function __invoke(): AnonymousResourceCollection
     {
-        return response()->json(
-            TechStack::all(),
+        return TechStackResource::collection(
+            TechStack::all()
         );
     }
 }

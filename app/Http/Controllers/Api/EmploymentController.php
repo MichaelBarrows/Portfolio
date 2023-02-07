@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\EmploymentResource;
 use App\Models\Employment;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class EmploymentController extends Controller
 {
-    public function __invoke(): JsonResponse
+    public function __invoke(): AnonymousResourceCollection
     {
-        return response()->json(
+        return EmploymentResource::collection(
             Employment::all()
         );
     }
