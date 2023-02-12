@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\EmploymentController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TechController;
+use App\Http\Controllers\Api\VersionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,7 @@ Route::get('/project/all', [ProjectController::class, 'index'])->name('project.a
 Route::get('/project/{project:pretty_url}', [ProjectController::class, 'show'])->name('project.show');
 Route::get('/tech-stack', TechController::class)->name('tech.show');
 Route::post('/contact', ContactController::class)->name('contact.save');
+
+Route::middleware('auth:sanctum')->prefix('/internal')->name('internal.')->group(function () {
+    Route::get('version', VersionController::class)->name('version');
+});
