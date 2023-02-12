@@ -3,9 +3,10 @@
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\EmploymentController;
+use App\Http\Controllers\Api\Internal\RegenerateTokenController;
+use App\Http\Controllers\Api\Internal\VersionController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TechController;
-use App\Http\Controllers\Api\VersionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,5 @@ Route::post('/contact', ContactController::class)->name('contact.save');
 
 Route::middleware('auth:sanctum')->prefix('/internal')->name('internal.')->group(function () {
     Route::get('version', VersionController::class)->name('version');
+    Route::get('regenerate-token', RegenerateTokenController::class)->name('regenerate-token');
 });
