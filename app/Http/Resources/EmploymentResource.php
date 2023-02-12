@@ -23,6 +23,7 @@ class EmploymentResource extends JsonResource
             );
 
         return [
+            'id' => $this->id,
             'title' => $this->title,
             'company' => $this->company,
             'start_date' => $this->start_date,
