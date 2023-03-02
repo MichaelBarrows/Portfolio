@@ -34,5 +34,6 @@ Route::middleware('auth:sanctum')->prefix('/internal')->name('internal.')->group
 
     Route::prefix('/employment')->name('employment.')->group(function () {
         Route::post('create', [EmploymentController::class, 'create'])->name('create');
+        Route::post('{employment}', [EmploymentController::class, 'update'])->name('update');
     });
 });

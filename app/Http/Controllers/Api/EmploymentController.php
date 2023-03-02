@@ -23,4 +23,13 @@ class EmploymentController extends Controller
             Employment::create($request->all())
         );
     }
+
+    public function update(Employment $employment, EmploymentRequest $request): EmploymentResource
+    {
+        $employment->update($request->all());
+
+        return new EmploymentResource(
+            $employment
+        );
+    }
 }
