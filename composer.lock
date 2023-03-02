@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2afe0a546724bc913daa6ea411afa25e",
+    "content-hash": "1dd41b36ce29e2aa97cd618aac274c37",
     "packages": [
         {
             "name": "brick/math",
@@ -982,16 +982,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.1.5",
+            "version": "v10.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "57850ab537cf0554b5b616215079c761b98168c8"
+                "reference": "3799f7f3118d57dc5d3dfaabde69a912fff65a7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/57850ab537cf0554b5b616215079c761b98168c8",
-                "reference": "57850ab537cf0554b5b616215079c761b98168c8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3799f7f3118d57dc5d3dfaabde69a912fff65a7e",
+                "reference": "3799f7f3118d57dc5d3dfaabde69a912fff65a7e",
                 "shasum": ""
             },
             "require": {
@@ -1178,7 +1178,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-02-24T09:57:13+00:00"
+            "time": "2023-03-02T14:55:50+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1771,16 +1771,16 @@
         },
         {
             "name": "michaelbarrows/portfolio-shared",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:MichaelBarrows/portfolio-shared.git",
-                "reference": "211be28a8e2eca17c309d7e4e5ddda2481440d37"
+                "reference": "c95b3a46dcfd9644c12d24f1e6959ec4189fe4bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MichaelBarrows/portfolio-shared/zipball/211be28a8e2eca17c309d7e4e5ddda2481440d37",
-                "reference": "211be28a8e2eca17c309d7e4e5ddda2481440d37",
+                "url": "https://api.github.com/repos/MichaelBarrows/portfolio-shared/zipball/c95b3a46dcfd9644c12d24f1e6959ec4189fe4bb",
+                "reference": "c95b3a46dcfd9644c12d24f1e6959ec4189fe4bb",
                 "shasum": ""
             },
             "require": {
@@ -1806,7 +1806,7 @@
                 }
             ],
             "description": "Portfolio functionality that is shared with other applications",
-            "time": "2023-03-02T12:52:35+00:00"
+            "time": "2023-03-02T14:56:08+00:00"
         },
         {
             "name": "monolog/monolog",

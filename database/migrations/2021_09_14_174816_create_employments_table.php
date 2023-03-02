@@ -14,11 +14,11 @@ class CreateEmploymentsTable extends Migration
             $table->string('company');
             $table->string('start_date');
             $table->string('end_date');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
-    
+
     public function down()
     {
         Schema::dropIfExists('employments');
