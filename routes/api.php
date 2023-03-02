@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/education/all', EducationController::class)->name('education.all');
-Route::get('/employment/all', EmploymentController::class)->name('employment.all');
+Route::get('/employment/all', [EmploymentController::class, 'index'])->name('employment.all');
 Route::get('/project/all', [ProjectController::class, 'index'])->name('project.all');
 Route::get('/project/{project:pretty_url}', [ProjectController::class, 'show'])->name('project.show');
 Route::get('/tech-stack', TechController::class)->name('tech.show');
@@ -31,4 +31,8 @@ Route::post('/contact', ContactController::class)->name('contact.save');
 Route::middleware('auth:sanctum')->prefix('/internal')->name('internal.')->group(function () {
     Route::get('version', VersionController::class)->name('version');
     Route::get('regenerate-token', RegenerateTokenController::class)->name('regenerate-token');
+
+    Route::prefix('/employment')->name('employment.')->group(function () {
+        Route::post('create', [EmploymentController::class, 'create'])->name('create');
+    });
 });
