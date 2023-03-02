@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\EmploymentResource;
 use App\Models\Employment;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use MichaelBarrows\PortfolioShared\Http\Requests\EmploymentRequest;
 
@@ -31,5 +32,12 @@ class EmploymentController extends Controller
         return new EmploymentResource(
             $employment
         );
+    }
+
+    public function delete(Employment $employment): JsonResponse
+    {
+        return response()->json([
+            'success' => $employment->delete(),
+        ]);
     }
 }

@@ -35,5 +35,12 @@ Route::middleware('auth:sanctum')->prefix('/internal')->name('internal.')->group
     Route::prefix('/employment')->name('employment.')->group(function () {
         Route::post('create', [EmploymentController::class, 'create'])->name('create');
         Route::post('{employment}', [EmploymentController::class, 'update'])->name('update');
+        Route::delete('{employment}', [EmploymentController::class, 'delete'])->name('delete');
+    });
+
+    Route::prefix('/education')->name('education.')->group(function () {
+        Route::post('create', [EducationController::class, 'create'])->name('create');
+        Route::post('{education}', [EducationController::class, 'update'])->name('update');
+        Route::delete('{education}', [EducationController::class, 'delete'])->name('delete');
     });
 });

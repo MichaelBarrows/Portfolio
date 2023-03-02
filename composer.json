@@ -1,7 +1,7 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
@@ -12,7 +12,7 @@
         "laravel/sanctum": "^3.2.1",
         "laravel/tinker": "^2.8.1",
         "laravel/slack-notification-channel": "^2.5",
-        "michaelbarrows/portfolio-shared": "^1.0.1"
+        "michaelbarrows/portfolio-shared": "^1.0.6"
     },
     "require-dev": {
         "laravel/sail": "^1.21.1",
