@@ -15,7 +15,7 @@ class CreateEducationTable extends Migration
             $table->string('grade');
             $table->string('start_date');
             $table->string('end_date');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->string('project_title')->nullable();
             $table->timestamps();
         });
