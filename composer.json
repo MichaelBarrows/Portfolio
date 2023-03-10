@@ -8,19 +8,19 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.5",
-        "laravel/framework": "^10.2.0",
+        "laravel/framework": "^10.3.3",
         "laravel/sanctum": "^3.2.1",
         "laravel/tinker": "^2.8.1",
         "laravel/slack-notification-channel": "^2.5",
         "michaelbarrows/portfolio-shared": "^1.0.6"
     },
     "require-dev": {
-        "laravel/sail": "^1.21.1",
+        "laravel/sail": "^1.21.2",
         "mockery/mockery": "^1.5.1",
         "fakerphp/faker": "^1.21.0",
         "laravel/pint": "^1.6",
-        "nunomaduro/collision": "^7.0.5",
-        "phpunit/phpunit": "^10.0.14",
+        "nunomaduro/collision": "^7.1.0",
+        "phpunit/phpunit": "^10.0.15",
         "spatie/laravel-ignition": "^2.0"
     },
     "repositories": [
