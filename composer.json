@@ -10,9 +10,10 @@
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^10.4.0",
         "laravel/sanctum": "^3.2.1",
-        "laravel/tinker": "^2.8.1",
         "laravel/slack-notification-channel": "^2.5",
-        "michaelbarrows/portfolio-shared": "^1.0.6"
+        "laravel/tinker": "^2.8.1",
+        "michaelbarrows/portfolio-shared": "^1.0.6",
+        "sentry/sentry-laravel": "^3.3"
     },
     "require-dev": {
         "laravel/sail": "^1.21.2",
