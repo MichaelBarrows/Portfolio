@@ -1,28 +1,28 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.5.1",
-        "laravel/framework": "^10.8.0",
-        "laravel/sanctum": "^3.2.1",
+        "laravel/framework": "^10.9.0",
+        "laravel/sanctum": "^3.2.5",
         "laravel/slack-notification-channel": "^2.5",
         "laravel/tinker": "^2.8.1",
         "michaelbarrows/portfolio-shared": "^1.0.6",
-        "sentry/sentry-laravel": "^3.3.3"
+        "sentry/sentry-laravel": "^3.4.0"
     },
     "require-dev": {
-        "laravel/sail": "^1.21.4",
+        "laravel/sail": "^1.21.5",
         "mockery/mockery": "^1.5.1",
         "fakerphp/faker": "^1.21.0",
-        "laravel/pint": "^1.9",
+        "laravel/pint": "^1.10",
         "nunomaduro/collision": "^7.5.2",
         "phpunit/phpunit": "^10.1.2",
-        "spatie/laravel-ignition": "^2.1"
+        "spatie/laravel-ignition": "^2.1.2"
     },
     "repositories": [
         {
