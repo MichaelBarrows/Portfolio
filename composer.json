@@ -12,7 +12,7 @@
         "laravel/slack-notification-channel": "^2.5",
         "laravel/tinker": "^2.8.1",
         "michaelbarrows/portfolio-shared": "^1.0.6",
-        "sentry/sentry-laravel": "^3.6.0"
+        "sentry/sentry-laravel": "^3.6.1"
     },
     "require-dev": {
         "laravel/sail": "^1.23.0",
@@ -20,7 +20,7 @@
         "fakerphp/faker": "^1.23.0",
         "laravel/pint": "^1.10.3",
         "nunomaduro/collision": "^7.7.0",
-        "phpunit/phpunit": "^10.2.2",
+        "phpunit/phpunit": "^10.2.3",
         "spatie/laravel-ignition": "^2.2.0"
     },
     "repositories": [
