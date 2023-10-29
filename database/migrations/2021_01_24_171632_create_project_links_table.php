@@ -13,7 +13,7 @@ class CreateProjectLinksTable extends Migration
             $table->foreignId('project_id');
             $table->string('name');
             $table->string('text');
-            $table->string('icon');
+            $table->json('icon');
             $table->string('link');
             $table->timestamps();
         });

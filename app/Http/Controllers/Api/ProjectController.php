@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function index(): AnonymousResourceCollection
     {
         return ProjectResource::collection(
-            Project::with('techStack')->get()
+            Project::with(['projectTexts', 'projectLinks'])->get()
         );
     }
 

@@ -22,6 +22,8 @@ class EducationResource extends JsonResource
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
             'project_title' => $this->project_title,
+            'description' => $this->description,
+            'tech_stack' => TechStackResource::collection($this->whenNotNull($this->tech_stack, collect())),
         ];
     }
 }

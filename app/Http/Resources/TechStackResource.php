@@ -15,10 +15,11 @@ class TechStackResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'identifier' => $this->identifier,
-            'is_long' => $this->is_long,
+            'id' => $this->value,
+            'name' => $this->getName(),
+            'identifier' => $this->getIdentifier(),
+            'is_long' => $this->isLong(),
+            'short_name' => $this->getShortName(),
         ];
     }
 }

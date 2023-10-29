@@ -10,6 +10,10 @@ class ProjectLink extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'icon' => 'array',
+    ];
+
     public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class);

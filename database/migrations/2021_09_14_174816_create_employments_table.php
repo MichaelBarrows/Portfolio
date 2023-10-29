@@ -14,7 +14,8 @@ class CreateEmploymentsTable extends Migration
             $table->string('company');
             $table->string('start_date');
             $table->string('end_date');
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
+            $table->json('tech_stack')->nullable();
             $table->timestamps();
         });
     }

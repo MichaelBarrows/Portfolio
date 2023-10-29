@@ -17,6 +17,7 @@ class CreateEducationTable extends Migration
             $table->string('end_date');
             $table->longText('description')->nullable();
             $table->string('project_title')->nullable();
+            $table->json('tech_stack')->nullable();
             $table->timestamps();
         });
     }

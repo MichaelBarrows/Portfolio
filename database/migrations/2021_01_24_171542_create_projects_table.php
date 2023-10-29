@@ -12,11 +12,8 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('pretty_url');
-            $table->string('short_description')->nullable();
-            $table->string('long_description')->nullable();
-            $table->string('image')->nullable();
-            $table->string('text_logo')->nullable();
             $table->string('fa_icon_logo')->nullable();
+            $table->json('tech_stack')->nullable();
             $table->timestamps();
         });
     }

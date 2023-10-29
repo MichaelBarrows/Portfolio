@@ -3,7 +3,9 @@
 namespace App\Http\Resources;
 
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Log;
 
 class EmploymentResource extends JsonResource
 {
@@ -33,6 +35,7 @@ class EmploymentResource extends JsonResource
                 'years' => $duration->format('%y'),
                 'months' => $duration->format('%m'),
             ],
+            'tech_stack' => TechStackResource::collection($this->whenNotNull($this->tech_stack, collect())),
         ];
     }
 }

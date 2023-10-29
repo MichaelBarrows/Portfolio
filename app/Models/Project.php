@@ -2,32 +2,36 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
+use App\Enums\TechStack;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\AsEnumCollection;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Project extends Model
 {
     use HasFactory;
 
-    protected $appends = ['tech_stack_list'];
+    protected $guarded = ['id'];
+
+    protected $casts = [
+        'tech_stack' => AsEnumCollection::class.':'.TechStack::class
+    ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('order', function (Builder $builder) {
+            $builder->orderBy('id', 'desc');
+        });
+    }
 
     public function projectLinks(): HasMany
     {
         return $this->hasMany(ProjectLink::class);
-    }
-
-    public function projectImages(): HasMany
-    {
-        return $this->hasMany(ProjectImage::class);
-    }
-
-    public function techStack(): BelongsToMany
-    {
-        return $this->belongsToMany(TechStack::class);
     }
 
     public function projectTexts(): HasMany
@@ -41,12 +45,5 @@ class Project extends Model
             ->projectTexts()
             ->sortBy('order')
             ->get();
-    }
-
-    public function techStackList(): Attribute
-    {
-        return new Attribute(
-            fn () => implode(' ', $this->techStack->pluck('identifier')->toArray()),
-        );
     }
 }

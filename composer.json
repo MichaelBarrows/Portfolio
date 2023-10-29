@@ -6,22 +6,22 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "guzzlehttp/guzzle": "^7.7.0",
-        "laravel/framework": "^10.14.1",
-        "laravel/sanctum": "^3.2.5",
+        "guzzlehttp/guzzle": "^7.8.0",
+        "laravel/framework": "^10.26.2",
+        "laravel/sanctum": "^3.3.1",
         "laravel/slack-notification-channel": "^2.5",
-        "laravel/tinker": "^2.8.1",
+        "laravel/tinker": "^2.8.2",
         "michaelbarrows/portfolio-shared": "^1.0.6",
-        "sentry/sentry-laravel": "^3.6.1"
+        "sentry/sentry-laravel": "^3.8.1"
     },
     "require-dev": {
-        "laravel/sail": "^1.23.0",
-        "mockery/mockery": "^1.6.2",
+        "laravel/sail": "^1.25.0",
+        "mockery/mockery": "^1.6.6",
         "fakerphp/faker": "^1.23.0",
-        "laravel/pint": "^1.10.3",
-        "nunomaduro/collision": "^7.7.0",
-        "phpunit/phpunit": "^10.2.3",
-        "spatie/laravel-ignition": "^2.2.0"
+        "laravel/pint": "^1.13.2",
+        "nunomaduro/collision": "^7.9.0",
+        "phpunit/phpunit": "^10.4.0",
+        "spatie/laravel-ignition": "^2.3.0"
     },
     "repositories": [
         {

@@ -18,13 +18,13 @@ class ProjectResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'pretty_url' => $this->pretty_url,
-            'short_description' => $this->short_description,
-            'long_description' => $this->long_description,
-            'image' => $this->image,
-            'text_logo' => $this->text_logo,
             'fa_icon_logo' => $this->fa_icon_logo,
-            'tech_stack' => $this->whenLoaded('techStack', TechStackResource::collection($this->techStack)),
-            'tech_stack_list' => $this->tech_stack_list,
+            'tech_stack' => TechStackResource::collection($this->whenNotNull($this->tech_stack, collect())),
+            'links' => ProjectLinkResource::collection($this->whenNotNull($this->projectLinks, collect())),
+            'content' => $this->whenLoaded(
+                'projectTexts',
+                $this->projectTexts->sortBy('order')
+            )
         ];
     }
 }
