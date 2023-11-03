@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use MichaelBarrows\Portfolio\Http\Controllers\ContactController;
 use MichaelBarrows\Portfolio\Http\Controllers\EducationController;
 use MichaelBarrows\Portfolio\Http\Controllers\EmploymentController;
+use MichaelBarrows\Portfolio\Http\Controllers\OpenToOpportunitiesController;
 use MichaelBarrows\Portfolio\Http\Controllers\ProjectController;
 
 Route::domain(config('portfolio.portfolio-api-domain', 'api.michaelbarrows.com'))->group(function () {
@@ -13,6 +14,7 @@ Route::domain(config('portfolio.portfolio-api-domain', 'api.michaelbarrows.com')
         Route::get('/employment', [EmploymentController::class, 'index'])->name('employment.all');
         Route::get('/project', [ProjectController::class, 'index'])->name('project.all');
         Route::post('/contact', ContactController::class)->name('contact.save');
+        Route::get('/open-to-opportunities', OpenToOpportunitiesController::class)->name('open-to-opportunities');
     });
 
     // Route::middleware('auth:sanctum')->prefix('/internal')->name('internal.')->group(function () {
