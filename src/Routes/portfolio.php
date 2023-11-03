@@ -8,6 +8,7 @@ use MichaelBarrows\Portfolio\Http\Controllers\ProjectController;
 
 Route::domain(config('portfolio.portfolio-api-domain', 'api.michaelbarrows.com'))->group(function () {
     Route::middleware('web')->group(function () {
+        Route::redirect('/', 'https://michaelbarrows.dev');
         Route::get('/education', EducationController::class)->name('education.all');
         Route::get('/employment', [EmploymentController::class, 'index'])->name('employment.all');
         Route::get('/project', [ProjectController::class, 'index'])->name('project.all');
