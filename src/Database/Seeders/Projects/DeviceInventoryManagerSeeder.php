@@ -2,12 +2,11 @@
 
 namespace MichaelBarrows\Portfolio\Database\Seeders\Projects;
 
-use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use MichaelBarrows\Portfolio\Enums\TechStack;
 use MichaelBarrows\Portfolio\Models\Project;
 
-class DeviceInventoryManagerSeeder extends Seeder
+class DeviceInventoryManagerSeeder
 {
     /**
      * Run the database seeds.

@@ -2,11 +2,10 @@
 
 namespace MichaelBarrows\Portfolio\Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use MichaelBarrows\Portfolio\Enums\TechStack;
 use MichaelBarrows\Portfolio\Models\Employment;
 
-class EmploymentSeeder extends Seeder
+class EmploymentSeeder
 {
     /**
      * Run the database seeds.
