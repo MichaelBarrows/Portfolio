@@ -1,75 +1,27 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
-    "license": "MIT",
-    "require": {
-        "php": "^8.1",
-        "guzzlehttp/guzzle": "^7.8.0",
-        "laravel/framework": "^10.29.0",
-        "laravel/sanctum": "^3.3.1",
-        "laravel/slack-notification-channel": "^2.5",
-        "laravel/tinker": "^2.8.2",
-        "michaelbarrows/portfolio-shared": "^1.0.6",
-        "sentry/sentry-laravel": "^3.8.2"
-    },
-    "require-dev": {
-        "laravel/sail": "^1.26.0",
-        "mockery/mockery": "^1.6.6",
-        "fakerphp/faker": "^1.23.0",
-        "laravel/pint": "^1.13.5",
-        "nunomaduro/collision": "^7.10.0",
-        "phpunit/phpunit": "^10.4.2",
-        "spatie/laravel-ignition": "^2.3.1"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:MichaelBarrows/portfolio-shared.git",
-            "no-api": true
-        }
-    ],
+    "name": "michaelbarrows/portfolio",
+    "description": "Portfolio API package",
+    "type": "library",
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "MichaelBarrows\\Portfolio\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
+    "authors": [
+        {
+            "name": "Michael Barrows",
+            "email": "contact@michaelbarrows.com"
         }
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ]
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.1"
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "providers": [
+                "MichaelBarrows\\Portfolio\\Providers\\PortfolioServiceProvider"
+            ]
         }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "php-http/discovery": false
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
