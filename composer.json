@@ -19,7 +19,9 @@
         "illuminate/http": "^10.30",
         "illuminate/database": "^10.30",
         "illuminate/console": "^10.30",
-        "illuminate/config": "^10.30"
+        "illuminate/config": "^10.30",
+        "illuminate/notifications": "^10.30",
+        "laravel/slack-notification-channel": "^3.1"
     },
     "extra": {
         "laravel": {

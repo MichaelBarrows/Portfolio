@@ -12,4 +12,5 @@ return [
         'unix_socket' => env('PORTFOLIO_DB_SOCKET', ''),
         'MYSQL_ATTR_SSL_CA' => env('MYSQL_ATTR_SSL_CA'),
     ],
+    'slack_webhook_url' => env('SLACK_CONTACT_WEBHOOK_URL'),
 ];
