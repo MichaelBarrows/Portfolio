@@ -18,6 +18,7 @@ enum TechStack: string
     case ML = 'machine-learning';
     case FLASK = 'flask';
     case API = 'api';
+    case KAFKA = 'kafka';
 
     public function getName(): string
     {
