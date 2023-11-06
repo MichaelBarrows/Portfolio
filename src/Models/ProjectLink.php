@@ -13,6 +13,8 @@ class ProjectLink extends Model
         'icon' => 'array',
     ];
 
+    protected $guarded = [];
+
     public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class);
