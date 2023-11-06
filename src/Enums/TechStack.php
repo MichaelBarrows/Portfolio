@@ -19,6 +19,9 @@ enum TechStack: string
     case FLASK = 'flask';
     case API = 'api';
     case KAFKA = 'kafka';
+    case LIVEWIRE = 'livewire';
+    case FILAMENT = 'filament';
+    case NATIVEPHP = 'nativephp';
 
     public function getName(): string
     {
@@ -27,6 +30,7 @@ enum TechStack: string
             self::JAVASCRIPT => 'JavaScript',
             self::JQUERY => 'JQuery',
             self::API => 'API',
+            self::NATIVEPHP => 'NativePHP',
             default => Str::title(Str::replace('-', ' ', $this->value))
         };
     }
