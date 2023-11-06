@@ -16,7 +16,8 @@ class Project extends Model
     protected $guarded = ['id'];
 
     protected $casts = [
-        'tech_stack' => AsEnumCollection::class.':'.TechStack::class
+        'tech_stack' => AsEnumCollection::class.':'.TechStack::class,
+        'visible' => 'bool',
     ];
 
     protected static function boot()
@@ -31,18 +32,5 @@ class Project extends Model
     public function projectLinks(): HasMany
     {
         return $this->hasMany(ProjectLink::class);
-    }
-
-    public function projectTexts(): HasMany
-    {
-        return $this->hasMany(ProjectTexts::class);
-    }
-
-    public function orderedProjectTexts(): Collection
-    {
-        return $this
-            ->projectTexts()
-            ->sortBy('order')
-            ->get();
     }
 }

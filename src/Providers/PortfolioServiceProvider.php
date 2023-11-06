@@ -3,7 +3,6 @@
 namespace MichaelBarrows\Portfolio\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use MichaelBarrows\Portfolio\Console\Commands\SeedPortfolioData;
 use MichaelBarrows\Portfolio\Models\Contact;
 use MichaelBarrows\Portfolio\Observers\ContactObserver;
 use PDO;
@@ -17,10 +16,6 @@ class PortfolioServiceProvider extends ServiceProvider
     public function boot()
     {
         Contact::observe(ContactObserver::class);
-
-        $this->commands([
-            SeedPortfolioData::class,
-        ]);
 
         $this->loadRoutesFrom(__DIR__.'/../Routes/portfolio.php');
         $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
