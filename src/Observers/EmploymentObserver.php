@@ -12,7 +12,7 @@ class EmploymentObserver
     public function saving(Employment $employment): void
     {
         $properties = $employment->properties;
-        if ($properties['url']) {
+        if (!empty($properties['url'])) {
             $properties['encoded_image'] = $this->encode($properties['url']);
             $employment->properties = $properties;
         }
