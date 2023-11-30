@@ -4,7 +4,11 @@ namespace MichaelBarrows\Portfolio\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use MichaelBarrows\Portfolio\Models\Contact;
+use MichaelBarrows\Portfolio\Models\Education;
+use MichaelBarrows\Portfolio\Models\Employment;
 use MichaelBarrows\Portfolio\Observers\ContactObserver;
+use MichaelBarrows\Portfolio\Observers\EducationObserver;
+use MichaelBarrows\Portfolio\Observers\EmploymentObserver;
 use PDO;
 
 class PortfolioServiceProvider extends ServiceProvider
@@ -16,6 +20,8 @@ class PortfolioServiceProvider extends ServiceProvider
     public function boot()
     {
         Contact::observe(ContactObserver::class);
+        Education::observe(EducationObserver::class);
+        Employment::observe(EmploymentObserver::class);
 
         $this->loadRoutesFrom(__DIR__.'/../Routes/portfolio.php');
         $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');

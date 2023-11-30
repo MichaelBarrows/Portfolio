@@ -20,7 +20,7 @@ class EmploymentResource extends JsonResource
         $duration = Carbon::parse($this->start_date)
             ->firstOfMonth()
             ->diff(
-                Carbon::parse($this->end_date != 'Present' ? $this->end_date : now())
+                Carbon::parse($this->end_date != 'Present' ? $this->end_date : Carbon::now())
                     ->endOfMonth()
             );
 
@@ -36,6 +36,9 @@ class EmploymentResource extends JsonResource
                 'months' => $duration->format('%m'),
             ],
             'tech_stack' => TechStackResource::collection($this->whenNotNull($this->tech_stack, collect())),
+            'properties' => [
+                'image' => !empty($this->properties['prefix']) && !empty($this->properties['encoded_image']) ? $this->properties['prefix'] . $this->properties['encoded_image'] : '',
+            ]
         ];
     }
 }

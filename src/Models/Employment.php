@@ -14,7 +14,8 @@ class Employment extends Model
     protected $guarded = ['id'];
 
     protected $casts = [
-        'tech_stack' => AsEnumCollection::class.':'.TechStack::class
+        'tech_stack' => AsEnumCollection::class.':'.TechStack::class,
+        'properties' => 'array',
     ];
 
     protected static function boot()

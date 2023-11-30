@@ -24,6 +24,9 @@ class EducationResource extends JsonResource
             'project_title' => $this->project_title,
             'description' => $this->description,
             'tech_stack' => TechStackResource::collection($this->whenNotNull($this->tech_stack, collect())),
+            'properties' => [
+                'image' => !empty($this->properties['prefix']) && !empty($this->properties['encoded_image']) ? $this->properties['prefix'] . $this->properties['encoded_image'] : '',
+            ]
         ];
     }
 }
