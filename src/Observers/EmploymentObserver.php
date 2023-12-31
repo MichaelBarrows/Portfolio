@@ -11,8 +11,8 @@ class EmploymentObserver
 
     public function saving(Employment $employment): void
     {
-        $properties = $employment->properties;
-        if (!empty($properties['url'])) {
+        if ($employment->isDirty('properties') && ! empty($employment->properties['encoded_image'])) {
+            $properties = $employment->properties;
             $properties['encoded_image'] = $this->encode($properties['url']);
             $employment->properties = $properties;
         }

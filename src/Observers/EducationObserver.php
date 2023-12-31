@@ -11,8 +11,8 @@ class EducationObserver
 
     public function saving(Education $education): void
     {
-        $properties = $education->properties;
-        if (!empty($properties['url'])) {
+        if ($education->isDirty('properties') && ! empty($education->properties['encoded_image'])) {
+            $properties = $education->properties;
             $properties['encoded_image'] = $this->encode($properties['url']);
             $education->properties = $properties;
         }
