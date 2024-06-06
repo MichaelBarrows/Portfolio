@@ -3,6 +3,7 @@
 return [
     'portfolio-api-domain' => env('PORTFOLIO_API_DOMAIN'),
     'database' => [
+        'driver' => env('PORTFOLIO_DATABASE_DRIVER', 'mysql'),
         'url' => env('PORTFOLIO_DATABASE_URL'),
         'host' => env('PORTFOLIO_DB_HOST', '127.0.0.1'),
         'port' => env('PORTFOLIO_DB_PORT', '3306'),
