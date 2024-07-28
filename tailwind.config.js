@@ -1,9 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 export default {
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./resources/views/livewire/*.blade.php",
+    "./resources/views/filament/*/*.blade.php",
+    './storage/framework/views/*.php',
+    './vendor/wire-elements/modal/resources/views/*.blade.php',
+    './app/Livewire/**/*.php',
+    './app/Filament/**/*.php',
+    './resources/views/**/*.blade.php',
+    './vendor/filament/**/*.blade.php',
   ],
   theme: {
     extend: {
@@ -22,7 +33,10 @@ export default {
                 '950': '#07354a',
             },
             'off-white': '#f9fafb'
-        }
+        },
+        fontFamily: {
+            sans: ["Raleway", ...defaultTheme.fontFamily.sans]
+        },
     },
   },
   plugins: [],

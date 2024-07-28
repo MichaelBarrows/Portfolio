@@ -1,0 +1,33 @@
+on:
+  pull_request:
+    branches:
+      - livewire
+  push:
+    branches:
+      - livewire
+  workflow_dispatch:
+    branches:
+      - livewire
+name: Pest
+
+jobs:
+  pest:
+    name: Pest
+    runs-on: ubuntu-latest
+    container:
+      image: kirschbaumdevelopment/laravel-test-runner:8.1
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+
+    - name: Install dependencies
+      run: composer install --no-scripts
+
+    - name: Prepare Laravel Application
+      run: |
+        cp .env.ci .env
+        php artisan key:generate
+
+    - name: Run Testsuite
+      run: vendor/bin/pest tests/

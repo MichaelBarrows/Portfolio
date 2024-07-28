@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient {
+    @apply bg-pacific-blue-600;
+}
+.modal .content h2:not(.modal-title) {
+    @apply text-2xl text-pacific-blue-600;
+}
+.modal .content p, ul {
+    @apply my-2;
+}
+.modal ul {
+    @apply list-disc list-outside marker:text-pacific-blue-600 ml-4;
+}
+.modal p > a, .modal li > a {
+    @apply text-pacific-blue-600;
+}
+.tag {
+    @apply border border-pacific-blue-600 font-semibold text-pacific-blue-600 rounded-md p-1 mr-1 mb-2 inline-block text-xs;
+}

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\OAuth\SpotifyController;
+use Filament\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::middleware([Authenticate::class])->group(function () {
+    Route::get('/oauth/spotify/redirect', [SpotifyController::class, 'redirect']);
+    Route::get('/oauth/spotify/callback', [SpotifyController::class, 'callback']);
 });

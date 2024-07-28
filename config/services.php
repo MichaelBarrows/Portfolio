@@ -30,4 +30,13 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
+    'spotify' => [
+        'client_id' => env('SPOTIFY_CLIENT_ID'),
+        'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
+        'redirect' => env('APP_URL').'/oauth/spotify/callback',
+        'min_refresh_after' => env('SPOTIFY_MIN_REFRESH_AFTER', 15000),
+        'idle_refresh_after' => env('SPOTIFY_IDLE_REFRESH_AFTER', 60000),
+        'token_url' => 'https://accounts.spotify.com/api/token',
+    ],
 ];
