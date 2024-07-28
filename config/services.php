@@ -39,4 +39,12 @@ return [
         'idle_refresh_after' => env('SPOTIFY_IDLE_REFRESH_AFTER', 60000),
         'token_url' => 'https://accounts.spotify.com/api/token',
     ],
+
+    'laravelpassport' => [
+        'enabled' => env('ENABLE_KNOX_LOGIN', false),
+        'client_id' => env('KNOX_CLIENT_ID'),
+        'client_secret' => env('KNOX_CLIENT_SECRET'),
+        'redirect' => env('KNOX_REDIRECT_URI'),
+        'host' => env('KNOX_HOST'),
+    ],
 ];

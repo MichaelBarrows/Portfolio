@@ -20,6 +20,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
             \SocialiteProviders\Spotify\SpotifyExtendSocialite::class.'@handle',
+            \SocialiteProviders\LaravelPassport\LaravelPassportExtendSocialite::class.'@handle',
         ],
     ];
 
