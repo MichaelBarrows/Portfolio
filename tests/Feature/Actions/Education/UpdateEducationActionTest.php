@@ -3,6 +3,7 @@
 use App\Actions\Education\UpdateEducationAction;
 use App\Events\Education\EducationUpdated;
 use App\Models\Education;
+use App\Repositories\EducationRepository;
 use Illuminate\Support\Facades\Event;
 
 beforeEach(function () {
@@ -15,12 +16,14 @@ beforeEach(function () {
         'start_date' => 'June 2023',
         'end_date' => 'June 2024',
     ];
+
+    $this->action = (new UpdateEducationAction(new EducationRepository));
 });
 
 it('updates the model', function () {
     $model = Education::factory()->create();
 
-    $result = (new UpdateEducationAction)->execute(
+    $result = $this->action->execute(
         education: $model,
         args: $this->data,
     );
@@ -36,7 +39,7 @@ it('updates the model', function () {
 it('dispatches the event', function () {
     $model = Education::factory()->create();
 
-    (new UpdateEducationAction)->execute(
+    $this->action->execute(
         education: $model,
         args: $this->data);
 
@@ -44,6 +47,7 @@ it('dispatches the event', function () {
         $expectedBroadcastingData = [
             'type' => 'education',
             'id' => $model->getKey(),
+            ...$this->data,
         ];
         $expectedChannels = [
             "education.{$model->getKey()}",

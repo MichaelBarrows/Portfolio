@@ -2,17 +2,22 @@
 
 namespace App\Actions\Employment;
 
+use App\Events\Employment\EmploymentCreated;
 use App\Models\Employment;
+use App\Repositories\EmploymentRepository;
 
 class CreateEmploymentAction
 {
+    public function __construct(
+        public EmploymentRepository $employmentRepository,
+    ) {
+    }
+
     public function execute(array $args): Employment
     {
-        $employment = new Employment;
+        $employment = $this->employmentRepository->createEmployment($args);
 
-        $employment->fill($args);
-
-        $employment->save();
+        EmploymentCreated::dispatch($employment->getKey(), $args);
 
         return $employment;
     }

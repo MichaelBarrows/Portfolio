@@ -2,17 +2,22 @@
 
 namespace App\Actions\Education;
 
+use App\Events\Education\EducationCreated;
 use App\Models\Education;
+use App\Repositories\EducationRepository;
 
 class CreateEducationAction
 {
+    public function __construct(
+        public EducationRepository $educationRepository,
+    ) {
+    }
+
     public function execute(array $args): Education
     {
-        $education = new Education;
+        $education = $this->educationRepository->createEducation($args);
 
-        $education->fill($args);
-
-        $education->save();
+        EducationCreated::dispatch($education->getKey(), $args);
 
         return $education;
     }

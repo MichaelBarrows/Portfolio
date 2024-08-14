@@ -7,10 +7,12 @@ use App\Interfaces\HasExperienceAttributes;
 use Illuminate\Database\Eloquent\Casts\AsEnumCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Education extends Model implements HasExperienceAttributes
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'education';
 

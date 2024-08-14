@@ -4,16 +4,23 @@ namespace App\Actions\Education;
 
 use App\Events\Education\EducationUpdated;
 use App\Models\Education;
+use App\Repositories\EducationRepository;
 
 class UpdateEducationAction
 {
+    public function __construct(
+        public EducationRepository $educationRepository,
+    ) {
+    }
+
     public function execute(Education $education, array $args): Education
     {
-        $education->fill($args);
+        [$education, $changes] = $this->educationRepository->updateEducation(
+            model: $education,
+            args: $args,
+        );
 
-        $education->save();
-
-        EducationUpdated::dispatch($education);
+        EducationUpdated::dispatch($education->getKey(), $changes);
 
         return $education;
     }

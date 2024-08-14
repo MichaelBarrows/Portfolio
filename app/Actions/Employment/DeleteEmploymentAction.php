@@ -2,12 +2,23 @@
 
 namespace App\Actions\Employment;
 
+use App\Events\Employment\EmploymentDeleted;
 use App\Models\Employment;
+use App\Repositories\EmploymentRepository;
 
 class DeleteEmploymentAction
 {
+    public function __construct(
+        public EmploymentRepository $employmentRepository
+    ) {
+    }
+
     public function execute(Employment $employment): bool
     {
-        return $employment->delete();
+        EmploymentDeleted::dispatch($employment->getKey());
+
+        $result = $this->employmentRepository->deleteEmployment($employment);
+
+        return $result;
     }
 }

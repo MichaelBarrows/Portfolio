@@ -2,13 +2,14 @@
 
 namespace App\Events\Employment;
 
+use App\Models\Employment;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class EmploymentUpdated implements ShouldBroadcastNow
+class EmploymentCreated implements ShouldBroadcastNow
 {
     use Dispatchable;
     use InteractsWithSockets;
@@ -40,5 +41,4 @@ class EmploymentUpdated implements ShouldBroadcastNow
             ...$this->dirtyData,
         ];
     }
-
 }

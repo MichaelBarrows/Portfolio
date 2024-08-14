@@ -2,7 +2,6 @@
 
 namespace App\Events\Education;
 
-use App\Models\Education;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
@@ -16,23 +15,29 @@ class EducationUpdated implements ShouldBroadcastNow
     use SerializesModels;
 
     public function __construct(
-        public Education $education,
+        public int $educationId,
+        public array $dirtyData,
     ) {
     }
 
     public function broadcastOn(): array
     {
         return [
-            new Channel('education.'.$this->education->getKey()),
+            new Channel('education.'.$this->educationId),
             new Channel('education'),
         ];
     }
 
     public function broadcastWith(): array
     {
+        if (! empty($this->dirtyData['description'])) {
+            $this->dirtyData['description'] = null;
+        }
+
         return [
             'type' => 'education',
-            'id' => $this->education->getKey(),
+            'id' => $this->educationId,
+            ...$this->dirtyData,
         ];
     }
 }

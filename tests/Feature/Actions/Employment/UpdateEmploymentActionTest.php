@@ -3,6 +3,7 @@
 use App\Actions\Employment\UpdateEmploymentAction;
 use App\Events\Employment\EmploymentUpdated;
 use App\Models\Employment;
+use App\Repositories\EmploymentRepository;
 use Illuminate\Support\Facades\Event;
 
 beforeEach(function () {
@@ -14,12 +15,14 @@ beforeEach(function () {
         'start_date' => $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y'),
         'end_date' => $this->faker->randomElement(['Present', $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y')]),
     ];
+
+    $this->action = new UpdateEmploymentAction(new EmploymentRepository);
 });
 
 it('updates the model', function () {
     $model = Employment::factory()->create();
 
-    $result = (new UpdateEmploymentAction)->execute(
+    $result = $this->action->execute(
         employment: $model,
         args: $this->data,
     );
@@ -34,7 +37,7 @@ it('updates the model', function () {
 it('dispatches the event', function () {
     $model = Employment::factory()->create();
 
-    (new UpdateEmploymentAction)->execute(
+    $this->action->execute(
         employment: $model,
         args: $this->data);
 
@@ -42,6 +45,7 @@ it('dispatches the event', function () {
         $expectedBroadcastingData = [
             'type' => 'employment',
             'id' => $model->getKey(),
+            ...$this->data,
         ];
         $expectedChannels = [
             "employment.{$model->getKey()}",
