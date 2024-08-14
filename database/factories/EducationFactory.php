@@ -16,7 +16,7 @@ class EducationFactory extends Factory
             'institution_name' => $this->faker->name(),
             'grade' => $this->faker->word(),
             'start_date' => $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y'),
-            'end_date' => $this->faker->randomElement(['Present', $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y')]),
+            'end_date' => $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y'),
         ];
     }
 }

@@ -15,7 +15,7 @@ class EmploymentFactory extends Factory
             'title' => $this->faker->name(),
             'company' => $this->faker->name(),
             'start_date' => $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y'),
-            'end_date' => $this->faker->randomElement(['Present', $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y')]),
+            'end_date' => $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y'),
         ];
     }
 }
