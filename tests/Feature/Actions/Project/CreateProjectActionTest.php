@@ -2,18 +2,26 @@
 
 use App\Actions\Project\CreateProjectAction;
 use App\Models\Project;
+use App\Repositories\ProjectRepository;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
 
 beforeEach(function () {
+    Event::fake();
+
     $this->data = [
         'name' => $this->faker->name(),
         'pretty_url' => Str::slug($this->faker->words(3, true)),
         'visible' => true,
     ];
+
+    $this->action = new CreateProjectAction(
+        new ProjectRepository
+    );
 });
 
 it('returns the created model', function () {
-    $result = (new CreateProjectAction)->execute($this->data);
+    $result = $this->action->execute($this->data);
 
     expect($result)->toBeInstanceOf(Project::class);
     expect($result)
@@ -23,7 +31,7 @@ it('returns the created model', function () {
 });
 
 it('stores the data', function () {
-    (new CreateProjectAction)->execute($this->data);
+    $this->action->execute($this->data);
 
     $this->assertDatabaseHas(
         table: Project::class,

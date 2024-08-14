@@ -15,9 +15,9 @@ class DeleteEmploymentAction
 
     public function execute(Employment $employment): bool
     {
-        EmploymentDeleted::dispatch($employment->getKey());
-
         $result = $this->employmentRepository->deleteEmployment($employment);
+
+        EmploymentDeleted::dispatch($employment->getKey());
 
         return $result;
     }

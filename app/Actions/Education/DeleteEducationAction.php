@@ -15,9 +15,9 @@ class DeleteEducationAction
 
     public function execute(Education $education): bool
     {
-        EducationDeleted::dispatch($education->getKey());
-
         $result = $this->educationRepository->deleteEducation($education);
+
+        EducationDeleted::dispatch($education->getKey());
 
         return $result;
     }

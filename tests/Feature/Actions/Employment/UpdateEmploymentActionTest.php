@@ -16,7 +16,9 @@ beforeEach(function () {
         'end_date' => $this->faker->randomElement(['Present', $this->faker->dateTimeBetween('-10 years', '-2 years')->format('F Y')]),
     ];
 
-    $this->action = new UpdateEmploymentAction(new EmploymentRepository);
+    $this->action = new UpdateEmploymentAction(
+        new EmploymentRepository
+    );
 });
 
 it('updates the model', function () {

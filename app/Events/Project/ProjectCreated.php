@@ -9,7 +9,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ProjectUpdated implements ShouldBroadcastNow
+class ProjectCreated implements ShouldBroadcastNow
 {
     use Dispatchable;
     use InteractsWithSockets;
@@ -32,7 +32,7 @@ class ProjectUpdated implements ShouldBroadcastNow
 
     public function broadcastWith(): array
     {
-        if (! empty($this->data['description'])) {
+        if (! empty($this->dirtyData['description'])) {
             $this->data['description'] = null;
         }
 

@@ -16,7 +16,7 @@ class EmploymentUpdated implements ShouldBroadcastNow
 
     public function __construct(
         public int $employmentId,
-        public array $dirtyData,
+        public array $data,
     ) {
     }
 
@@ -30,15 +30,14 @@ class EmploymentUpdated implements ShouldBroadcastNow
 
     public function broadcastWith(): array
     {
-        if (! empty($this->dirtyData['description'])) {
-            $this->dirtyData['description'] = null;
+        if (! empty($this->data['description'])) {
+            $this->data['description'] = null;
         }
 
         return [
             'type' => 'employment',
             'id' => $this->employmentId,
-            ...$this->dirtyData,
+            ...$this->data,
         ];
     }
-
 }

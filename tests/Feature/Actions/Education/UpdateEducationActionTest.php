@@ -17,7 +17,9 @@ beforeEach(function () {
         'end_date' => 'June 2024',
     ];
 
-    $this->action = (new UpdateEducationAction(new EducationRepository));
+    $this->action = new UpdateEducationAction(
+        new EducationRepository
+    );
 });
 
 it('updates the model', function () {
