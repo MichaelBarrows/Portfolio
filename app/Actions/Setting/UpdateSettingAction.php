@@ -4,25 +4,24 @@ namespace App\Actions\Setting;
 
 use App\Events\Settings\SettingUpdated;
 use App\Models\Setting;
-use Illuminate\Support\Facades\Crypt;
+use App\Repositories\SettingRepository;
 
 class UpdateSettingAction
 {
+    public function __construct(
+        private SettingRepository $settingRepository,
+    ) {
+    }
+
     public function execute(Setting $setting, array $args): Setting
     {
+        $result = $this->settingRepository->updateSetting(
+            model: $setting,
+            args: $args,
+        );
 
-        if ($args['type'] == 'encrypted') {
-            $args['value'] = Crypt::encrypt($args['value']);
-        } else if ($args['type'] == 'bool') {
-            $args['value'] = $args['value'] ? 'true' : 'false';
-        }
-
-        $setting->fill($args);
-
-        $setting->save();
-
-        if ($setting->type != 'encrypted') {
-            SettingUpdated::dispatch($setting);
+        if (in_array($setting->key, config('broadcasting.settings-to-broadcast'))) {
+            SettingUpdated::dispatch($setting->key, $setting->value);
         }
 
         return $setting;

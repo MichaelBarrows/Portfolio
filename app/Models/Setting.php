@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Crypt;
@@ -22,14 +23,23 @@ class Setting extends Model
         'type',
     ];
 
-    public function getValueAttribute()
+    protected function value(): Attribute
     {
-        return match ($this->type) {
-            'int' => (int) $this->attributes['value'],
-            'bool' => $this->attributes['value'] == 'true',
-            'string' => (string) $this->attributes['value'],
-            'encrypted' => Crypt::decrypt($this->attributes['value']),
-            default => $this->attributes['value'],
-        };
+        return Attribute::make(
+            get: fn (string $value) => match ($this->type) {
+                'int' => (int) $value,
+                'bool' => $value == 'true',
+                'string' => (string) $value,
+                'encrypted' => Crypt::decrypt($value),
+                'array', 'tags' => json_decode($value, true),
+                default => $value,
+            },
+            set: fn (mixed $value) => match ($this->type) {
+                'int', 'string', 'bool' => $value,
+                'encrypted' => Crypt::encrypt($value),
+                'array', 'tags' => json_encode($value),
+                default => $value,
+            },
+        );
     }
 }

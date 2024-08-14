@@ -16,7 +16,8 @@ class SettingUpdated implements ShouldBroadcastNow
     use SerializesModels;
 
     public function __construct(
-        public Setting $setting,
+        public string $key,
+        public mixed $value,
     ) {
     }
 
@@ -30,8 +31,8 @@ class SettingUpdated implements ShouldBroadcastNow
     public function broadcastWith(): array
     {
         return [
-            'key' => $this->setting['key'],
-            'value' => $this->setting['value'],
+            'key' => $this->key,
+            'value' => $this->value,
         ];
     }
 }

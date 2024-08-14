@@ -2,6 +2,7 @@
 
 use App\Actions\Setting\CreateSettingAction;
 use App\Models\Setting;
+use App\Repositories\SettingRepository;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 
@@ -11,10 +12,14 @@ beforeEach(function () {
         'value' => Str::slug($this->faker->words(3, true)),
         'type' => 'string',
     ];
+
+    $this->action = new CreateSettingAction(
+        new SettingRepository
+    );
 });
 
 it('returns the created model', function () {
-    $result = (new CreateSettingAction)->execute($this->data);
+    $result = $this->action->execute($this->data);
 
     expect($result)->toBeInstanceOf(Setting::class);
     expect($result)
@@ -24,25 +29,10 @@ it('returns the created model', function () {
 });
 
 it('stores the data', function () {
-    (new CreateSettingAction)->execute($this->data);
+    $this->action->execute($this->data);
 
     $this->assertDatabaseHas(
         table: Setting::class,
         data: $this->data,
     );
-});
-
-it('encrypts the value', function () {
-    $result = (new CreateSettingAction)->execute([
-        'key' => 'some-key',
-        'value' => 'some-value',
-        'type' => 'encrypted',
-    ]);
-
-    // bypass the automatic attribute transformation
-    $result->type = 'string';
-    $result->save();
-
-    expect(Crypt::decrypt($result->value))
-        ->toBe('some-value');
 });

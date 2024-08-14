@@ -3,9 +3,17 @@
 use App\Actions\Setting\UpdateSettingAction;
 use App\Events\Settings\SettingUpdated;
 use App\Models\Setting;
+use App\Repositories\SettingRepository;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Event;
 
-beforeEach(fn () => Event::fake());
+beforeEach(function () {
+    Event::fake();
+
+    $this->action = new UpdateSettingAction(
+        new SettingRepository,
+    );
+});
 
 it('updates the model', function () {
     $model = Setting::factory()->create([
@@ -13,7 +21,7 @@ it('updates the model', function () {
         'value' => false,
     ]);
 
-    $result = (new UpdateSettingAction)->execute(
+    $result = $this->action->execute(
         setting: $model,
         args: [
             'type' => 'string',
@@ -31,7 +39,9 @@ it('dispatches the event', function () {
         'value' => false,
     ]);
 
-    (new UpdateSettingAction)->execute(
+    Config::set('broadcasting.settings-to-broadcast', [$setting->key]);
+
+    $this->action->execute(
         setting: $setting,
         args: [
             'type' => 'bool',

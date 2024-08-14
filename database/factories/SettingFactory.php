@@ -14,7 +14,7 @@ class SettingFactory extends Factory
     {
         return [
             'key' => Str::random(),
-            'value' => '',
+            'value' => Str::random(),
             'type' => 'string',
         ];
     }
