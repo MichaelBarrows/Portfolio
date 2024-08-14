@@ -39,7 +39,8 @@ it('dispatches the event', function () {
 
     $this->action->execute(
         employment: $model,
-        args: $this->data);
+        args: $this->data,
+    );
 
     Event::assertDispatched(function (EmploymentUpdated $event) use ($model) {
         $expectedBroadcastingData = [

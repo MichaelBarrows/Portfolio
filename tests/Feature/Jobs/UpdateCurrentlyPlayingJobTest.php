@@ -14,6 +14,13 @@ it ('does nothing if the track is current', function () {
     Broadcast::partialMock()
         ->shouldNotReceive('getPusher->getChannelInfo');
 
+    $this->instance(
+        SpotifyService::class,
+        Mockery::mock(SpotifyService::class, function (MockInterface $mock) {
+            $mock->shouldNotReceive('getCurrentlyPlaying');
+        })
+    );
+
     UpdateCurrentlyPlayingJob::dispatchSync();
 });
 
