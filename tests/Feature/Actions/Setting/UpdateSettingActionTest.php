@@ -33,7 +33,7 @@ it('updates the model', function () {
         ->value->toBe($value);
 });
 
-it('dispatches the event', function () {
+it('dispatches the event when the key is in the config', function () {
     $setting = Setting::factory()->create([
         'type' => 'bool',
         'value' => false,
@@ -49,4 +49,22 @@ it('dispatches the event', function () {
         ]);
 
     Event::assertDispatched(SettingUpdated::class);
+});
+
+it('does not dispatch the event when the key is not in the config', function () {
+    $setting = Setting::factory()->create([
+        'type' => 'bool',
+        'value' => false,
+    ]);
+
+    Config::set('broadcasting.settings-to-broadcast', []);
+
+    $this->action->execute(
+        setting: $setting,
+        args: [
+            'type' => 'bool',
+            'value' => true,
+        ]);
+
+    Event::assertNotDispatched(SettingUpdated::class);
 });

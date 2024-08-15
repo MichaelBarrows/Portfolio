@@ -21,9 +21,9 @@ class UpdateSettingAction
         );
 
         if (in_array($setting->key, config('broadcasting.settings-to-broadcast'))) {
-            SettingUpdated::dispatch($setting->key, $setting->value);
+            SettingUpdated::dispatch($result->key, $result->value);
         }
 
-        return $setting;
+        return $result;
     }
 }
