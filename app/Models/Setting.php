@@ -35,7 +35,8 @@ class Setting extends Model
                 default => $value,
             },
             set: fn (mixed $value) => match ($this->type) {
-                'int', 'string', 'bool' => $value,
+                'int', 'string' => $value,
+                'bool' => $value ? 'true' : 'false',
                 'encrypted' => Crypt::encrypt($value),
                 'array', 'tags' => json_encode($value),
                 default => $value,
