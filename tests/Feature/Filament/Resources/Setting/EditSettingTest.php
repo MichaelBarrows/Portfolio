@@ -5,7 +5,6 @@ use App\Models\Setting;
 use function Pest\Livewire\livewire;
 use Illuminate\Support\Facades\Event;
 
-
 beforeEach(function () {
     Event::fake();
 
