@@ -85,4 +85,5 @@ return [
 
     'livewire_loading_delay' => 'default',
 
+    'auth_user_domain' => env('FILAMENT_AUTH_USER_DOMAIN'),
 ];

@@ -2,7 +2,6 @@
 
 namespace App\Events\Project;
 
-use App\Models\Project;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
@@ -32,7 +31,7 @@ class ProjectCreated implements ShouldBroadcastNow
 
     public function broadcastWith(): array
     {
-        if (! empty($this->dirtyData['description'])) {
+        if (! empty($this->data['description'])) {
             $this->data['description'] = null;
         }
 
