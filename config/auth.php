@@ -112,4 +112,5 @@ return [
 
     'password_timeout' => 10800,
 
+    'enable_password_login' => env('ENABLE_PASSWORD_LOGIN', false),
 ];
