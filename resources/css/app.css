@@ -20,3 +20,9 @@
 .tag {
     @apply border border-pacific-blue-600 font-semibold text-pacific-blue-600 rounded-md p-1 mr-1 mb-2 inline-block text-xs;
 }
+label span {
+    @apply text-pacific-blue-600;
+}
+input {
+    @apply text-pacific-blue-600;
+}

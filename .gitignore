@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 portfolio.sqlite
 */.DS_Store
+packages/*
