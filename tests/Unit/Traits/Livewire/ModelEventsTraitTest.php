@@ -23,7 +23,7 @@ beforeEach(function () {
     };
 });
 
-it('modelCreated calls the getData method', function () {
+test('modelCreated calls the getData method', function () {
     $this->class->getData();
     expect($this->class->data)->isEmpty()->toBeTrue();
     Education::factory(2)->create();
@@ -33,7 +33,7 @@ it('modelCreated calls the getData method', function () {
     expect($this->class->data)->count()->toBe(2);
 });
 
-it('modelUpdated applies the updates to the models', function () {
+test('modelUpdated applies the updates to the models', function () {
     $education = Education::factory()->create();
     $this->class->getData();
     expect($this->class->data)->count()->toBe(1);
@@ -43,7 +43,7 @@ it('modelUpdated applies the updates to the models', function () {
     expect($this->class->data->first())->course_name->toBe('test 2');
 });
 
-it('modelUpdated reloads the whole model when the description key is provided', function () {
+test('modelUpdated reloads the whole model when the description key is provided', function () {
     $education = Education::factory()->create();
     $this->class->getData();
     expect($this->class->data)->count()->toBe(1);
@@ -56,7 +56,20 @@ it('modelUpdated reloads the whole model when the description key is provided', 
     expect($this->class->data->first())->course_name->toBe('test course');
 });
 
-it('modelDeleted removes the model from the dataset', function () {
+test('modelUpdated reloads the whole model when the filtered key is provided', function () {
+    $education = Education::factory()->create();
+    $this->class->getData();
+    expect($this->class->data)->count()->toBe(1);
+    $education->update([
+        'course_name' => 'test course',
+    ]);
+
+    $this->class->modelUpdated($education['id'], ['filtered' => true]);
+
+    expect($this->class->data->first())->course_name->toBe('test course');
+});
+
+test('modelDeleted removes the model from the dataset', function () {
     $education = Education::factory()->create();
     $this->class->getData();
     expect($this->class->data)->count()->toBe(1);

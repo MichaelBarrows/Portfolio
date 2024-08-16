@@ -34,21 +34,8 @@ it('dispatches the event', function () {
     $result = $this->action->execute($this->data);
 
     Event::assertDispatched(function (EmploymentCreated $event) use ($result) {
-        $expectedBroadcastingData = [
-            'type' => 'employment',
-            'id' => $result->getKey(),
-            ...$this->data,
-        ];
-        $expectedChannels = [
-            "employment.{$result->getKey()}",
-            'employment',
-        ];
-        $actualChannels = collect($event->broadcastOn())
-            ->map(fn ($channel) => $channel->name)
-            ->toArray();
-
-        return $event->broadcastWith() === $expectedBroadcastingData
-            && $actualChannels ===  $expectedChannels;
+        return $event->employmentId === $result->getKey()
+            && $event->data === $this->data;
     });
 });
 

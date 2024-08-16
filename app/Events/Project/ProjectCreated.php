@@ -2,6 +2,7 @@
 
 namespace App\Events\Project;
 
+use App\Traits\Event\GeneratesModelEventPayload;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
@@ -11,6 +12,7 @@ use Illuminate\Queue\SerializesModels;
 class ProjectCreated implements ShouldBroadcastNow
 {
     use Dispatchable;
+    use GeneratesModelEventPayload;
     use InteractsWithSockets;
     use SerializesModels;
 
@@ -31,13 +33,12 @@ class ProjectCreated implements ShouldBroadcastNow
 
     public function broadcastWith(): array
     {
-        if (! empty($this->data['description'])) {
-            $this->data['description'] = null;
-        }
-
-        return [
-            'id' => $this->projectId,
-            ...$this->data,
-        ];
+        return $this->getPayload(
+            id: $this->projectId,
+            data: $this->data,
+            filterableKeys: [
+                'description',
+            ],
+        );
     }
 }

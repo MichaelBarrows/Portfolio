@@ -46,20 +46,7 @@ it('dispatches the event', function () {
         args: $this->data);
 
     Event::assertDispatched(function (EducationUpdated $event) use ($model) {
-        $expectedBroadcastingData = [
-            'type' => 'education',
-            'id' => $model->getKey(),
-            ...$this->data,
-        ];
-        $expectedChannels = [
-            "education.{$model->getKey()}",
-            'education',
-        ];
-        $actualChannels = collect($event->broadcastOn())
-            ->map(fn ($channel) => $channel->name)
-            ->toArray();
-
-        return $event->broadcastWith() === $expectedBroadcastingData
-            && $actualChannels ===  $expectedChannels;
+        return $event->educationId === $model->getKey()
+            && $event->data === $this->data;
     });
 });

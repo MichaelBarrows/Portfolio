@@ -14,6 +14,10 @@ trait ModelEventsTrait
     public function modelUpdated(string $key, array $event)
     {
         if ($this->data->has($key)) {
+            if (array_key_exists('filtered', $event)) {
+                return $this->data[$key]->refresh();
+            }
+
             foreach ($this->refreshModelFields as $field) {
                 if (array_key_exists($field, $event)) {
                     return $this->data[$key]->refresh();

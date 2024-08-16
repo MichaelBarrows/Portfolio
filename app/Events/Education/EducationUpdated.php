@@ -2,6 +2,7 @@
 
 namespace App\Events\Education;
 
+use App\Traits\Event\GeneratesModelEventPayload;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
@@ -11,6 +12,7 @@ use Illuminate\Queue\SerializesModels;
 class EducationUpdated implements ShouldBroadcastNow
 {
     use Dispatchable;
+    use GeneratesModelEventPayload;
     use InteractsWithSockets;
     use SerializesModels;
 
@@ -30,14 +32,14 @@ class EducationUpdated implements ShouldBroadcastNow
 
     public function broadcastWith(): array
     {
-        if (! empty($this->data['description'])) {
-            $this->data['description'] = null;
-        }
-
-        return [
-            'type' => 'education',
-            'id' => $this->educationId,
-            ...$this->data,
-        ];
+        return $this->getPayload(
+            id: $this->educationId,
+            data: $this->data,
+            filterableKeys: [
+                'properties',
+                'description',
+            ],
+            type: 'education',
+        );
     }
 }

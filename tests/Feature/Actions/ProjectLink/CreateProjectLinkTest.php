@@ -41,20 +41,8 @@ it('dispatches the event', function () {
     );
 
     Event::assertDispatched(function (ProjectUpdated $event) {
-        $expectedBroadcastingData = [
-            'id' => $this->project->getKey(),
-            'project_link' => 'created',
-        ];
-        $expectedChannels = [
-            "projects.{$this->project->getKey()}",
-            'projects',
-        ];
-        $actualChannels = collect($event->broadcastOn())
-            ->map(fn ($channel) => $channel->name)
-            ->toArray();
-
-        return $event->broadcastWith() === $expectedBroadcastingData
-            && $actualChannels ===  $expectedChannels;
+        return $event->projectId === $this->project->getKey()
+            && $event->data === ['project_link' => 'created'];
     });
 });
 

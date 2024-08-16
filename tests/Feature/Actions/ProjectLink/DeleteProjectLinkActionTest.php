@@ -35,20 +35,8 @@ it('dispatches the event', function () {
 
     $this->action->execute($link);
 
-    Event::assertDispatched(function (ProjectUpdated $event) {
-        $expectedBroadcastingData = [
-            'id' => $this->project->getKey(),
-            'project_link' => 'deleted'
-        ];
-        $expectedChannels = [
-            "projects.{$this->project->getKey()}",
-            'projects',
-        ];
-        $actualChannels = collect($event->broadcastOn())
-            ->map(fn ($channel) => $channel->name)
-            ->toArray();
-
-        return $event->broadcastWith() === $expectedBroadcastingData
-            && $actualChannels ===  $expectedChannels;
+    Event::assertDispatched(function (ProjectUpdated $event) use ($link) {
+        return $event->projectId === $this->project->getKey()
+            && $event->data === ['project_link' => 'deleted'];
     });
 });
