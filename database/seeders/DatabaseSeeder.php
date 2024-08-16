@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             EducationSeeder::class,
             EmploymentSeeder::class,
             ProjectSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

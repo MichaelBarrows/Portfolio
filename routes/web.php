@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OAuth\KnoxController;
 use App\Http\Controllers\OAuth\SpotifyController;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
@@ -16,10 +17,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
-Route::middleware([Authenticate::class])->group(function () {
-    Route::get('/oauth/spotify/redirect', [SpotifyController::class, 'redirect']);
-    Route::get('/oauth/spotify/callback', [SpotifyController::class, 'callback']);
+Route::name('oauth.')->group(function () {
+    Route::middleware(Authenticate::class)->name('spotify.')->group(function () {
+        Route::get('/oauth/spotify/redirect', [SpotifyController::class, 'redirect'])->name('redirect');
+        Route::get('/oauth/spotify/callback', [SpotifyController::class, 'callback'])->name('callback');
+    });
+
+    Route::name('knox.')->group(function () {
+        Route::get('/oauth/knox/redirect', [KnoxController::class, 'redirect'])->name('redirect');
+        Route::get('/oauth/knox/callback', [KnoxController::class, 'callback'])->name('callback');
+    });
 });
