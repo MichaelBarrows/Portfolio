@@ -38,7 +38,6 @@ class SpotifySettings extends Page
         return [
             Action::make('newContentRule')
                 ->form([
-                    TextInput::make('type'),
                     Select::make('field')
                         ->options([
                             'uri' => 'Track ID',
@@ -55,7 +54,6 @@ class SpotifySettings extends Page
                             'contains' => 'contains',
                         ]),
                     TextInput::make('value'),
-                    TextInput::make('display_value'),
                 ])
                 ->action(function ($data) {
                     return app(CreateSpotifyContentRuleAction::class)->execute($data);
