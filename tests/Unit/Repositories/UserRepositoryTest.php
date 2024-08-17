@@ -4,7 +4,7 @@ use App\Models\User;
 use App\Repositories\UserRepository;
 use Laravel\Socialite\Two\User as SocialiteUser;
 
-it('creates the model', function () {
+test('createUser creates the model', function () {
     $args = User::factory()->definition();
     unset(
         $args['email_verified_at'],
@@ -22,7 +22,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateUser updates the model', function () {
     $args = User::factory()->definition();
     unset(
         $args['email_verified_at'],
@@ -43,7 +43,7 @@ it('updates the model', function () {
     }
 });
 
-it('deletes the model', function () {
+test('deleteUser deletes the model', function () {
     $model = User::factory()->create();
     $repository = new UserRepository;
 
@@ -53,7 +53,7 @@ it('deletes the model', function () {
     expect(User::count())->toBe(0);
 });
 
-it('creates a user from the socialite user', function () {
+test('createUserFromSocialiteUser creates a user from the socialite user', function () {
     $mockUser = Mockery::mock(socialiteUser::class);
     $mockUser->shouldReceive('getEmail')
         ->andReturn($email = fake()->safeEmail());
@@ -75,7 +75,7 @@ it('creates a user from the socialite user', function () {
     );
 });
 
-it('returns the existing user', function () {
+test('createUserFromSocialiteUser returns the existing user', function () {
     $user = User::factory()->create(['password' => null]);
     $mockUser = Mockery::mock(socialiteUser::class);
     $mockUser->shouldReceive('getEmail')

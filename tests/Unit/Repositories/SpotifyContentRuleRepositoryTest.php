@@ -3,7 +3,7 @@
 use App\Models\SpotifyContentRule;
 use App\Repositories\SpotifyContentRuleRepository;
 
-it('creates the model', function () {
+test('createSpotifyContentRule creates the model', function () {
     $args = SpotifyContentRule::factory()->definition();
     $repository = new SpotifyContentRuleRepository;
 
@@ -15,7 +15,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateSpotifyContentRule updates the model', function () {
     $args = SpotifyContentRule::factory()->definition();
     $model = SpotifyContentRule::factory()->create();
     $repository = new SpotifyContentRuleRepository;
@@ -30,7 +30,7 @@ it('updates the model', function () {
     }
 });
 
-it('deletes the model', function () {
+test('deleteSpotifyContentRule deletes the model', function () {
     $model = SpotifyContentRule::factory()->create();
     $repository = new SpotifyContentRuleRepository;
 

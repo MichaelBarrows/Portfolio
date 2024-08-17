@@ -5,10 +5,9 @@ use App\Models\User;
 use App\Repositories\OauthMethodRepository;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Crypt;
-use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User as SocialiteUser;
 
-it('creates the model', function () {
+test('createOauthMethod creates the model', function () {
     $args = OauthMethod::factory()->definition();
     $user = User::factory()->create();
     $repository = new OauthMethodRepository;
@@ -24,7 +23,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateOauthMethod updates the model', function () {
     $args = OauthMethod::factory()
         ->definition();
     $model = OauthMethod::factory()
@@ -42,7 +41,7 @@ it('updates the model', function () {
     }
 });
 
-it('deletes the model', function () {
+test('deleteOauthMethod deletes the model', function () {
     $model = OauthMethod::factory()
         ->withUser()
         ->create();
@@ -54,7 +53,7 @@ it('deletes the model', function () {
     expect(OauthMethod::count())->toBe(0);
 });
 
-it('returns an oauth method for a socialite user', function () {
+test('getMethodForSocialiteUser returns an oauth method for a socialite user', function () {
     $user = User::factory()->create();
     $oauthMethod = OauthMethod::factory()
         ->for($user)
@@ -76,7 +75,7 @@ it('returns an oauth method for a socialite user', function () {
         ->user->getKey()->toBe($user->getKey());
 });
 
-it('returns null when the oauth method doesnt exist', function () {
+test('getMethodForSocialiteUser returns null when the oauth method doesnt exist', function () {
     $mockUser = Mockery::mock(SocialiteUser::class);
     $mockUser->shouldReceive('getId')
         ->andReturn(fake()->uuid());
@@ -91,7 +90,7 @@ it('returns null when the oauth method doesnt exist', function () {
     expect($result)->toBeNull();
 });
 
-it('creates the oauth method and associates it with the user', function () {
+test('createMethodForUser creates the oauth method and associates it with the user', function () {
     $user = User::factory()->create();
 
     $mockUser = Mockery::mock(SocialiteUser::class);
@@ -114,7 +113,7 @@ it('creates the oauth method and associates it with the user', function () {
     expect(Crypt::decrypt($result->refresh_token))->toBe($refreshToken);
 });
 
-it('returns the existing oauth method when it is associated to the user', function () {
+test('createMethodForUser returns the existing oauth method when it is associated to the user', function () {
     $user = User::factory()->create();
     $oauthMethod = OauthMethod::factory()
         ->for($user)
@@ -147,7 +146,7 @@ it('returns the existing oauth method when it is associated to the user', functi
     );
 });
 
-it('throws an exception when the provider is already associated to a different user', function () {
+test('createMethodForUser throws an exception when the provider is already associated to a different user', function () {
     $user = User::factory()->create();
     $oauthMethod = OauthMethod::factory()
         ->for($user)

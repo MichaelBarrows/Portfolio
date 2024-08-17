@@ -3,7 +3,7 @@
 use App\Models\Employment;
 use App\Repositories\EmploymentRepository;
 
-it('creates the model', function () {
+test('createEmployment creates the model', function () {
     $args = Employment::factory()->definition();
     $repository = new EmploymentRepository;
 
@@ -15,7 +15,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateEmployment updates the model', function () {
     $args = Employment::factory()->definition();
     $model = Employment::factory()->create();
     $repository = new EmploymentRepository;
@@ -30,7 +30,7 @@ it('updates the model', function () {
     }
 });
 
-it('returns the changes', function () {
+test('updateEmployment returns the changes', function () {
     $data = [
         'title' => 'title name',
         'company' => 'new name',
@@ -47,7 +47,7 @@ it('returns the changes', function () {
         ->toBe($data);
 });
 
-it('deletes the model', function () {
+test('deleteEmployment deletes the model', function () {
     $model = Employment::factory()->create();
     $repository = new EmploymentRepository;
 

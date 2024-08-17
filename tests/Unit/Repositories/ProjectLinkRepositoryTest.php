@@ -4,7 +4,7 @@ use App\Models\Project;
 use App\Models\ProjectLink;
 use App\Repositories\ProjectLinkRepository;
 
-it('creates the model', function () {
+test('createProjectLink creates the model', function () {
     $project = Project::factory()->create();
     $args = ProjectLink::factory()->definition();
     $repository = new ProjectLinkRepository;
@@ -20,7 +20,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateProjectLink updates the model', function () {
     $args = ProjectLink::factory()->definition();
     $model = ProjectLink::factory()
         ->for(Project::factory()->create())
@@ -37,7 +37,7 @@ it('updates the model', function () {
     }
 });
 
-it('deletes the model', function () {
+test('deleteProjectLink deletes the model', function () {
     $model = ProjectLink::factory()
         ->for(Project::factory()->create())
         ->create();

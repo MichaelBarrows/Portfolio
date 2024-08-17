@@ -3,7 +3,7 @@
 use App\Models\Project;
 use App\Repositories\ProjectRepository;
 
-it('creates the model', function () {
+test('createProject creates the model', function () {
     $args = Project::factory()->definition();
     $repository = new ProjectRepository;
 
@@ -15,7 +15,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateProject updates the model', function () {
     $args = Project::factory()->definition();
     $model = Project::factory()->create();
     $repository = new ProjectRepository;
@@ -30,7 +30,7 @@ it('updates the model', function () {
     }
 });
 
-it('returns the changes', function () {
+test('updateProject returns the changes', function () {
     $data = [
         'name' => 'course name',
         'visible' => false,
@@ -47,7 +47,7 @@ it('returns the changes', function () {
         ->toBe($data);
 });
 
-it('deletes the model', function () {
+test('deleteProject deletes the model', function () {
     $model = Project::factory()->create();
     $repository = new ProjectRepository;
 

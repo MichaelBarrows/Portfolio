@@ -3,7 +3,7 @@
 use App\Models\Education;
 use App\Repositories\EducationRepository;
 
-it('creates the model', function () {
+test('createEducation creates the model', function () {
     $args = Education::factory()->definition();
     $repository = new EducationRepository;
 
@@ -15,7 +15,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateEducation updates the model', function () {
     $args = Education::factory()->definition();
     $model = Education::factory()->create();
     $repository = new EducationRepository;
@@ -30,7 +30,7 @@ it('updates the model', function () {
     }
 });
 
-it('returns the changes', function () {
+test('updateEducation returns the changes', function () {
     $data = [
         'course_name' => 'course name',
         'institution_name' => 'new name',
@@ -47,7 +47,7 @@ it('returns the changes', function () {
         ->toBe($data);
 });
 
-it('deletes the model', function () {
+test('deleteEducation deletes the model', function () {
     $model = Education::factory()->create();
     $repository = new EducationRepository;
 
