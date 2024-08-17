@@ -2,7 +2,6 @@
 
 use App\Livewire\Landing;
 use App\Models\Setting;
-
 use function Pest\Livewire\livewire;
 
 it('shows the currently playing widget when the setting value is true', function () {
@@ -97,4 +96,25 @@ it('shows the currently working at appropriately when an image is not provided',
             'background-color: #000000',
             'color: #FFFFFF',
         ]);
+});
+
+it('reacts appropriately to the setting updated event', function () {
+    $setting = Setting::factory()->create([
+        'key' => 'open-to-opportunities',
+        'type' => 'bool',
+        'value' => 'false',
+    ]);
+
+    $assert = livewire(Landing::class)
+        ->assertViewHas('settings', fn ($settings) => $settings[$setting->key] === false)
+        ->assertSee('Not at the moment');
+
+    $assert->dispatch(
+        'echo:settings,Settings\\SettingUpdated',
+        [
+            'key' => $setting->key,
+            'value' => true,
+        ])
+        ->assertViewHas('settings', fn ($settings)  => $settings[$setting->key] === true)
+        ->assertSee('Yes, get in touch');
 });
