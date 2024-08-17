@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require('tailwindcss/defaultTheme')
+import colors from 'tailwindcss/colors'
 
 export default {
   content: [
@@ -32,7 +33,7 @@ export default {
                 '900': '#0b536f',
                 '950': '#07354a',
             },
-            'off-white': '#f9fafb'
+            'off-white': '#f9fafb',
         },
         fontFamily: {
             sans: ["Raleway", ...defaultTheme.fontFamily.sans]
