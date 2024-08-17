@@ -39,9 +39,13 @@ class TimelineItemModal extends ModalComponent
 
     #[On('echo:education.{model.id},Education\\EducationUpdated')]
     #[On('echo:employment.{model.id},Employment\\EmploymentUpdated')]
-    public function updateProject()
+    public function updateProject($event)
     {
-        $this->model = $this->model->refresh();
+        if (array_key_exists('description', $event)) {
+            return $this->model = $this->model->refresh();
+        }
+
+        return $this->model->fill($event);
     }
 
     public function render()

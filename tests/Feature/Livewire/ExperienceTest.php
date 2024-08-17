@@ -85,45 +85,106 @@ it('reacts appropriately to the employment created event', function () {
         });
 });
 
-it('reacts appropriately to the education updated event', function () {
-    $education = Education::factory()->create(['course_name' => 'course a']);
+it('reacts appropriately to the education updated event', function ($field, $oldValue, $newValue) {
+    $education = Education::factory()->create([
+        $field => $oldValue,
+    ]);
 
     $assert = livewire(Experience::class)
-        ->assertViewHas('experiences', function ($experiences) {
-            return $experiences->first()->course_name === 'course a';
+        ->assertViewHas('experiences', function ($experiences) use ($field, $oldValue) {
+            return $experiences->first()->{$field} === $oldValue;
         });
+
+    $education->update([
+        $field => $newValue,
+    ]);
 
     $assert->dispatch(
         'echo:education,Education\\EducationUpdated',
         [
             'id' => $education->getKey(),
             'type' => 'education',
-            'course_name' => 'course b'
+            $field => $newValue,
         ])
-        ->assertViewHas('experiences', function ($experiences) use ($education) {
-            return $experiences->get("edu-{$education->getKey()}")->course_name === 'course b';
+        ->assertViewHas('experiences', function ($experiences) use ($education, $field, $newValue) {
+            return $experiences->get("edu-{$education->getKey()}")->{$field} === $newValue;
         });
-});
+})->with([
+    ['course_name', 'course a', 'course b'],
+    ['institution_name', 'uni a', 'uni b'],
+    ['start_date', 'September 2015', 'January 2020'],
+    ['end_date', 'June 2019', 'January 2021'],
+    ['description', 'description a', 'description b'],
+]);
 
-it('reacts appropriately to the employment updated event', function () {
-    $employment = Employment::factory()->create(['title' => 'position a']);
+it('reacts appropriately to the employment updated event', function ($field, $oldValue, $newValue) {
+    $employment = Employment::factory()->create([
+        $field => $oldValue,
+    ]);
 
     $assert = livewire(Experience::class)
-        ->assertViewHas('experiences', function ($experiences) {
-            return $experiences->first()->title === 'position a';
+        ->assertViewHas('experiences', function ($experiences) use ($field, $oldValue) {
+            return $experiences->first()->{$field} === $oldValue;
         });
+
+    $employment->update([
+        $field => $newValue,
+    ]);
 
     $assert->dispatch(
         'echo:employment,Employment\\EmploymentUpdated',
         [
             'id' => $employment->getKey(),
             'type' => 'employment',
-            'title' => 'position b'
+            $field => $newValue,
         ])
-        ->assertViewHas('experiences', function ($experiences) use ($employment) {
-            return $experiences->get("emp-{$employment->getKey()}")->title === 'position b';
+        ->assertViewHas('experiences', function ($experiences) use ($employment, $field, $newValue) {
+            return $experiences->get("emp-{$employment->getKey()}")->{$field} === $newValue;
         });
-});
+})->with([
+    ['title', 'position a', 'position b'],
+    ['company', 'company a', 'company b'],
+    ['start_date', 'September 2015', 'January 2020'],
+    ['end_date', 'June 2019', 'January 2021'],
+    ['description', 'description a', 'description b'],
+]);
+
+it('reacts appropriately when the tech stack is updated', function ($modelType) {
+    $model = (new ($modelType))->factory()->create([
+        'tech_stack' => ['php', 'laravel', 'livewire'],
+    ]);
+
+    $assert = livewire(Experience::class)
+        ->assertSeeInOrder([
+            'PHP',
+            'Laravel',
+            'Livewire',
+        ]);
+
+    $model->update([
+        'tech_stack' => ['javascript', 'python'],
+    ]);
+
+    $assert->dispatch(
+        $model instanceof Employment ? 'echo:employment,Employment\\EmploymentUpdated' : 'echo:education,Education\\EducationUpdated',
+        [
+            'id' => $model->getKey(),
+            'type' => $model instanceof Employment ? 'employment' : 'education',
+            'tech_stack' => ['javascript', 'python'],
+        ])
+        ->assertSeeInOrder([
+            'JavaScript',
+            'Python',
+        ])
+        ->assertDontSee([
+            'PHP',
+            'Laravel',
+            'Livewire',
+        ]);
+})->with([
+    [Education::class],
+    [Employment::class],
+]);
 
 it('reacts appropriately to the education deleted event', function () {
     $education = Education::factory()->create(['course_name' => 'course a']);

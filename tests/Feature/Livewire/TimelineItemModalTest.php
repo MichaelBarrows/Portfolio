@@ -46,35 +46,65 @@ it('displays the data for employment', function () {
         ]);
 });
 
-it('reacts to the education updated event appropriately', function () {
-    $record = Education::factory()->create(['course_name' => 'course a']);
+it('reacts to the education updated event appropriately', function ($field, $oldValue, $newValue) {
+    $record = Education::factory()->create([
+        $field => $oldValue,
+    ]);
 
     $assert = livewire(TimelineItemModal::class, [
         'type' => 'edu',
         'id' => $record->getKey(),
     ])
-        ->assertSee('course a');
+        ->assertSee($oldValue);
 
-    $record->update(['course_name' => 'course b']);
+    $record->update([$field => $newValue]);
 
-    $assert->dispatch("echo:education.{$record->getKey()},Education\\EducationUpdated")
-        ->assertSee('course b');
-});
+    $assert->dispatch(
+        "echo:education.{$record->getKey()},Education\\EducationUpdated",
+        [
+            'id' => $record->getKey(),
+            'type' => 'education',
+            $field => $newValue,
+        ],
+    )
+    ->assertSee($newValue);
+})->with([
+    ['course_name', 'course a', 'course b'],
+    ['institution_name', 'uni a', 'uni b'],
+    ['start_date', 'September 2015', 'January 2020'],
+    ['end_date', 'June 2019', 'January 2021'],
+    ['description', 'description a', 'description b'],
+]);
 
-it('reacts to the employment updated event appropriately', function () {
-    $record = Employment::factory()->create(['title' => 'position a']);
+it('reacts to the employment updated event appropriately', function ($field, $oldValue, $newValue) {
+    $record = Employment::factory()->create([
+        $field => $oldValue,
+    ]);
 
     $assert = livewire(TimelineItemModal::class, [
         'type' => 'emp',
         'id' => $record->getKey(),
     ])
-        ->assertSee('position a');
+        ->assertSee($oldValue);
 
-    $record->update(['title' => 'position b']);
+    $record->update([$field => $newValue]);
 
-    $assert->dispatch("echo:employment.{$record->getKey()},Employment\\EmploymentUpdated")
-        ->assertSee('position b');
-});
+    $assert->dispatch(
+        "echo:employment.{$record->getKey()},Employment\\EmploymentUpdated",
+        [
+            'id' => $record->getKey(),
+            'type' => 'employment',
+            $field => $newValue,
+        ],
+    )
+    ->assertSee($newValue);
+})->with([
+    ['title', 'position a', 'position b'],
+    ['company', 'company a', 'company b'],
+    ['start_date', 'September 2015', 'January 2020'],
+    ['end_date', 'June 2019', 'January 2021'],
+    ['description', 'description a', 'description b'],
+]);
 
 it('displays the image when one is set', function () {
     $record = Employment::factory()->create([
