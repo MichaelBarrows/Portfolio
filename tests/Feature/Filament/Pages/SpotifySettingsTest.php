@@ -19,7 +19,7 @@ it('creates the content rule', function () {
 });
 
 it('displays the spotify user information appropriately', function () {
-    // should come back and mock this, but mockery isn't liking it
+    // @TODO should come back and mock this, but mockery isn't liking it
     Cache::set('spotify-user', [
         'name' => 'Test User',
         'avatar' => 'USER-AVATAR-URL',

@@ -65,9 +65,4 @@ return [
             'driver' => 'null',
         ],
     ],
-
-    'settings-to-broadcast' => [
-        'open-to-opportunities',
-        'show-currently-playing',
-    ]
 ];

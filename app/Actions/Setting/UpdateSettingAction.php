@@ -20,7 +20,7 @@ class UpdateSettingAction
             args: $args,
         );
 
-        if (in_array($setting->key, config('broadcasting.settings-to-broadcast'))) {
+        if (in_array($setting->key, config('settings.broadcastable'))) {
             SettingUpdated::dispatch($result->key, $result->value);
         }
 

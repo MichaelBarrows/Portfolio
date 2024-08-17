@@ -39,7 +39,7 @@ it('dispatches the event when the key is in the config', function () {
         'value' => false,
     ]);
 
-    Config::set('broadcasting.settings-to-broadcast', [$setting->key]);
+    Config::set('settings.broadcastable', [$setting->key]);
 
     $this->action->execute(
         setting: $setting,
