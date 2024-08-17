@@ -39,6 +39,9 @@ it('updates the model', function () {
         ->call('save')
         ->assertHasNoFormErrors();
 
+    $data['tech_stack'] = $data['tech_stack']
+        ->map(fn ($techStack) => $techStack->value)
+        ->toJson();
     $this->assertDatabaseHas(
         table: Education::class,
         data: $data,

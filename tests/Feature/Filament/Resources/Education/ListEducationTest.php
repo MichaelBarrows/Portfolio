@@ -17,7 +17,9 @@ it('can list education', function () {
         $assert->assertSeeInOrder([
             $edu->institution_name,
             $edu->course_name,
-            $edu->tech_stack
+            ...$edu->tech_stack
+                ->map(fn ($techStack) => $techStack->getName())
+                ->toArray(),
         ]);
     });
 });
