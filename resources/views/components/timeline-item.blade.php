@@ -26,9 +26,9 @@
                 <div class="mt-2" v-if="techStack">
                     @foreach($techStack as $tag)
                         @if (is_array($tag))
-                            <span class="tag">{{ $tag['name'] }}</span>
+                            <x-tag>{{ $tag['name'] }}</x-tag>
                         @else
-                            <span class="tag">{{ $tag->getName() }}</span>
+                            <x-tag>{{ $tag->getName() }}</x-tag>
                         @endif
                     @endforeach
                 </div>
