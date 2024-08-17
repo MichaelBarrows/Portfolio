@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5.4",
         "pusher/pusher-php-server": "^7.2.4",
+        "sentry/sentry-laravel": "^4.8",
         "socialiteproviders/laravelpassport": "^4.3",
         "socialiteproviders/spotify": "^4.1",
         "wire-elements/modal": "^2.0.10"
