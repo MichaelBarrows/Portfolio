@@ -2,8 +2,17 @@
 
 use App\Models\Setting;
 use App\Repositories\SettingRepository;
+use Illuminate\Database\Eloquent\Builder;
 
-it('creates the model', function () {
+test('getQueryBuilder returns the query builder', function () {
+    $repository = new SettingRepository;
+
+    $result = $repository->getQueryBuilder();
+
+    expect($result)->toBeInstanceOf(Builder::class);
+});
+
+test('createSetting creates the model', function () {
     $args = Setting::factory()->definition();
     $repository = new SettingRepository;
 
@@ -15,7 +24,7 @@ it('creates the model', function () {
     }
 });
 
-it('updates the model', function () {
+test('updateSetting updates the model', function () {
     $args = Setting::factory()->definition();
     $model = Setting::factory()->create();
     $repository = new SettingRepository;
@@ -30,7 +39,7 @@ it('updates the model', function () {
     }
 });
 
-it('deletes the model', function () {
+test('deleteSetting deletes the model', function () {
     $model = Setting::factory()->create();
     $repository = new SettingRepository;
 

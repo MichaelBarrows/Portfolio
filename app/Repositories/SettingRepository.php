@@ -3,9 +3,15 @@
 namespace App\Repositories;
 
 use App\Models\Setting;
+use Illuminate\Database\Eloquent\Builder;
 
 class SettingRepository
 {
+    public function getQueryBuilder(): Builder
+    {
+        return Setting::query();
+    }
+
     public function createSetting(array $args = []): ?Setting
     {
         $record = new Setting;
