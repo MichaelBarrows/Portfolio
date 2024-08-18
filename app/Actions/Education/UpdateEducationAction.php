@@ -9,7 +9,7 @@ use App\Repositories\EducationRepository;
 class UpdateEducationAction
 {
     public function __construct(
-        public EducationRepository $educationRepository,
+        private EducationRepository $educationRepository,
     ) {
     }
 

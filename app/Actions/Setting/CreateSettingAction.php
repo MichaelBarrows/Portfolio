@@ -8,7 +8,7 @@ use App\Repositories\SettingRepository;
 class CreateSettingAction
 {
     public function __construct(
-        public SettingRepository $settingRepository,
+        private SettingRepository $settingRepository,
     ) {
     }
 

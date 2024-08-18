@@ -8,7 +8,7 @@ use App\Repositories\SpotifyContentRuleRepository;
 class CreateSpotifyContentRuleAction
 {
     public function __construct(
-        public SpotifyContentRuleRepository $spotifyContentRuleRepository,
+        private SpotifyContentRuleRepository $spotifyContentRuleRepository,
     ) {
     }
 

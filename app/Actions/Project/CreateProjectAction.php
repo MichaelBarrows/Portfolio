@@ -9,7 +9,7 @@ use App\Repositories\ProjectRepository;
 class CreateProjectAction
 {
     public function __construct(
-        public ProjectRepository $projectRepository,
+        private ProjectRepository $projectRepository,
     ) {
     }
 

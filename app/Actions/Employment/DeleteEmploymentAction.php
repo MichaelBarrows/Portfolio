@@ -9,7 +9,7 @@ use App\Repositories\EmploymentRepository;
 class DeleteEmploymentAction
 {
     public function __construct(
-        public EmploymentRepository $employmentRepository
+        private EmploymentRepository $employmentRepository
     ) {
     }
 

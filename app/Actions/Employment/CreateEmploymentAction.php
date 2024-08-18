@@ -9,7 +9,7 @@ use App\Repositories\EmploymentRepository;
 class CreateEmploymentAction
 {
     public function __construct(
-        public EmploymentRepository $employmentRepository,
+        private EmploymentRepository $employmentRepository,
     ) {
     }
 

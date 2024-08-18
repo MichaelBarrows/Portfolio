@@ -9,7 +9,7 @@ use App\Repositories\ProjectRepository;
 class DeleteProjectAction
 {
     public function __construct(
-        public ProjectRepository $projectRepository
+        private ProjectRepository $projectRepository
     ) {
     }
 
