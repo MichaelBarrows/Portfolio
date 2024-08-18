@@ -2,6 +2,7 @@
 
 use App\Actions\Contact\CreateContactAction;
 use App\Models\Contact;
+use App\Repositories\ContactRepository;
 
 beforeEach(function () {
     $this->data = [
@@ -10,10 +11,14 @@ beforeEach(function () {
         'phone' => $this->faker->numerify('0###########'),
         'message' => $this->faker->words(15, true),
     ];
+
+    $this->action = new CreateContactAction(
+        new ContactRepository
+    );
 });
 
 it('returns the created model', function () {
-    $result = (new CreateContactAction)->execute($this->data);
+    $result = $this->action->execute($this->data);
 
     expect($result)->toBeInstanceOf(Contact::class);
     expect($result)
@@ -24,7 +29,7 @@ it('returns the created model', function () {
 });
 
 it('stores the data', function () {
-    (new CreateContactAction)->execute($this->data);
+    $this->action->execute($this->data);
 
     $this->assertDatabaseHas(
         table: Contact::class,

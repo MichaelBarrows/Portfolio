@@ -2,6 +2,7 @@
 
 use App\Actions\Contact\UpdateContactAction;
 use App\Models\Contact;
+use App\Repositories\ContactRepository;
 
 it('updates the model', function () {
     $model = Contact::factory()->create([
@@ -10,8 +11,11 @@ it('updates the model', function () {
         'phone' => '01234567890',
         'message' => 'test message',
     ]);
+    $action = new UpdateContactAction(
+        new ContactRepository
+    );
 
-    $result = (new UpdateContactAction)->execute(
+    $result = $action->execute(
         contact: $model,
         args: [
             'name' => 'New Test Name',
