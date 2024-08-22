@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require('tailwindcss/defaultTheme')
-import colors from 'tailwindcss/colors'
 
 export default {
   content: [
@@ -10,7 +9,6 @@ export default {
     "./resources/**/*.vue",
     "./resources/views/livewire/*.blade.php",
     "./resources/views/filament/*/*.blade.php",
-    './storage/framework/views/*.php',
     './vendor/wire-elements/modal/resources/views/*.blade.php',
     './app/Livewire/**/*.php',
     './app/Filament/**/*.php',

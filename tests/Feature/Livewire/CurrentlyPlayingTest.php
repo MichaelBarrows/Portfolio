@@ -4,7 +4,7 @@ use App\Livewire\CurrentlyPlaying;
 use function Pest\Livewire\livewire;
 use Illuminate\Support\Facades\Cache;
 
-it('displays_the_track_details_appropriately', function() {
+it('displays the track details appropriately', function() {
     livewire(CurrentlyPlaying::class)
         ->set('track', [
             'track' => 'Track Name',
@@ -29,7 +29,7 @@ it('displays_the_track_details_appropriately', function() {
         ]);
 });
 
-it('updates_the_track_when_the_event_is_dispatched', function () {
+it('updates the track when the event is dispatched', function () {
     Cache::shouldReceive('get')
         ->withArgs(fn ($key, $default) => $key === 'spotify.currently-playing')
         ->once()

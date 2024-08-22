@@ -29,7 +29,7 @@ class UpdateCurrentlyPlayingJob implements ShouldQueue
         $subscriptionCount = $pusher->getChannelInfo(
             channel: "currently-playing",
             params: ['info' => 'subscription_count'],
-        )?->subscription_count;
+        )?->subscription_count ?? 0;
 
         if ($subscriptionCount < 1) {
             return;
