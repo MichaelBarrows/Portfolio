@@ -4,15 +4,15 @@
         <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3 grid grid-cols-1">
             <div class="aspect-square max-w-[25%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full mb-2">
                 <div class="relative top-[50%] -translate-y-2/4">
-                    <i class="fas fa-graduation-cap block text-3xl md:text-4xl p-5 text-white" aria-hidden="true"></i>
+                    <i class="fas fa-graduation-cap block text-3xl p-5 text-white" aria-hidden="true"></i>
                 </div>
             </div>
             <p class="md:text-lg pt-3">4 years of Web Development specific education</p>
         </div>
-        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3 grid grid-cols-1">
+        <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-2 grid grid-cols-1">
             <div class="aspect-square max-w-[25%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full mb-2">
                 <div class="relative top-[50%] -translate-y-2/4">
-                    <i class="fas fa-building block text-3xl md:text-4xl p-5 text-white" aria-hidden="true"></i>
+                    <i class="fas fa-building block text-3xl p-5  mx-2 text-white" aria-hidden="true"></i>
                 </div>
             </div>
             <p class="md:text-lg pt-3">3 years of commercial experience</p>
@@ -20,7 +20,7 @@
         <div class="border-2 border-pacific-blue-600 rounded-md shadow-lg text-center p-3 grid grid-cols-1">
             <div class="aspect-square max-w-[25%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full mb-2">
                 <div class="relative top-[50%] -translate-y-2/4">
-                    <i class="fas fa-code block text-3xl md:text-4xl p-5 text-white" aria-hidden="true"></i>
+                    <i class="fas fa-code block text-3xl p-5 text-white" aria-hidden="true"></i>
                 </div>
             </div>
             <p class="md:text-lg pt-3">Full-stack, with a back-end focus</p>
@@ -29,7 +29,7 @@
             <div class="grid grid-cols-2">
                 <div class="aspect-square max-w-[70%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full mb-2">
                     <div class="relative top-[50%] -translate-y-2/4">
-                        <i class="fab fa-php block text-3xl md:text-4xl p-5 text-white" aria-hidden="true"></i>
+                        <i class="fab fa-php block text-3xl p-5 text-white" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="aspect-square max-w-[70%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full mb-2">
@@ -44,12 +44,12 @@
             <div class="grid grid-cols-2">
                 <div class="aspect-square max-w-[70%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full mb-2">
                     <div class="relative top-[50%] -translate-y-2/4">
-                        <i class="fas fa-graduation-cap block text-3xl md:text-4xl p-5 text-white" aria-hidden="true"></i>
+                        <i class="fas fa-graduation-cap block text-3xl p-5 text-white" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="aspect-square max-w-[70%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full mb-2">
                     <div class="relative top-[50%] -translate-y-2/4">
-                        <i class="fas fa-comments block text-3xl md:text-4xl p-5 text-white" aria-hidden="true"></i>
+                        <i class="fas fa-comments block text-3xl p-5 text-white" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>

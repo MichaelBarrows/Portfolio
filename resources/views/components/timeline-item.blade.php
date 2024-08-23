@@ -1,14 +1,14 @@
 <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-    <div class="{{ $endDate == 'Present' ? 'bg-emerald-500' : 'gradient'}} flex items-center justify-center w-10 h-10 rounded-full border border-white text-white shadow-xl shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+    <div class="{{ $endDate == 'Present' ? 'bg-emerald-500' : 'gradient' }} flex items-center justify-center w-10 h-10 rounded-full border border-white text-white shadow-xl shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
         <i class="text-xl fas fa-{{ $type === 'edu' ? 'mortar-board' : 'briefcase' }}"></i>
     </div>
     <div
-        class="'w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white rounded border-2 shadow-xl cursor-pointer m-1 md:m-0 {{ $endDate == 'Present' ? 'border-emerald-500' : 'border-pacific-blue-600' }} {{ ! empty($properties['image']) ? 'p-4 pl-2' : ' p-4' }}"
+        class="'w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white rounded border-2 shadow-xl cursor-pointer m-1 md:m-0 {{ $endDate == 'Present' ? 'border-emerald-500' : 'border-pacific-blue-600' }} {{ ! empty($properties['image']) ? 'p-4 pl-2' : ' p-4' }} grow md:grow-0"
         wire:click="$dispatch('openModal', { component: 'timeline-item-modal', arguments: { type: '{{ $type }}', id: {{ $id }} }})"
     >
         <div class="grid grid-cols-5 items-center justify-center relative">
             @if ($endDate == 'Present')
-                <p class="bg-emerald-500 absolute -top-3 -right-3 text-white text-sm font-semibold rounded px-2 py-1">Current</p>
+                <p class="hidden md:block bg-emerald-500 absolute -top-3 -right-3 text-white text-sm font-semibold rounded px-2 py-1">Current</p>
             @endif
             @if (! empty($image))
                 <img src="{{ $image }}" class="max-w-full" alt="{{ $organisation }} logo"/>
