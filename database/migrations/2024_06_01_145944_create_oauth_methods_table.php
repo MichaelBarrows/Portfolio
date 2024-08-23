@@ -13,7 +13,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('provider');
             $table->string('provider_id');
-            $table->string('refresh_token')->nullable();
+            $table->string('refresh_token', 2000)->nullable();
             $table->timestamps();
 
             $table->unique(['provider', 'provider_id']);
