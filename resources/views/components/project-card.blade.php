@@ -2,7 +2,7 @@
     class="p-2 p-4 rounded-md text-white shadow-xl cursor-pointer border-2 border-pacific-blue-600"
     wire:click="$dispatch('openModal', { component: 'project-modal', arguments: { id: {{ $id }} }})"
 >
-    <div class="">
+    <div class="grid grid-cols-1">
         <div class="aspect-square w-[20%] md:w-[35%] mx-auto text-center bg-pacific-blue-600 shadow-xl rounded-full">
             <div class="relative top-[50%] -translate-y-2/4">
                 <i class="fas {{ $icon ?? 'fa-code' }} block text-4xl p-2 text-white"></i>
