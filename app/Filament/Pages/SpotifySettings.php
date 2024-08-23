@@ -3,6 +3,7 @@
 namespace App\Filament\Pages;
 
 use App\Actions\SpotifyContentRule\CreateSpotifyContentRuleAction;
+use App\Livewire\SpotifyContentSettings;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -51,12 +52,14 @@ class SpotifySettings extends Page
                     Select::make('operand')
                         ->options([
                             'equals' => 'equals',
+                            'bool' => 'boolean',
                             'contains' => 'contains',
                         ]),
                     TextInput::make('value'),
                 ])
                 ->action(function ($data) {
-                    return app(CreateSpotifyContentRuleAction::class)->execute($data);
+                    $result = app(CreateSpotifyContentRuleAction::class)->execute($data);
+                    $this->dispatch('ruleAdded')->to(SpotifyContentSettings::class);
                 }),
         ];
     }

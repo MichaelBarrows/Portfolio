@@ -24,6 +24,8 @@ class SpotifyContentSettings extends Component implements HasForms, HasTable
     use InteractsWithForms;
     use InteractsWithTable;
 
+    protected $listeners = ['ruleAdded' => '$refresh'];
+
     public function table(Table $table): Table
     {
         return $table
