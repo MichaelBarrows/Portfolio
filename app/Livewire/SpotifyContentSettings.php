@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Actions\SpotifyContentRule\DeleteSpotifyContentRuleAction;
 use App\Actions\SpotifyContentRule\UpdateSpotifyContentRuleAction;
-use App\Http\Controllers\OAuth\SpotifyController;
 use App\Models\SpotifyContentRule;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -59,13 +58,16 @@ class SpotifyContentSettings extends Component implements HasForms, HasTable
                                 'artists.name' => 'Artist name',
                                 'album.name' => 'Album name',
                                 'explicit' => 'Explicit',
-                            ]),
+                            ])
+                            ->required(),
                         Select::make('operand')
                             ->options([
                                 'equals' => 'equals',
                                 'contains' => 'contains',
-                            ]),
-                        TextInput::make('value'),
+                            ])
+                            ->required(),
+                        TextInput::make('value')
+                            ->required(),
                     ])
                     ->using(fn (Model $record, array $data) => app(UpdateSpotifyContentRuleAction::class)->execute(
                         spotifyContentRule: $record,

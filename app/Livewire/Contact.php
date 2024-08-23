@@ -35,8 +35,7 @@ class Contact extends Component implements HasForms
                             ViewField::make('name')
                                 ->view('components.forms.text-input')
                                 ->label('Name')
-                                ->required()
-                                ->live(),
+                                ->required(),
 
                             ViewField::make('email')
                                 ->view('components.forms.email-input')
