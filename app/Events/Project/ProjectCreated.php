@@ -16,7 +16,6 @@ class ProjectCreated implements ShouldBroadcastNow
     use InteractsWithSockets;
     use SerializesModels;
 
-
     public function __construct(
         public int $projectId,
         public array $data,

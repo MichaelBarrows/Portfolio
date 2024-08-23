@@ -16,7 +16,6 @@ class ProjectUpdated implements ShouldBroadcastNow
     use InteractsWithSockets;
     use SerializesModels;
 
-
     public function __construct(
         public int $projectId,
         public array $data,
@@ -38,6 +37,7 @@ class ProjectUpdated implements ShouldBroadcastNow
             data: $this->data,
             filterableKeys: [
                 'description',
+                'tech_stack',
                 'project_link',
             ],
         );

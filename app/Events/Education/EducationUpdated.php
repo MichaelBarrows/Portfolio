@@ -38,6 +38,7 @@ class EducationUpdated implements ShouldBroadcastNow
             filterableKeys: [
                 'properties',
                 'description',
+                'tech_stack',
             ],
             type: 'education',
         );

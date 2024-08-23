@@ -37,6 +37,7 @@ class EmploymentUpdated implements ShouldBroadcastNow
             data: $this->data,
             filterableKeys: [
                 'properties',
+                'tech_stack',
                 'description',
             ],
             type: 'employment',
