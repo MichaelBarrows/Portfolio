@@ -1,6 +1,7 @@
 <?php
 
 use App\Filament\Pages\SpotifySettings;
+use App\Livewire\SpotifyContentSettings;
 use App\Models\SpotifyContentRule;
 use function Pest\Livewire\livewire;
 use Illuminate\Support\Facades\Cache;
@@ -41,4 +42,13 @@ it('displays the sign in message when a spotify user is not associated', functio
             'No User Associated',
             'Sign in',
         ]);
+});
+
+it('emits the event when the record is created', function () {
+    $data = SpotifyContentRule::factory()->definition();
+
+    livewire(SpotifySettings::class)
+        ->callAction('newContentRule', $data)
+        ->assertDispatchedTo(SpotifyContentSettings::class, 'ruleAdded')
+        ->assertHasNoActionErrors();
 });

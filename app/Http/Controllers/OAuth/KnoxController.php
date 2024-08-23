@@ -40,7 +40,7 @@ class KnoxController extends Controller
         if ($loginMethod && $loginMethod->user) {
             $user = $loginMethod->user;
         } else {
-            $user = app(UserRepository::class)->createUserFromSocialiteUser(socialiteUser: $knoxUser);
+        $user = app(UserRepository::class)->createUserFromSocialiteUser(socialiteUser: $knoxUser);
             app(OauthMethodRepository::class)->createMethodForUser(
                 provider: 'knox',
                 user: $user,

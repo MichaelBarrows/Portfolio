@@ -38,6 +38,7 @@ return [
         'min_refresh_after' => env('SPOTIFY_MIN_REFRESH_AFTER', 15000),
         'idle_refresh_after' => env('SPOTIFY_IDLE_REFRESH_AFTER', 60000),
         'token_url' => 'https://accounts.spotify.com/api/token',
+        'api_url' => 'https://api.spotify.com/v1/',
     ],
 
     'laravelpassport' => [

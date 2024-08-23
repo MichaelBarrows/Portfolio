@@ -32,6 +32,8 @@ it('caches the returned data', function () {
         ->andSet('refreshToken', $token = fake()->uuid())
         ->andReturn($userName = fake()->name());
 
+    Socialite::shouldReceive('driver->user')->andReturn($mockUser);
+
     Cache::shouldReceive('rememberForever')
         ->once()
         ->withArgs(function ($key, $callback) use ($avatar, $userName, $token) {
@@ -41,8 +43,6 @@ it('caches the returned data', function () {
                 && $data['name'] === $userName
                 && Crypt::decrypt($data['refreshToken']) === $token;
         });
-
-    Socialite::shouldReceive('driver->user')->andReturn($mockUser);
 
     $this->actingAs(User::factory()->create())
         ->get(route('oauth.spotify.callback'))
