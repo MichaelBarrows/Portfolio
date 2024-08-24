@@ -1,11 +1,11 @@
-name: Build Assets
+name: Build and Deploy
 on:
   workflow_run:
     workflows: ["Pest"]
     types:
       - completed
 jobs:
-  build:
+  build-deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     env:
@@ -25,14 +25,73 @@ jobs:
         run: npm install
       - name: Compile assets for production
         run: npm run build
-      - name: Stage changed files
-        run: git add public/build -f
-      - name: Commit changes
+      - name: Remove node_modules
+        run: rm -rf node_modules
+      - name: Remove vendor
+        run: rm -rf vendor
+      - name: Set release id
+        id: releaseId
+        run: echo "RELEASE_ID=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+      - name: Setup SSH
         run: |
-          git config user.name "${GITHUB_ACTOR}"
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git commit -m 'build assets'
-      - name: Tag
-        run: git tag latest
-      - name: Push tag
-        run: git push -f --tags
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PUBLIC_KEY }}" > ~/.ssh/id_rsa.pub
+          chmod 600 ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa.pub
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+      - name: Create release directory
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/releases/
+            mkdir $RELEASE_ID
+          "
+      - name: Sync files
+        run: rsync -vrm  ${{ github.workspace }}/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
+      - name: Composer install
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
+            composer install --no-dev
+          "
+      - name: Symlink storage folder
+        # run: |
+        #   ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+        #     cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
+        #     rm -rf storage
+        #     ln -s ${{ secrets.SSH_DIRECTORY }}/storage storage
+        #   "
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
+            mv storage ${{ secrets.SSH_DIRECTORY }}/storage
+            ln -s ${{ secrets.SSH_DIRECTORY }}/storage storage
+          "
+      - name: Symlink ENV
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
+            ln -s ${{ secrets.SSH_DIRECTORY }}/.env .env
+          "
+      - name: Run migrations
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
+            php artisan migrate --force
+          "
+      - name: Activate release
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}
+            rm -rf current
+            ln -s ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID current
+          "
+      - name: Optimize
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/current
+            php artisan optimize
+            php artisan view:clear
+            php artisan view:cache
+          "
+
