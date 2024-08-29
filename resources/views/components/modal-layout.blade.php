@@ -7,12 +7,13 @@
     </div>
     {!! $slot !!}
 </div>
+
 @script
     <script>
         Livewire.on('modalClosed', (component) => {
             Object.keys(Echo.connector.channels)
                 .filter((channel) => channel.includes('.') && ! channel.includes('private'))
-                .forEach((channel) => setTimeout(() => window.Echo.leave(channel), 2000))
+                .forEach((channel) => setTimeout(() => Echo.leave(channel), 2000))
         });
     </script>
 @endscript

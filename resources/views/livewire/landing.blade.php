@@ -133,3 +133,13 @@
         </div>
     </div>
 </div>
+
+@script
+    <script>
+        $wire.on('echo:settings,Settings\\SettingUpdated', function (event) {
+            if (event[0].key === 'show-currently-playing' && event[0].value === false) {
+                setTimeout(() => Echo.leave('currently-playing'), 2000);
+            }
+        });
+</script>
+@endscript
