@@ -49,4 +49,9 @@ class ProjectModal extends ModalComponent
     {
         return '7xl';
     }
+
+    public static function dispatchCloseEvent(): bool
+    {
+        return true;
+    }
 }

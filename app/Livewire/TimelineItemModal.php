@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\Education;
 use App\Models\Employment;
-use Livewire\Attributes\On;
 use LivewireUI\Modal\ModalComponent;
 
 class TimelineItemModal extends ModalComponent
@@ -19,9 +18,23 @@ class TimelineItemModal extends ModalComponent
     {
         if ($this->type === 'edu') {
             $this->model = Education::find($this->id);
-        } else {
-            $this->model = Employment::find($this->id);
+            return;
         }
+
+        $this->model = Employment::find($this->id);
+    }
+
+    public function getListeners(): array
+    {
+        if ($this->type === 'edu') {
+            return [
+                "echo:education.{$this->id},Education\\EducationUpdated" => 'updateModel',
+            ];
+        }
+
+        return [
+            "echo:employment.{$this->id},Employment\\EmploymentUpdated" => 'updateModel',
+        ];
     }
 
     private function convertObject(Education|Employment $record): array
@@ -37,9 +50,7 @@ class TimelineItemModal extends ModalComponent
         ];
     }
 
-    #[On('echo:education.{model.id},Education\\EducationUpdated')]
-    #[On('echo:employment.{model.id},Employment\\EmploymentUpdated')]
-    public function updateProject($event)
+    public function updateModel($event)
     {
         if (array_key_exists('description', $event)) {
             return $this->model = $this->model->refresh();
@@ -58,5 +69,10 @@ class TimelineItemModal extends ModalComponent
     public static function modalMaxWidth(): string
     {
         return '7xl';
+    }
+
+    public static function dispatchCloseEvent(): bool
+    {
+        return true;
     }
 }
