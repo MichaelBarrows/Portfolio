@@ -7,7 +7,6 @@
         <title>Michael Barrows | Software Engineer in Colchester, England</title>
 
         @filamentStyles
-        @vite('resources/css/filament/admin/theme.css')
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
 
