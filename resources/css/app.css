@@ -8,6 +8,9 @@
 .modal .content h2:not(.modal-title) {
     @apply text-2xl text-pacific-blue-600;
 }
+.modal .content h3 {
+    @apply text-xl text-pacific-blue-600;
+}
 .modal .content p, ul {
     @apply my-2;
 }
