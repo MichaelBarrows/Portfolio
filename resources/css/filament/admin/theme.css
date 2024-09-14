@@ -2,8 +2,8 @@
 
 @config 'tailwind.config.js';
 
-.fi-sidebar-nav, .fi-sidebar-header, .fi-logo {
-    @apply bg-pacific-blue-600 text-white text-white;
+.fi-sidebar-nav, .fi-sidebar-header, .fi-sidebar-header .fi-logo {
+    @apply bg-pacific-blue-600 text-white;
 }
 
 .fi-sidebar-group-label {
