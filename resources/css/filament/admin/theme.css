@@ -1,3 +1,32 @@
 @import '/vendor/filament/filament/resources/css/theme.css';
 
 @config 'tailwind.config.js';
+
+.fi-sidebar-nav, .fi-sidebar-header, .fi-logo {
+    @apply bg-pacific-blue-600 text-white text-white;
+}
+
+.fi-sidebar-group-label {
+    @apply text-white font-semibold;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-label {
+    @apply text-pacific-blue-600;
+}
+.fi-sidebar-item-active .fi-sidebar-item-icon {
+    @apply text-pacific-blue-600;
+}
+
+.fi-sidebar-item a:hover .fi-sidebar-item-label {
+    @apply text-pacific-blue-600;
+}
+.fi-sidebar-item a:hover .fi-sidebar-item-icon {
+    @apply text-pacific-blue-600;
+}
+
+.fi-sidebar-item-label  {
+    @apply text-white;
+}
+.fi-sidebar-item-icon {
+    @apply text-white;
+}
