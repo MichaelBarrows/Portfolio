@@ -30,3 +30,7 @@
 .fi-sidebar-item-icon {
     @apply text-white;
 }
+
+.fi-icon-btn-icon {
+    @apply text-white;
+}
