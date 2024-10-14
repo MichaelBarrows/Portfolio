@@ -9,9 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "calebporzio/sushi": "^2.5.2",
-        "filament/filament": "^3.2.115",
-        "filament/notifications": "^3.2.115",
+        "filament/filament": "^3.2.117",
+        "filament/notifications": "^3.2.117",
         "guzzlehttp/guzzle": "^7.9.2",
         "laravel/framework": "^10.48.22",
         "laravel/sanctum": "^3.3.3",
@@ -23,27 +22,18 @@
         "sentry/sentry-laravel": "^4.9",
         "socialiteproviders/laravelpassport": "^4.3",
         "socialiteproviders/spotify": "^4.1",
-        "wire-elements/modal": "^2.0.10"
+        "wire-elements/modal": "^2.0.12"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.14.2",
+        "barryvdh/laravel-debugbar": "^3.14.3",
         "fakerphp/faker": "^1.23.1",
         "laravel/pint": "^1.18.1",
-        "laravel/sail": "^1.33.0",
-        "michaelbarrows/artisan-make-commands": "^1.0",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^7.10",
         "pestphp/pest": "^2.35.1",
         "pestphp/pest-plugin-livewire": "^2.1",
         "spatie/laravel-ignition": "^2.8.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:MichaelBarrows/artisan-make-commands.git",
-            "no-api": true
-        }
-    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",
