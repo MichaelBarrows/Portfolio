@@ -141,5 +141,5 @@
                 setTimeout(() => Echo.leave('currently-playing'), 2000);
             }
         });
-</script>
+    </script>
 @endscript
