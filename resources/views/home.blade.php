@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Michael Barrows | Software Engineer in Colchester, England</title>
+        <meta property="og:site_name" content="Michael Barrows" />
 
         @filamentStyles
         @vite('resources/css/app.css')
