@@ -15,7 +15,7 @@
 
             <div class="text-2xl font-semibold tracking-tight text-gray-950 dark:text-white grid md:grid-cols-3 items-center">
                 <div class="flex items-center space-x-4 md:col-span-2 md:py-2">
-                    <img class="rounded-full" src="{{ $userAvatar }}" />
+                    <img class="rounded-full" style="max-width: 20%;" src="{{ $userAvatar }}" />
                     <p class="@if(! empty($userName)) p-3 @endif">{{ $userName ?? 'No User Associated' }}</p>
                 </div>
                 <div class="flex flex-row-reverse">
