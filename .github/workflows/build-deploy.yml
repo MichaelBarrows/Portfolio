@@ -15,6 +15,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Open Firewall
+        run: |
+          curl -X GET \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${{ secrets.MISSION_CONTROL_TOKEN }}" \
+          "${{ secrets.MISSION_CONTROL_URL }}"
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
