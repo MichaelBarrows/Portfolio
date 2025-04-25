@@ -20,7 +20,7 @@ jobs:
           curl -X GET \
           -H "Content-Type: application/json" \
           -H "Authorization: Bearer ${{ secrets.MISSION_CONTROL_TOKEN }}" \
-          "${{ secrets.MISSION_CONTROL_URL }}"
+          "${{ secrets.MISSION_CONTROL_URL }}/enable-deployment"
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -99,4 +99,10 @@ jobs:
             php artisan view:clear
             php artisan view:cache
           "
+      - name: Close Firewall
+        run: |
+          curl -X GET \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${{ secrets.MISSION_CONTROL_TOKEN }}" \
+          "${{ secrets.MISSION_CONTROL_URL }}/disable-deployment"
 
