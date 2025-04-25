@@ -91,6 +91,11 @@ jobs:
             rm -rf current
             ln -s ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID current
           "
+      - name: Restart FPM
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            sudo /usr/sbin/service php8.3-fpm reload
+          "
       - name: Optimize
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
