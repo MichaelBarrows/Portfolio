@@ -28,6 +28,6 @@
         @livewire('notifications')
 
         @filamentScripts
-        <script src="https://kit.fontawesome.com/4d49df2bcb.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/d822f9bfc6.js" crossorigin="anonymous"></script>
     </body>
 </html>
