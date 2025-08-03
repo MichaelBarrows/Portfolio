@@ -104,6 +104,12 @@ jobs:
             php artisan view:clear
             php artisan view:cache
           "
+      - name: Cleanup releases
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/releases
+            ~/cleanup-releases.sh 1
+          "
       - name: Close Firewall
         run: |
           curl -X GET \
