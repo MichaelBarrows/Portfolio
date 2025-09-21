@@ -9,8 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "filament/filament": "^3.3.37",
-        "filament/notifications": "^3.3.37",
+        "filament/filament": "^3.3.39",
+        "filament/notifications": "^3.3.39",
         "guzzlehttp/guzzle": "^7.10.0",
         "laravel/framework": "^10.49.0",
         "laravel/sanctum": "^3.3.3",
@@ -28,7 +28,7 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.16.0",
         "fakerphp/faker": "^1.24.1",
-        "laravel/pint": "^1.24.0",
+        "laravel/pint": "^1.25.1",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^7.12",
         "pestphp/pest": "^2.36.0",
