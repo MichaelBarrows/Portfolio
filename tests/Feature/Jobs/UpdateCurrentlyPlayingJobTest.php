@@ -43,6 +43,29 @@ it ('does nothing if there are no users subscribed', function () {
     UpdateCurrentlyPlayingJob::dispatchSync();
 });
 
+it ('does nothing when frozen', function () {
+    Cache::shouldReceive('has')
+        ->with('spotify.currently-playing.is-current')
+        ->once()
+        ->andReturn(false);
+    Broadcast::partialMock()
+        ->shouldReceive('getPusher->getChannelInfo')
+        ->andReturn((object) ['subscription_count' => 5]);
+    Cache::shouldReceive('get')
+        ->with('freeze-currently-playing', false)
+        ->once()
+        ->andReturn(true);
+
+    $this->instance(
+        SpotifyService::class,
+        Mockery::mock(SpotifyService::class, function (MockInterface $mock) {
+            $mock->shouldNotReceive('getCurrentlyPlaying');
+        })
+    );
+
+    UpdateCurrentlyPlayingJob::dispatchSync();
+});
+
 it ('calls the service', function () {
     Cache::shouldReceive('has')
         ->with('spotify.currently-playing.is-current')
@@ -51,6 +74,10 @@ it ('calls the service', function () {
     Broadcast::partialMock()
         ->shouldReceive('getPusher->getChannelInfo')
         ->andReturn((object) ['subscription_count' => 10]);
+    Cache::shouldReceive('get')
+        ->with('freeze-currently-playing', false)
+        ->once()
+        ->andReturn(false);
 
     $this->instance(
         SpotifyService::class,

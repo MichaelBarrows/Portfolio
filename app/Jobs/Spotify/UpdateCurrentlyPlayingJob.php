@@ -35,6 +35,10 @@ class UpdateCurrentlyPlayingJob implements ShouldQueue
             return;
         }
 
+        if (Cache::get('freeze-currently-playing', false)) {
+            return;
+        }
+
         $spotifyService->getCurrentlyPlaying();
     }
 }

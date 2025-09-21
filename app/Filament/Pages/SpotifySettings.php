@@ -61,6 +61,16 @@ class SpotifySettings extends Page
                     $result = app(CreateSpotifyContentRuleAction::class)->execute($data);
                     $this->dispatch('ruleAdded')->to(SpotifyContentSettings::class);
                 }),
+
+            Action::make('pauseUpdates')
+                ->icon('heroicon-s-pause-circle')
+                ->hidden(fn () => Cache::get('freeze-currently-playing', false))
+                ->action(fn () => Cache::rememberForever('freeze-currently-playing', fn () => true)),
+
+            Action::make('resumeUpdates')
+                ->icon('heroicon-s-play-circle')
+                ->hidden(fn () => ! Cache::get('freeze-currently-playing', false))
+                ->action(fn () => Cache::forget('freeze-currently-playing')),
         ];
     }
 }
