@@ -94,7 +94,7 @@ jobs:
       - name: Restart FPM
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            sudo /usr/sbin/service php8.3-fpm reload
+            sudo /usr/sbin/service php8.4-fpm reload
           "
       - name: Optimize
         run: |
