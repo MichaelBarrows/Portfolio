@@ -65,13 +65,13 @@ jobs:
             cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
             composer install --no-dev
           "
-      # - name: Symlink storage folder
-      #   run: |
-      #     ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-      #       cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
-      #       rm -rf storage
-      #       ln -s ${{ secrets.SSH_DIRECTORY }}/storage storage
-      #     "
+      - name: Symlink storage folder
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+            cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
+            rm -rf storage
+            ln -s ${{ secrets.SSH_DIRECTORY }}/storage storage
+          "
       - name: Symlink ENV
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
