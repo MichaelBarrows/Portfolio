@@ -41,11 +41,10 @@ return [
         'api_url' => 'https://api.spotify.com/v1/',
     ],
 
-    'laravelpassport' => [
-        'enabled' => env('ENABLE_KNOX_LOGIN', false),
-        'client_id' => env('KNOX_CLIENT_ID'),
-        'client_secret' => env('KNOX_CLIENT_SECRET'),
-        'redirect' => env('KNOX_REDIRECT_URI'),
-        'host' => env('KNOX_HOST'),
-    ],
+    'google' => [
+        'enabled' => env('ENABLE_GOOGLE_LOGIN', true),
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('APP_URL').'/oauth/google/callback',
+    ]
 ];

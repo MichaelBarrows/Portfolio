@@ -26,18 +26,18 @@ it('does not show the login form when the config value is false', function () {
         ->assertDontSee('Remember me');
 });
 
-it('shows the login with knox button when the config value is true', function () {
-    Config::set('services.laravelpassport.enabled', true);
+it('shows the login with google button when the config value is true', function () {
+    Config::set('services.google.enabled', true);
 
     livewire(Login::class)
-        ->assertSee('Login with Knox');
+        ->assertSee('Login with Google');
 });
 
-it('does not show the login with knox button when the config value is false', function () {
-    Config::set('services.laravelpassport.enabled', false);
+it('does not show the login with google button when the config value is false', function () {
+    Config::set('services.google.enabled', false);
 
     livewire(Login::class)
-        ->assertDontSee('Login with Knox');
+        ->assertDontSee('Login with Google');
 });
 
 it('does not allow logging in using a password when the user does not have a password', function () {

@@ -19,14 +19,14 @@
     @endif
 
 
-    @if(config('services.laravelpassport.enabled'))
+    @if(config('services.google.enabled'))
         <x-filament::button
-            :href="route('oauth.knox.redirect')"
+            :href="route('oauth.google.redirect')"
             tag="a"
-            color="knox"
-            icon="knox"
+            color="primary"
+            icon="google"
         >
-            Login with Knox
+            Login with Google
         </x-filament::button>
     @endif
 </x-filament-panels::page.simple>

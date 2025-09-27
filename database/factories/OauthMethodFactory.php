@@ -14,7 +14,7 @@ class OauthMethodFactory extends Factory
     public function definition(): array
     {
         return [
-            'provider' => $this->faker->randomElement(['knox', 'google', 'spotify']),
+            'provider' => $this->faker->randomElement(['google', 'spotify']),
             'provider_id' => $this->faker->uuid(),
             'refresh_token' => Str::random(64),
         ];

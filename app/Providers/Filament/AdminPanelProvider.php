@@ -28,7 +28,6 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->colors([
                 'primary' => Color::hex('#0099CC'),
-                'knox' => Color::Emerald,
                 'black' => Color::hex('#000000'),
                 ...Color::all(),
             ])

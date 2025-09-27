@@ -7,23 +7,22 @@ use App\Repositories\OauthMethodRepository;
 use App\Repositories\UserRepository;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 
-class KnoxController extends Controller
+class GoogleController extends Controller
 {
     public function redirect()
     {
-        return Socialite::driver('laravelpassport')
+        return Socialite::driver('google')
             ->redirect();
     }
 
     public function callback()
     {
-        $knoxUser = Socialite::driver('laravelpassport')->user();
+        $googleUser = Socialite::driver('google')->user();
 
-        if (! Str::endsWith($knoxUser->getEmail(), config('filament.auth_user_domain'))){
+        if (! Str::endsWith($googleUser->getEmail(), config('filament.auth_user_domain'))){
             Notification::make()
                 ->title('Error')
                 ->body("You're not authorised to access this application")
@@ -33,18 +32,18 @@ class KnoxController extends Controller
         }
 
         $loginMethod = app(OauthMethodRepository::class)->getMethodForSocialiteUser(
-            provider: 'knox',
-            socialiteUser: $knoxUser,
+            provider: 'google',
+            socialiteUser: $googleUser,
         );
 
         if ($loginMethod && $loginMethod->user) {
             $user = $loginMethod->user;
         } else {
-        $user = app(UserRepository::class)->createUserFromSocialiteUser(socialiteUser: $knoxUser);
+        $user = app(UserRepository::class)->createUserFromSocialiteUser(socialiteUser: $googleUser);
             app(OauthMethodRepository::class)->createMethodForUser(
-                provider: 'knox',
+                provider: 'google',
                 user: $user,
-                socialiteUser: $knoxUser
+                socialiteUser: $googleUser
             );
         }
 

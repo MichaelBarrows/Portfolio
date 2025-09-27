@@ -7,7 +7,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User as SocialiteUser;
 
 it('redirects the user to the application', function () {
-    $this->get(route('oauth.knox.redirect'))
+    $this->get(route('oauth.google.redirect'))
         ->assertRedirect();
 });
 
@@ -19,7 +19,7 @@ it('does not create the user when their email address does not match the approve
 
     Socialite::shouldReceive('driver->user')->andReturn($mockUser);
 
-    $this->get(route('oauth.knox.callback'))
+    $this->get(route('oauth.google.callback'))
         ->assertRedirect(route('filament.admin.auth.login'));
 
     expect(User::all())->count()->toBe(0);
@@ -37,7 +37,7 @@ it('creates the user when their email address matches the approved domain', func
 
     Socialite::shouldReceive('driver->user')->andReturn($mockUser);
 
-    $this->get(route('oauth.knox.callback'))
+    $this->get(route('oauth.google.callback'))
         ->assertRedirect(route('filament.admin.pages.dashboard'));
 
     expect(User::all())->count()->toBe(1);
@@ -48,7 +48,7 @@ it('creates the user when their email address matches the approved domain', func
 
     expect(OauthMethod::all())->count()->toBe(1);
     expect(OauthMethod::first())
-        ->provider->toBe('knox')
+        ->provider->toBe('google')
         ->provider_id->toBe($userId);
 });
 
@@ -57,7 +57,7 @@ it('logs the user in without duplicating them', function () {
     $user = User::factory()->create(['password' => null]);
     $oauthMethod = OauthMethod::factory()
         ->for($user)
-        ->create(['provider' => 'knox']);
+        ->create(['provider' => 'google']);
 
     $mockUser = Mockery::mock(SocialiteUser::class);
     $mockUser->shouldReceive('getEmail')
@@ -69,7 +69,7 @@ it('logs the user in without duplicating them', function () {
 
     Socialite::shouldReceive('driver->user')->andReturn($mockUser);
 
-    $this->get(route('oauth.knox.callback'))
+    $this->get(route('oauth.google.callback'))
         ->assertRedirect(route('filament.admin.pages.dashboard'));
 
     expect(User::all())->count()->toBe(1);

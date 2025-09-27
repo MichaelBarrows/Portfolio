@@ -83,7 +83,7 @@ test('getMethodForSocialiteUser returns null when the oauth method doesnt exist'
     $repository = new OauthMethodRepository;
 
     $result = $repository->getMethodForSocialiteUser(
-        provider: 'knox',
+        provider: 'google',
         socialiteUser: $mockUser,
     );
 
@@ -101,13 +101,13 @@ test('createMethodForUser creates the oauth method and associates it with the us
     $repository = new OauthMethodRepository;
 
     $result = $repository->createMethodForUser(
-        provider: 'knox',
+        provider: 'google',
         user: $user,
         socialiteUser: $mockUser,
     );
 
     expect($result)->toBeInstanceOf(OauthMethod::class);
-    expect($result)->provider->toBe('knox')
+    expect($result)->provider->toBe('google')
         ->provider_id->toBe($providerId)
         ->user->getKey()->toBe($user->getKey());
     expect(Crypt::decrypt($result->refresh_token))->toBe($refreshToken);

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\OAuth\KnoxController;
+use App\Http\Controllers\OAuth\GoogleController;
 use App\Http\Controllers\OAuth\SpotifyController;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
@@ -26,8 +26,8 @@ Route::name('oauth.')->group(function () {
         Route::get('/oauth/spotify/callback', [SpotifyController::class, 'callback'])->name('callback');
     });
 
-    Route::name('knox.')->group(function () {
-        Route::get('/oauth/knox/redirect', [KnoxController::class, 'redirect'])->name('redirect');
-        Route::get('/oauth/knox/callback', [KnoxController::class, 'callback'])->name('callback');
+    Route::name('google.')->group(function () {
+        Route::get('/oauth/google/redirect', [GoogleController::class, 'redirect'])->name('redirect');
+        Route::get('/oauth/google/callback', [GoogleController::class, 'callback'])->name('callback');
     });
 });
