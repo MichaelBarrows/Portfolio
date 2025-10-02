@@ -65,12 +65,6 @@ jobs:
             cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
             composer install --no-dev
           "
-      - name: File ownership
-        run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
-            cd ${{ secrets.SSH_DIRECTORY }}/releases/$RELEASE_ID
-            chown ${{ secrets.SSH_USER }}:www-data -R .
-          "
       - name: Symlink storage folder
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
