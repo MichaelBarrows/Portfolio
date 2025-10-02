@@ -9,10 +9,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
-        "filament/filament": "^3.3.41",
-        "filament/notifications": "^3.3.41",
+        "filament/filament": "^3.3.42",
+        "filament/notifications": "^3.3.42",
         "guzzlehttp/guzzle": "^7.10.0",
-        "laravel/framework": "^10.49.0",
+        "laravel/framework": "^10.49.1",
         "laravel/sanctum": "^3.3.3",
         "laravel/socialite": "^5.23.0",
         "laravel/tinker": "^2.10.1",
