@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a579bc24dd470c821919d5b61b9ff48",
+    "content-hash": "80a18ad7be1762d396eb43ec2f7bcdc3",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2967,16 +2967,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.26.0",
+            "version": "9.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "7fce732754d043f3938899e5183e2d0f3d31b571"
+                "reference": "cb491b1ba3c42ff2bcd0113814f4256b42bae845"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/7fce732754d043f3938899e5183e2d0f3d31b571",
-                "reference": "7fce732754d043f3938899e5183e2d0f3d31b571",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/cb491b1ba3c42ff2bcd0113814f4256b42bae845",
+                "reference": "cb491b1ba3c42ff2bcd0113814f4256b42bae845",
                 "shasum": ""
             },
             "require": {
@@ -3054,7 +3054,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-10-01T11:24:54+00:00"
+            "time": "2025-10-16T08:22:09+00:00"
         },
         {
             "name": "league/flysystem",
@@ -5741,16 +5741,16 @@
         },
         {
             "name": "sentry/sentry-laravel",
-            "version": "4.16.0",
+            "version": "4.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-laravel.git",
-                "reference": "b33b2e487b02db02d92988228f142d7fa2be2bfa"
+                "reference": "f321c450f1ff31fc97cf42c249de4a47d593d216"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/b33b2e487b02db02d92988228f142d7fa2be2bfa",
-                "reference": "b33b2e487b02db02d92988228f142d7fa2be2bfa",
+                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/f321c450f1ff31fc97cf42c249de4a47d593d216",
+                "reference": "f321c450f1ff31fc97cf42c249de4a47d593d216",
                 "shasum": ""
             },
             "require": {
@@ -5814,7 +5814,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-laravel/issues",
-                "source": "https://github.com/getsentry/sentry-laravel/tree/4.16.0"
+                "source": "https://github.com/getsentry/sentry-laravel/tree/4.17.0"
             },
             "funding": [
                 {
@@ -5826,7 +5826,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-09-10T16:38:18+00:00"
+            "time": "2025-10-15T09:58:47+00:00"
         },
         {
             "name": "socialiteproviders/laravelpassport",
