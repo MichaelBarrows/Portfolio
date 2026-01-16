@@ -20,6 +20,8 @@ jobs:
           curl -X GET \
           -H "Content-Type: application/json" \
           -H "Authorization: Bearer ${{ secrets.MISSION_CONTROL_TOKEN }}" \
+          -H "CF-Access-Client-Id: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_ID }}" \
+          -H "CF-Access-Client-Secret: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_SECRET }}" \
           "${{ secrets.MISSION_CONTROL_URL }}/enable-deployment"
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -115,5 +117,7 @@ jobs:
           curl -X GET \
           -H "Content-Type: application/json" \
           -H "Authorization: Bearer ${{ secrets.MISSION_CONTROL_TOKEN }}" \
+          -H "CF-Access-Client-Id: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_ID }}" \
+          -H "CF-Access-Client-Secret: ${{ secrets.CLOUDFLARE_ACCESS_CLIENT_SECRET }}" \
           "${{ secrets.MISSION_CONTROL_URL }}/disable-deployment"
 
