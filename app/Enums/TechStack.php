@@ -9,6 +9,7 @@ enum TechStack: string
     case PHP = 'php';
     case LARAVEL = 'laravel';
     case JAVASCRIPT = 'javascript';
+    case ALPINE = 'alpine.js';
     case JQUERY = 'jquery';
     case REACT = 'react';
     case VUE = 'vue';
@@ -22,6 +23,7 @@ enum TechStack: string
     case LIVEWIRE = 'livewire';
     case FILAMENT = 'filament';
     case NATIVEPHP = 'nativephp';
+    case STRIPE = 'stripe';
 
     public function getName(): string
     {

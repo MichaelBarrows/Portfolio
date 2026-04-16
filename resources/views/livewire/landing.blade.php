@@ -1,6 +1,6 @@
 <div class="md:min-h-[100vh] md:flex md:items-center md:place-content-center">
     <div>
-        <h1 class="max-w-[95%] md:max-w-6xl text-center text-4xl md:text-6xl font-semibold mt-16 md:mt-8 mb-16 2xl:mb-24 mx-auto text-pacific-blue-600">Hi, I'm Michael, a Software Engineer in Colchester, Essex!</h1>
+        <h1 class="max-w-[95%] md:max-w-6xl text-center text-4xl md:text-6xl font-medium mt-16 md:mt-8 mb-16 2xl:mb-24 mx-auto text-pacific-blue-600">Hi, I'm Michael, a Software Engineer in Colchester, Essex!</h1>
         <div class="max-w-[95%] md:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 pb-10 md:pb-16 lg:pb-24 2xl:pb-32">
             <div class="@if($settings['show-currently-playing']) lg:col-span-5 @else lg:col-span-8 @endif md:pb-2">
                 <p class="text-center text-xl text-pacific-blue-600 pb-2 font-semibold">Working with</p>

@@ -36,7 +36,7 @@ export default {
                 'off-white': '#f9fafb',
             },
             fontFamily: {
-                sans: ["Raleway", ...defaultTheme.fontFamily.sans]
+                sans: ["Outfit", ...defaultTheme.fontFamily.sans]
             },
         },
     },

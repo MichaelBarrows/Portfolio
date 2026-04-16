@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

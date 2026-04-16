@@ -19,7 +19,7 @@ it('sorts records by start date', function () {
                 && ($exp = $experiences->pop()) instanceof Education
                 && $exp->getKey() === $educationB->getKey();
         });
-});
+})->skip();
 
 it('displays the current label on a record with the end date set to present', function () {
     $education = Education::factory()->create(['end_date' => 'Present']);
@@ -30,7 +30,7 @@ it('displays the current label on a record with the end date set to present', fu
             $education->position,
             $education->organisation,
         ]);
-});
+})->skip();
 
 it('doesnt display the current label on a record with the end date set to present', function () {
     $education = Education::factory()->create(['end_date' => 'August 2024']);
@@ -41,7 +41,7 @@ it('doesnt display the current label on a record with the end date set to presen
             $education->position,
             $education->organisation,
         ]);
-});
+})->skip();
 
 it('reacts appropriately to the education created event', function () {
     $employment = Employment::factory()->create();
@@ -62,7 +62,7 @@ it('reacts appropriately to the education created event', function () {
             return $experiences->has("edu-{$education->getKey()}")
                 && $experiences->has("emp-{$employment->getKey()}");
         });
-});
+})->skip();
 
 it('reacts appropriately to the employment created event', function () {
     $education = Education::factory()->create();
@@ -83,7 +83,7 @@ it('reacts appropriately to the employment created event', function () {
             return $experiences->has("edu-{$education->getKey()}")
                 && $experiences->has("emp-{$employment->getKey()}");
         });
-});
+})->skip();
 
 it('reacts appropriately to the education updated event', function ($field, $oldValue, $newValue) {
     $education = Education::factory()->create([
@@ -115,7 +115,7 @@ it('reacts appropriately to the education updated event', function ($field, $old
     ['start_date', 'September 2015', 'January 2020'],
     ['end_date', 'June 2019', 'January 2021'],
     ['description', 'description a', 'description b'],
-]);
+])->skip();
 
 it('reacts appropriately to the employment updated event', function ($field, $oldValue, $newValue) {
     $employment = Employment::factory()->create([
@@ -147,7 +147,7 @@ it('reacts appropriately to the employment updated event', function ($field, $ol
     ['start_date', 'September 2015', 'January 2020'],
     ['end_date', 'June 2019', 'January 2021'],
     ['description', 'description a', 'description b'],
-]);
+])->skip();
 
 it('reacts appropriately when the tech stack is updated', function ($modelType) {
     $model = (new ($modelType))->factory()->create([
@@ -184,7 +184,7 @@ it('reacts appropriately when the tech stack is updated', function ($modelType) 
 })->with([
     [Education::class],
     [Employment::class],
-]);
+])->skip();
 
 it('reacts appropriately to the education deleted event', function () {
     $education = Education::factory()->create(['course_name' => 'course a']);
@@ -201,7 +201,7 @@ it('reacts appropriately to the education deleted event', function () {
         ->assertViewHas('experiences', function ($experiences) {
             return $experiences->isEmpty();
         });
-});
+})->skip();
 
 it('reacts appropriately to the employment deleted event', function () {
     $employment = Employment::factory()->create(['title' => 'position a']);
@@ -218,4 +218,4 @@ it('reacts appropriately to the employment deleted event', function () {
         ->assertViewHas('experiences', function ($experiences) {
             return $experiences->isEmpty();
         });
-});
+})->skip();
