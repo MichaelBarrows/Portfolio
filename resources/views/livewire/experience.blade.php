@@ -22,7 +22,7 @@
                         <div class="flex flex-wrap items-center gap-1.5 text-sm mt-0.5">
                             <span class="font-medium text-slate-500">{{ $experience->organisation }}</span>
                         </div>
-                        <div class="flex gap-1 text-sm">
+                        <div class="flex gap-1 text-xs mt-0.5">
                             @foreach ($experience->tech_stack as $tech)
                                 <span class="bg-pacific-blue-600 text-white py-0.5 px-1 rounded-sm">
                                     {{ $tech->isLong() ? $tech->getShortName() : $tech->getName() }}
@@ -56,7 +56,7 @@
                         <div class="flex flex-wrap items-center gap-1.5 text-foreground/70 text-sm mt-0.5">
                             <span class="font-medium text-slate-500">{{ $experience->organisation }}</span>
                         </div>
-                        <div class="flex gap-1 text-sm">
+                        <div class="flex gap-1 text-xs mt-0.5">
                             @foreach ($experience->tech_stack as $tech)
                                 <span class="bg-pacific-blue-600 text-white py-0.5 px-1 rounded-sm">
                                     {{ $tech->isLong() ? $tech->getShortName() : $tech->getName() }}
