@@ -16,13 +16,13 @@
                         </div>
                         <div class=" {{ $loop->last ? 'hidden' : '' }} w-px flex-1 bg-pacific-blue-600 mt-1">&nbsp;</div>
                     </div>
-                    <div class="pb-8 min-w-0 text-left">
+                    <div class="pb-6 min-w-0 text-left">
                         <p class="text-sm font-medium text-pacific-blue-600 mb-0.5">{{ $experience->start_date }} - {{ $experience->end_date }}</p>
                         <h3 class="text-lg font-semibold leading-snug">{{ $experience->position }}</h3>
                         <div class="flex flex-wrap items-center gap-1.5 text-sm mt-0.5">
                             <span class="font-medium text-slate-500">{{ $experience->organisation }}</span>
                         </div>
-                        <div class="flex gap-1 text-xs mt-0.5">
+                        <div class="flex gap-1 text-xs mt-1">
                             @foreach ($experience->tech_stack as $tech)
                                 <span class="bg-pacific-blue-600 text-white py-0.5 px-1 rounded-sm">
                                     {{ $tech->isLong() ? $tech->getShortName() : $tech->getName() }}
@@ -50,13 +50,13 @@
                         </div>
                         <div class=" {{ $loop->last ? 'hidden' : '' }} w-px flex-1 bg-pacific-blue-400 mt-1">&nbsp;</div>
                     </div>
-                    <div class="pb-8 min-w-0 text-left">
+                    <div class="pb-6 min-w-0 text-left">
                         <p class="text-sm font-medium text-pacific-blue-600 mb-0.5">{{ $experience->start_date }} - {{ $experience->end_date }}</p>
                         <h3 class="text-lg font-semibold leading-snug">{{ $experience->position }}</h3>
                         <div class="flex flex-wrap items-center gap-1.5 text-foreground/70 text-sm mt-0.5">
                             <span class="font-medium text-slate-500">{{ $experience->organisation }}</span>
                         </div>
-                        <div class="flex gap-1 text-xs mt-0.5">
+                        <div class="flex gap-1 text-xs mt-1">
                             @foreach ($experience->tech_stack as $tech)
                                 <span class="bg-pacific-blue-600 text-white py-0.5 px-1 rounded-sm">
                                     {{ $tech->isLong() ? $tech->getShortName() : $tech->getName() }}
