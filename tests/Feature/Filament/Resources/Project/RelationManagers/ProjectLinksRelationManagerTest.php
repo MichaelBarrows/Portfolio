@@ -5,9 +5,9 @@ use App\Filament\Resources\ProjectResource\Pages\EditProject;
 use App\Filament\Resources\ProjectResource\RelationManagers\ProjectLinksRelationManager;
 use App\Models\Project;
 use App\Models\ProjectLink;
-use Filament\Tables\Actions\CreateAction;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\EditAction;
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use function Pest\Livewire\livewire;
 use Illuminate\Support\Facades\Event;
 
@@ -39,7 +39,7 @@ it('can create a link', function () {
         'pageClass' => EditProject::class,
     ])
         ->callTableAction(
-            name: CreateAction::class,
+            CreateAction::class,
             record: null,
             data: $data,
         );
@@ -66,7 +66,7 @@ it('can update a given link', function () {
         'pageClass' => EditProject::class,
     ])
         ->callTableAction(
-            name: EditAction::class,
+            EditAction::class,
             record: $link->getKey(),
             data: $data,
         );
@@ -89,7 +89,7 @@ it('can delete a given link', function () {
         'pageClass' => EditProject::class,
     ])
         ->callTableAction(
-            name: DeleteAction::class,
+            DeleteAction::class,
             record: $link->getKey(),
         );
 

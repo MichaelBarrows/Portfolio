@@ -2,18 +2,21 @@
 
 namespace App\Livewire;
 
+use Filament\Actions\Contracts\HasActions;
+use Filament\Actions\Concerns\InteractsWithActions;
+use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Flex;
+use Filament\Schemas\Components\Grid;
 use App\Actions\Contact\CreateContactAction;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Split;
 use Filament\Forms\Components\ViewField;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Livewire\Component;
 
-class Contact extends Component implements HasForms
+class Contact extends Component implements HasForms, HasActions
 {
+    use InteractsWithActions;
     use InteractsWithForms;
 
     public array $data = [
@@ -25,11 +28,11 @@ class Contact extends Component implements HasForms
 
     public bool $disabled = false;
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Split::make([
+        return $schema
+            ->components([
+                Flex::make([
                     Grid::make(['default' => 1])
                         ->schema([
                             ViewField::make('name')

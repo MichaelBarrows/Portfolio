@@ -2,12 +2,15 @@
 
 namespace App\Filament\Resources\ProjectResource\RelationManagers;
 
+use Filament\Schemas\Schema;
+use Filament\Actions\CreateAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 use App\Actions\ProjectLink\CreateProjectLinkAction;
 use App\Actions\ProjectLink\DeleteProjectLinkAction;
 use App\Actions\ProjectLink\UpdateProjectLinkAction;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -18,10 +21,10 @@ class ProjectLinksRelationManager extends RelationManager
 {
     protected static string $relationship = 'projectLinks';
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -41,7 +44,7 @@ class ProjectLinksRelationManager extends RelationManager
 
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make()
+                CreateAction::make()
                     ->using(function (array $data): Model {
                         return app(CreateProjectLinkAction::class)->execute(
                             project: $this->getOwnerRecord(),
@@ -49,15 +52,15 @@ class ProjectLinksRelationManager extends RelationManager
                         );
                     })
             ])
-            ->actions([
-                Tables\Actions\EditAction::make()
+            ->recordActions([
+                EditAction::make()
                     ->using(function (array $data, Model $record): Model {
                         return app(UpdateProjectLinkAction::class)->execute(
                             link: $record,
                             args: $data,
                         );
                     }),
-                Tables\Actions\DeleteAction::make()
+                DeleteAction::make()
                     ->using(function (Model $record): bool {
                         return app(DeleteProjectLinkAction::class)->execute(
                             link: $record,

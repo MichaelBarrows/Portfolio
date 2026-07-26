@@ -2,8 +2,8 @@
 
 use App\Livewire\SpotifyContentSettings;
 use App\Models\SpotifyContentRule;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 
 use function Pest\Livewire\livewire;
 

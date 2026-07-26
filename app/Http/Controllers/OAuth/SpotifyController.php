@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\OAuth;
 
+use Filament\Facades\Filament;
 use App\Filament\Pages\SpotifySettings;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
@@ -32,6 +33,6 @@ class SpotifyController extends Controller
             ],
         );
 
-        return redirect(route(SpotifySettings::getRouteName('admin')));
+        return redirect(route(SpotifySettings::getRouteName(Filament::getPanel('admin'))));
     }
 }

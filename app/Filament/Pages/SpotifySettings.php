@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Cache;
 
 class SpotifySettings extends Page
 {
-    protected static ?string $navigationIcon = 'heroicon-o-musical-note';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-musical-note';
 
-    protected static string $view = 'filament.pages.spotify-settings';
+    protected string $view = 'filament.pages.spotify-settings';
 
-    protected static ?string $navigationGroup = 'Settings';
+    protected static string | \UnitEnum | null $navigationGroup = 'Settings';
 
     protected static ?int $navigationSort = 12;
 
@@ -38,7 +38,7 @@ class SpotifySettings extends Page
     {
         return [
             Action::make('newContentRule')
-                ->form([
+                ->schema([
                     Select::make('field')
                         ->options([
                             'uri' => 'Track ID',

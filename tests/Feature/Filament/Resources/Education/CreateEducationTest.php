@@ -26,6 +26,7 @@ it('validates the input', function ($attribute) {
 
 it('creates the model', function () {
     $data = Education::factory()->definition();
+    $data['description'] = 'Test description content.';
 
     livewire(CreateEducation::class)
         ->fillForm($data)

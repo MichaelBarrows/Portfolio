@@ -2,6 +2,10 @@
 
 namespace App\Livewire;
 
+use Filament\Actions\Contracts\HasActions;
+use Filament\Actions\Concerns\InteractsWithActions;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 use App\Actions\SpotifyContentRule\DeleteSpotifyContentRuleAction;
 use App\Actions\SpotifyContentRule\UpdateSpotifyContentRuleAction;
 use App\Models\SpotifyContentRule;
@@ -9,8 +13,6 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
@@ -18,8 +20,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 
-class SpotifyContentSettings extends Component implements HasForms, HasTable
+class SpotifyContentSettings extends Component implements HasForms, HasTable, HasActions
 {
+    use InteractsWithActions;
     use InteractsWithForms;
     use InteractsWithTable;
 
@@ -46,9 +49,9 @@ class SpotifyContentSettings extends Component implements HasForms, HasTable
                     ->badge(),
                 TextColumn::make('value'),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make()
-                    ->form([
+                    ->schema([
                         Select::make('field')
                             ->options([
                                 'uri' => 'Track ID',
@@ -77,7 +80,7 @@ class SpotifyContentSettings extends Component implements HasForms, HasTable
                     ->requiresConfirmation()
                     ->using(fn (Model $record) => app(DeleteSpotifyContentRuleAction::class)->execute($record)),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 //
             ]);
     }

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use SocialiteProviders\Manager\SocialiteWasCalled;
+use SocialiteProviders\Spotify\SpotifyExtendSocialite;
+use SocialiteProviders\LaravelPassport\LaravelPassportExtendSocialite;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,9 +21,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-            \SocialiteProviders\Spotify\SpotifyExtendSocialite::class.'@handle',
-            \SocialiteProviders\LaravelPassport\LaravelPassportExtendSocialite::class.'@handle',
+        SocialiteWasCalled::class => [
+            SpotifyExtendSocialite::class.'@handle',
+            LaravelPassportExtendSocialite::class.'@handle',
         ],
     ];
 

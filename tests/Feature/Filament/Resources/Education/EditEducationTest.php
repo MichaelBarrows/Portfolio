@@ -33,6 +33,7 @@ it('validates the input', function ($attribute) {
 it('updates the model', function () {
     $education = Education::factory()->create();
     $data = Education::factory()->definition();
+    $data['description'] = 'Test description content.';
 
     livewire(EditEducation::class, [$education->getKey()])
         ->fillForm($data)

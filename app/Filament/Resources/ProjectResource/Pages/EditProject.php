@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ProjectResource\Pages;
 
+use Filament\Actions\DeleteAction;
 use App\Actions\Project\DeleteProjectAction;
 use App\Actions\Project\UpdateProjectAction;
 use App\Filament\Resources\ProjectResource;
@@ -19,7 +20,7 @@ class EditProject extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make()
+            DeleteAction::make()
                 ->using(fn (Model $record) => app(DeleteProjectAction::class)->execute($record)),
         ];
     }

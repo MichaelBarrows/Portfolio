@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\EmploymentResource\Pages;
 
+use Filament\Actions\CreateAction;
 use App\Filament\Resources\EmploymentResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
@@ -15,7 +16,7 @@ class ListEmployments extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            CreateAction::make(),
         ];
     }
 }

@@ -2,6 +2,13 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Resources\EmploymentResource\Pages\ListEmployments;
+use App\Filament\Resources\EmploymentResource\Pages\CreateEmployment;
+use App\Filament\Resources\EmploymentResource\Pages\EditEmployment;
 use App\Enums\TechStack;
 use App\Filament\Resources\EmploymentResource\Pages;
 use App\Models\Employment;
@@ -9,7 +16,6 @@ use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -19,18 +25,18 @@ class EmploymentResource extends Resource
 {
     protected static ?string $model = Employment::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-building-office-2';
 
     protected static ?string $navigationLabel = 'Employment';
 
-    protected static ?string $navigationGroup = 'Data';
+    protected static string | \UnitEnum | null $navigationGroup = 'Data';
 
     protected static ?int $navigationSort = 2;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 TextInput::make('title')->required(),
                 TextInput::make('company')->required(),
                 TextInput::make('start_date')->required(),
@@ -65,12 +71,12 @@ class EmploymentResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -85,9 +91,9 @@ class EmploymentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEmployments::route('/'),
-            'create' => Pages\CreateEmployment::route('/create'),
-            'edit' => Pages\EditEmployment::route('/{record}/edit'),
+            'index' => ListEmployments::route('/'),
+            'create' => CreateEmployment::route('/create'),
+            'edit' => EditEmployment::route('/{record}/edit'),
         ];
     }
 }

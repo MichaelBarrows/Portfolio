@@ -2,6 +2,13 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Resources\EducationResource\Pages\ListEducation;
+use App\Filament\Resources\EducationResource\Pages\CreateEducation;
+use App\Filament\Resources\EducationResource\Pages\EditEducation;
 use App\Enums\TechStack;
 use App\Filament\Resources\EducationResource\Pages;
 use App\Models\Education;
@@ -9,7 +16,6 @@ use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
@@ -19,16 +25,16 @@ class EducationResource extends Resource
 {
     protected static ?string $model = Education::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-academic-cap';
 
-    protected static ?string $navigationGroup = 'Data';
+    protected static string | \UnitEnum | null $navigationGroup = 'Data';
 
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
                 TextInput::make('institution_name')->required(),
                 TextInput::make('course_name')->required(),
                 TextInput::make('grade')->required(),
@@ -65,12 +71,12 @@ class EducationResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -85,9 +91,9 @@ class EducationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEducation::route('/'),
-            'create' => Pages\CreateEducation::route('/create'),
-            'edit' => Pages\EditEducation::route('/{record}/edit'),
+            'index' => ListEducation::route('/'),
+            'create' => CreateEducation::route('/create'),
+            'edit' => EditEducation::route('/{record}/edit'),
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\EmploymentResource\Pages;
 
+use Filament\Actions\DeleteAction;
 use App\Actions\Employment\DeleteEmploymentAction;
 use App\Actions\Employment\UpdateEmploymentAction;
 use App\Filament\Resources\EmploymentResource;
@@ -19,7 +20,7 @@ class EditEmployment extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make()
+            DeleteAction::make()
                 ->using(fn (Model $record) => app(DeleteEmploymentAction::class)->execute($record)),
         ];
     }

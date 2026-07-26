@@ -46,5 +46,5 @@ it('caches the returned data', function () {
 
     $this->actingAs(User::factory()->create())
         ->get(route('oauth.spotify.callback'))
-        ->assertRedirect(route(SpotifySettings::getRouteName('admin')));
+        ->assertRedirect(route(SpotifySettings::getRouteName()));
 });

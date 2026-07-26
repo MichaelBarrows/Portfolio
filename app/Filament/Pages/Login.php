@@ -2,14 +2,13 @@
 
 namespace App\Filament\Pages;
 
+use Filament\Auth\Http\Responses\Contracts\LoginResponse;
 use App\Models\User;
-use Filament\Http\Responses\Auth\Contracts\LoginResponse;
-use Filament\Pages\Auth\Login as AuthLogin;
 use Illuminate\Contracts\Support\Htmlable;
 
-class Login extends AuthLogin
+class Login extends \Filament\Auth\Pages\Login
 {
-    protected static string $view = 'filament.pages.login';
+    protected string $view = 'filament.pages.login';
 
     public function authenticate():? LoginResponse
     {

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\EducationResource\Pages;
 
+use Filament\Actions\DeleteAction;
 use App\Actions\Education\DeleteEducationAction;
 use App\Actions\Education\UpdateEducationAction;
 use App\Filament\Resources\EducationResource;
@@ -19,7 +20,7 @@ class EditEducation extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make()
+            DeleteAction::make()
                 ->using(fn (Model $record) => app(DeleteEducationAction::class)->execute($record)),
         ];
     }

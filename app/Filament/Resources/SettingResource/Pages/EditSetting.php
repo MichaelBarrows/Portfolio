@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\SettingResource\Pages;
 
+use Filament\Actions\DeleteAction;
 use App\Actions\Setting\DeleteSettingAction;
 use App\Actions\Setting\UpdateSettingAction;
 use App\Filament\Resources\SettingResource;
@@ -16,7 +17,7 @@ class EditSetting extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make()
+            DeleteAction::make()
                 ->using(fn (Model $record) => app(DeleteSettingAction::class)->execute($record)),
         ];
     }
